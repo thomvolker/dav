@@ -1,0 +1,174 @@
+# Week 1 - Data manipulation and EDA {#eda}
+
+## Introduction
+
+```{r, include = F}
+library(kableExtra)
+options(kableExtra.html.bsTable = T)
+```
+
+
+```{r, message = FALSE, warning = FALSE}
+library(ISLR)
+library(tidyverse)
+library(haven)
+library(readxl)
+```
+
+## Data types
+
+### Exercise 1
+
+```{r}
+object_1 <- 1:5
+object_2 <- 1L:5L
+object_3 <- "-123.456"
+object_4 <- as.numeric(object_2)
+object_5 <- letters[object_1]
+object_6 <- as.factor(rep(object_5, 2))
+object_7 <- c(1, 2, 3, "4", "5", "6")
+```
+
+### Exercise 2
+
+```{r}
+as.numeric(object_7)
+```
+
+## Lists and data frames
+
+### Exercise 3
+
+```{r}
+objects <- mget(ls(pattern = "^object_\\d{1}$"), .GlobalEnv)
+```
+
+### Exercise 4
+
+```{r}
+df <- data.frame(object_1, object_2, object_5)
+```
+
+### Exercise 5
+
+```{r}
+ncol(df)
+nrow(df)
+```
+## Loading, viewing and summarising data
+
+### Exercise 6
+
+```{r, message = F}
+apps <- read_csv("data/googleplaystore.csv")
+```
+
+### Exercise 7
+
+Yes, the variables `size`, `installs` and `price` could have been numeric variables, rather than character variables. 
+
+### Exercise 8
+
+```{r}
+knitr::kable(head(apps[,-1]), booktabs = T) %>%
+  kableExtra::kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
+
+### Exercise 9
+
+```{r}
+students <- readxl::read_xlsx("data/students.xlsx")
+students$student_number <- as.character(students$student_number)
+
+head(students) %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("striped", "hover"))
+```
+### Exercise 10
+
+```{r}
+summary(students)
+```
+
+## Data transformation with `dplyr`
+
+### Exercise 11
+
+```{r}
+students %>%
+  filter(grade < 5.5)
+```
+
+### Exercise 12
+
+```{r}
+students %>%
+  filter(grade > 8 & programme == "A")
+```
+
+### Exercise 13
+
+```{r}
+students %>%
+  arrange(programme, desc(grade))
+```
+
+### Exercise 14
+
+```{r}
+students %>%
+  select(student_number, programme)
+```
+
+### Exercise 15
+
+```{r}
+students_recoded <- students %>%
+  mutate(programme = recode(programme, "A" = "Science", "B" = "Social Science"))
+```
+
+### Exercise 16
+
+```{r, message = F}
+popular_apps <- read_csv("data/googleplaystore.csv") %>%
+  mutate(Installs = parse_number(Installs)) %>%
+  filter(Installs > 500000000) %>%
+  arrange(desc(Rating)) %>%
+  select(Category, Rating, Reviews, Size, Installs, Type, Price)
+```
+
+### Exercise 17
+
+```{r}
+popular_apps %>%
+  summarise_if(is.numeric, 
+               .funs = list(median = median, min = min, max = max))
+```
+
+### Exercise 18
+
+```{r}
+mad <- function(x) median(abs(x - median(x)))
+
+popular_apps %>%
+  summarise_if(is.numeric, 
+               .funs = list(median = median, 
+                            min = min, 
+                            max = max,
+                            mad = mad))
+```
+
+### Exercise 19
+
+```{r}
+popular_apps %>%
+  group_by(Category) %>%
+  summarise(mean = mean(Rating),
+            median = median(Rating),
+            sd = sd(Rating),
+            min = min(Rating),
+            max = max(Rating),
+            mad = mad(Rating))
+```
+
