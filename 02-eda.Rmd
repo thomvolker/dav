@@ -1,4 +1,4 @@
-# Week 1 - Data manipulation and EDA {#eda}
+# Week 1 Data manipulation and EDA {#eda}
 
 ## Introduction
 
