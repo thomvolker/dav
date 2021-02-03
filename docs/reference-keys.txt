@@ -106,3 +106,5 @@ applications
 example-one
 example-two
 final-words
+class
+unsup

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Data Visualization using ggplot2 | Data Analysis and Visualization - Practicals</title>
+  <meta name="description" content="This gitbook contains all practical assignments for the course Data Analysis and Visualization." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Data Visualization using ggplot2 | Data Analysis and Visualization - Practicals" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This gitbook contains all practical assignments for the course Data Analysis and Visualization." />
+  <meta name="github-repo" content="thomvolker/dav" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Data Visualization using ggplot2 | Data Analysis and Visualization - Practicals" />
+  
+  <meta name="twitter:description" content="This gitbook contains all practical assignments for the course Data Analysis and Visualization." />
+  
+
+<meta name="author" content="Thom Volker" />
+
+
+<meta name="date" content="2021-02-03" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="eda.html"/>
+<link rel="next" href="reg.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="eda.html"><a href="eda.html"><i class="fa fa-check"></i><b>2</b> Week 1 - Data manipulation and EDA</a><ul>
+<li class="chapter" data-level="2.1" data-path="eda.html"><a href="eda.html#introduction-1"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.2" data-path="eda.html"><a href="eda.html#data-types"><i class="fa fa-check"></i><b>2.2</b> Data types</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="eda.html"><a href="eda.html#exercise-1"><i class="fa fa-check"></i><b>2.2.1</b> Exercise 1</a></li>
+<li class="chapter" data-level="2.2.2" data-path="eda.html"><a href="eda.html#exercise-2"><i class="fa fa-check"></i><b>2.2.2</b> Exercise 2</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="eda.html"><a href="eda.html#lists-and-data-frames"><i class="fa fa-check"></i><b>2.3</b> Lists and data frames</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="eda.html"><a href="eda.html#exercise-3"><i class="fa fa-check"></i><b>2.3.1</b> Exercise 3</a></li>
+<li class="chapter" data-level="2.3.2" data-path="eda.html"><a href="eda.html#exercise-4"><i class="fa fa-check"></i><b>2.3.2</b> Exercise 4</a></li>
+<li class="chapter" data-level="2.3.3" data-path="eda.html"><a href="eda.html#exercise-5"><i class="fa fa-check"></i><b>2.3.3</b> Exercise 5</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="eda.html"><a href="eda.html#loading-viewing-and-summarising-data"><i class="fa fa-check"></i><b>2.4</b> Loading, viewing and summarising data</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="eda.html"><a href="eda.html#exercise-6"><i class="fa fa-check"></i><b>2.4.1</b> Exercise 6</a></li>
+<li class="chapter" data-level="2.4.2" data-path="eda.html"><a href="eda.html#exercise-7"><i class="fa fa-check"></i><b>2.4.2</b> Exercise 7</a></li>
+<li class="chapter" data-level="2.4.3" data-path="eda.html"><a href="eda.html#exercise-8"><i class="fa fa-check"></i><b>2.4.3</b> Exercise 8</a></li>
+<li class="chapter" data-level="2.4.4" data-path="eda.html"><a href="eda.html#exercise-9"><i class="fa fa-check"></i><b>2.4.4</b> Exercise 9</a></li>
+<li class="chapter" data-level="2.4.5" data-path="eda.html"><a href="eda.html#exercise-10"><i class="fa fa-check"></i><b>2.4.5</b> Exercise 10</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="eda.html"><a href="eda.html#data-transformation-with-dplyr"><i class="fa fa-check"></i><b>2.5</b> Data transformation with <code>dplyr</code></a><ul>
+<li class="chapter" data-level="2.5.1" data-path="eda.html"><a href="eda.html#exercise-11"><i class="fa fa-check"></i><b>2.5.1</b> Exercise 11</a></li>
+<li class="chapter" data-level="2.5.2" data-path="eda.html"><a href="eda.html#exercise-12"><i class="fa fa-check"></i><b>2.5.2</b> Exercise 12</a></li>
+<li class="chapter" data-level="2.5.3" data-path="eda.html"><a href="eda.html#exercise-13"><i class="fa fa-check"></i><b>2.5.3</b> Exercise 13</a></li>
+<li class="chapter" data-level="2.5.4" data-path="eda.html"><a href="eda.html#exercise-14"><i class="fa fa-check"></i><b>2.5.4</b> Exercise 14</a></li>
+<li class="chapter" data-level="2.5.5" data-path="eda.html"><a href="eda.html#exercise-15"><i class="fa fa-check"></i><b>2.5.5</b> Exercise 15</a></li>
+<li class="chapter" data-level="2.5.6" data-path="eda.html"><a href="eda.html#exercise-16"><i class="fa fa-check"></i><b>2.5.6</b> Exercise 16</a></li>
+<li class="chapter" data-level="2.5.7" data-path="eda.html"><a href="eda.html#exercise-17"><i class="fa fa-check"></i><b>2.5.7</b> Exercise 17</a></li>
+<li class="chapter" data-level="2.5.8" data-path="eda.html"><a href="eda.html#exercise-18"><i class="fa fa-check"></i><b>2.5.8</b> Exercise 18</a></li>
+<li class="chapter" data-level="2.5.9" data-path="eda.html"><a href="eda.html#exercise-19"><i class="fa fa-check"></i><b>2.5.9</b> Exercise 19</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="ggplot2.html"><a href="ggplot2.html"><i class="fa fa-check"></i><b>3</b> Data Visualization using ggplot2</a><ul>
+<li class="chapter" data-level="3.1" data-path="ggplot2.html"><a href="ggplot2.html#introduction-2"><i class="fa fa-check"></i><b>3.1</b> Introduction</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="ggplot2.html"><a href="ggplot2.html#exercise-1-1"><i class="fa fa-check"></i><b>3.1.1</b> Exercise 1</a></li>
+<li class="chapter" data-level="3.1.2" data-path="ggplot2.html"><a href="ggplot2.html#exercise-2-1"><i class="fa fa-check"></i><b>3.1.2</b> Exercise 2</a></li>
+<li class="chapter" data-level="3.1.3" data-path="ggplot2.html"><a href="ggplot2.html#exercise-3-1"><i class="fa fa-check"></i><b>3.1.3</b> Exercise 3</a></li>
+<li class="chapter" data-level="3.1.4" data-path="ggplot2.html"><a href="ggplot2.html#exercise-4-1"><i class="fa fa-check"></i><b>3.1.4</b> Exercise 4</a></li>
+<li class="chapter" data-level="3.1.5" data-path="ggplot2.html"><a href="ggplot2.html#exercise-5-1"><i class="fa fa-check"></i><b>3.1.5</b> Exercise 5</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="ggplot2.html"><a href="ggplot2.html#visual-exploratory-data-analysis"><i class="fa fa-check"></i><b>3.2</b> Visual exploratory data analysis</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="ggplot2.html"><a href="ggplot2.html#exercise-6-1"><i class="fa fa-check"></i><b>3.2.1</b> Exercise 6</a></li>
+<li class="chapter" data-level="3.2.2" data-path="ggplot2.html"><a href="ggplot2.html#exercise-7-1"><i class="fa fa-check"></i><b>3.2.2</b> Exercise 7</a></li>
+<li class="chapter" data-level="3.2.3" data-path="ggplot2.html"><a href="ggplot2.html#exercise-8-1"><i class="fa fa-check"></i><b>3.2.3</b> Exercise 8</a></li>
+<li class="chapter" data-level="3.2.4" data-path="ggplot2.html"><a href="ggplot2.html#exercise-9-1"><i class="fa fa-check"></i><b>3.2.4</b> Exercise 9</a></li>
+<li class="chapter" data-level="3.2.5" data-path="ggplot2.html"><a href="ggplot2.html#exercise-10-1"><i class="fa fa-check"></i><b>3.2.5</b> Exercise 10</a></li>
+<li class="chapter" data-level="3.2.6" data-path="ggplot2.html"><a href="ggplot2.html#exercise-11-1"><i class="fa fa-check"></i><b>3.2.6</b> Exercise 11</a></li>
+<li class="chapter" data-level="3.2.7" data-path="ggplot2.html"><a href="ggplot2.html#exercise-12-1"><i class="fa fa-check"></i><b>3.2.7</b> Exercise 12</a></li>
+<li class="chapter" data-level="3.2.8" data-path="ggplot2.html"><a href="ggplot2.html#exercise-13-1"><i class="fa fa-check"></i><b>3.2.8</b> Exercise 13</a></li>
+<li class="chapter" data-level="3.2.9" data-path="ggplot2.html"><a href="ggplot2.html#exercise-14---17"><i class="fa fa-check"></i><b>3.2.9</b> Exercise 14 - 17</a></li>
+<li class="chapter" data-level="3.2.10" data-path="ggplot2.html"><a href="ggplot2.html#exercise-18-1"><i class="fa fa-check"></i><b>3.2.10</b> Exercise 18</a></li>
+<li class="chapter" data-level="3.2.11" data-path="ggplot2.html"><a href="ggplot2.html#exercise-19-1"><i class="fa fa-check"></i><b>3.2.11</b> Exercise 19</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="reg.html"><a href="reg.html"><i class="fa fa-check"></i><b>4</b> Regression</a><ul>
+<li class="chapter" data-level="4.1" data-path="reg.html"><a href="reg.html#book"><i class="fa fa-check"></i><b>4.1</b> Book</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="reg.html"><a href="reg.html#chapter-3"><i class="fa fa-check"></i><b>4.1.1</b> Chapter 3</a></li>
+<li class="chapter" data-level="4.1.2" data-path="reg.html"><a href="reg.html#chapter-6---model-selection"><i class="fa fa-check"></i><b>4.1.2</b> Chapter 6 - Model selection</a></li>
+<li class="chapter" data-level="4.1.3" data-path="reg.html"><a href="reg.html#chapter-7---shrinkage-methods"><i class="fa fa-check"></i><b>4.1.3</b> Chapter 7 - Shrinkage methods</a></li>
+<li class="chapter" data-level="4.1.4" data-path="reg.html"><a href="reg.html#resampling-methods"><i class="fa fa-check"></i><b>4.1.4</b> Resampling Methods</a></li>
+<li class="chapter" data-level="4.1.5" data-path="reg.html"><a href="reg.html#moving-beyond-linearity"><i class="fa fa-check"></i><b>4.1.5</b> Moving beyond linearity</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="reg.html"><a href="reg.html#lecture---regression-i"><i class="fa fa-check"></i><b>4.2</b> Lecture - Regression I</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="reg.html"><a href="reg.html#model-accuracy-1"><i class="fa fa-check"></i><b>4.2.1</b> Model accuracy</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="reg.html"><a href="reg.html#lecture---regression-ii"><i class="fa fa-check"></i><b>4.3</b> Lecture - Regression II</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="reg.html"><a href="reg.html#feature-selection-penalization"><i class="fa fa-check"></i><b>4.3.1</b> Feature selection / penalization</a></li>
+<li class="chapter" data-level="4.3.2" data-path="reg.html"><a href="reg.html#wrapper-methods"><i class="fa fa-check"></i><b>4.3.2</b> Wrapper methods</a></li>
+<li class="chapter" data-level="4.3.3" data-path="reg.html"><a href="reg.html#filter-methods"><i class="fa fa-check"></i><b>4.3.3</b> Filter methods</a></li>
+<li class="chapter" data-level="4.3.4" data-path="reg.html"><a href="reg.html#embedded-methods"><i class="fa fa-check"></i><b>4.3.4</b> Embedded methods</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="reg.html"><a href="reg.html#lecture---regression-iii"><i class="fa fa-check"></i><b>4.4</b> Lecture - Regression III</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="reg.html"><a href="reg.html#polynomial-regression-1"><i class="fa fa-check"></i><b>4.4.1</b> Polynomial regression</a></li>
+<li class="chapter" data-level="4.4.2" data-path="reg.html"><a href="reg.html#piecewise-regression"><i class="fa fa-check"></i><b>4.4.2</b> Piecewise regression</a></li>
+<li class="chapter" data-level="4.4.3" data-path="reg.html"><a href="reg.html#basis-functions-1"><i class="fa fa-check"></i><b>4.4.3</b> Basis functions</a></li>
+<li class="chapter" data-level="4.4.4" data-path="reg.html"><a href="reg.html#splines"><i class="fa fa-check"></i><b>4.4.4</b> Splines</a></li>
+<li class="chapter" data-level="4.4.5" data-path="reg.html"><a href="reg.html#local-regression-1"><i class="fa fa-check"></i><b>4.4.5</b> Local regression</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="reg.html"><a href="reg.html#practical-regression-i"><i class="fa fa-check"></i><b>4.5</b> Practical Regression I</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>5</b> Applications</a><ul>
+<li class="chapter" data-level="5.1" data-path="applications.html"><a href="applications.html#example-one"><i class="fa fa-check"></i><b>5.1</b> Example one</a></li>
+<li class="chapter" data-level="5.2" data-path="applications.html"><a href="applications.html#example-two"><i class="fa fa-check"></i><b>5.2</b> Example two</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>6</b> Final Words</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Data Analysis and Visualization - Practicals</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ggplot2" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Data Visualization using ggplot2</h1>
+<div id="introduction-2" class="section level2">
+<h2><span class="header-section-number">3.1</span> Introduction</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="ggplot2.html#cb1-1"></a><span class="kw">library</span>(ISLR)</span>
+<span id="cb1-2"><a href="ggplot2.html#cb1-2"></a><span class="kw">library</span>(tidyverse)</span></code></pre></div>
+<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──</code></pre>
+<pre><code>## ✓ ggplot2 3.3.0     ✓ purrr   0.3.4
+## ✓ tibble  3.0.3     ✓ dplyr   1.0.0
+## ✓ tidyr   1.1.0     ✓ stringr 1.4.0
+## ✓ readr   1.3.1     ✓ forcats 0.5.0</code></pre>
+<pre><code>## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
+<div id="exercise-1-1" class="section level3">
+<h3><span class="header-section-number">3.1.1</span> Exercise 1</h3>
+<ul>
+<li><code>aesthetics</code>: x = Hits, y = homeruns</li>
+<li><code>geoms</code>: points, 2d density</li>
+<li><code>scales</code>: identity</li>
+<li><code>facets</code>: none</li>
+<li><code>transformations</code>: none</li>
+<li><code>coordinate systems</code>: cartesian</li>
+</ul>
+</div>
+<div id="exercise-2-1" class="section level3">
+<h3><span class="header-section-number">3.1.2</span> Exercise 2</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="ggplot2.html#cb5-1"></a><span class="kw">set.seed</span>(<span class="dv">1234</span>)</span>
+<span id="cb5-2"><a href="ggplot2.html#cb5-2"></a>ggstudents &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">grade =</span> <span class="kw">rnorm</span>(<span class="dv">32</span>, <span class="dv">7</span>),</span>
+<span id="cb5-3"><a href="ggplot2.html#cb5-3"></a>                         <span class="dt">number =</span> <span class="kw">round</span>(<span class="kw">runif</span>(<span class="dv">32</span>) <span class="op">*</span><span class="st"> </span><span class="fl">2e6</span> <span class="op">+</span><span class="st"> </span><span class="fl">5e6</span>),</span>
+<span id="cb5-4"><a href="ggplot2.html#cb5-4"></a>                         <span class="dt">programme =</span> <span class="kw">sample</span>(<span class="kw">c</span>(<span class="st">&quot;Science&quot;</span>, <span class="st">&quot;Social Science&quot;</span>), </span>
+<span id="cb5-5"><a href="ggplot2.html#cb5-5"></a>                                            <span class="dv">32</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>))</span></code></pre></div>
+</div>
+<div id="exercise-3-1" class="section level3">
+<h3><span class="header-section-number">3.1.3</span> Exercise 3</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="ggplot2.html#cb6-1"></a><span class="kw">ggplot</span>(Hitters, <span class="kw">aes</span>(<span class="dt">y =</span> Hits, <span class="dt">x =</span> HmRun)) <span class="op">+</span></span>
+<span id="cb6-2"><a href="ggplot2.html#cb6-2"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
+<span id="cb6-3"><a href="ggplot2.html#cb6-3"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="st">&quot;Hits&quot;</span>, <span class="dt">x =</span> <span class="st">&quot;Home runs&quot;</span>) <span class="op">+</span></span>
+<span id="cb6-4"><a href="ggplot2.html#cb6-4"></a><span class="st">  </span><span class="kw">geom_density_2d</span>() <span class="op">+</span></span>
+<span id="cb6-5"><a href="ggplot2.html#cb6-5"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Density and scatter plot of baseball data&quot;</span>) <span class="op">+</span></span>
+<span id="cb6-6"><a href="ggplot2.html#cb6-6"></a><span class="st">  </span><span class="kw">theme_minimal</span>()</span></code></pre></div>
+<p><img src="dav_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+</div>
+<div id="exercise-4-1" class="section level3">
+<h3><span class="header-section-number">3.1.4</span> Exercise 4</h3>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="ggplot2.html#cb7-1"></a><span class="kw">ggplot</span>(Hitters, <span class="kw">aes</span>(<span class="dt">y =</span> Hits, <span class="dt">x =</span> HmRun, <span class="dt">col =</span> League, <span class="dt">size =</span> Salary)) <span class="op">+</span></span>
+<span id="cb7-2"><a href="ggplot2.html#cb7-2"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
+<span id="cb7-3"><a href="ggplot2.html#cb7-3"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="st">&quot;Hits&quot;</span>, <span class="dt">x =</span> <span class="st">&quot;Home runs&quot;</span>) <span class="op">+</span></span>
+<span id="cb7-4"><a href="ggplot2.html#cb7-4"></a><span class="st">  </span><span class="kw">geom_density_2d</span>() <span class="op">+</span></span>
+<span id="cb7-5"><a href="ggplot2.html#cb7-5"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Density and scatter plot of baseball data&quot;</span>) <span class="op">+</span></span>
+<span id="cb7-6"><a href="ggplot2.html#cb7-6"></a><span class="st">  </span><span class="kw">scale_color_brewer</span>(<span class="dt">palette =</span> <span class="st">&quot;Set1&quot;</span>) <span class="op">+</span></span>
+<span id="cb7-7"><a href="ggplot2.html#cb7-7"></a><span class="st">  </span><span class="kw">theme_minimal</span>()</span></code></pre></div>
+<pre><code>## Warning: Removed 59 rows containing missing values (geom_point).</code></pre>
+<p><img src="dav_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+</div>
+<div id="exercise-5-1" class="section level3">
+<h3><span class="header-section-number">3.1.5</span> Exercise 5</h3>
+<p>Done.</p>
+</div>
+</div>
+<div id="visual-exploratory-data-analysis" class="section level2">
+<h2><span class="header-section-number">3.2</span> Visual exploratory data analysis</h2>
+<div id="exercise-6-1" class="section level3">
+<h3><span class="header-section-number">3.2.1</span> Exercise 6</h3>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="ggplot2.html#cb9-1"></a>ggstudents <span class="op">%&gt;%</span></span>
+<span id="cb9-2"><a href="ggplot2.html#cb9-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> grade)) <span class="op">+</span></span>
+<span id="cb9-3"><a href="ggplot2.html#cb9-3"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth =</span> <span class="fl">0.5</span>, <span class="dt">col =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;transparent&quot;</span>) <span class="op">+</span></span>
+<span id="cb9-4"><a href="ggplot2.html#cb9-4"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Grade&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Count&quot;</span>) <span class="op">+</span></span>
+<span id="cb9-5"><a href="ggplot2.html#cb9-5"></a><span class="st">  </span>ggthemes<span class="op">::</span><span class="kw">theme_tufte</span>()</span></code></pre></div>
+<p><img src="dav_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+</div>
+<div id="exercise-7-1" class="section level3">
+<h3><span class="header-section-number">3.2.2</span> Exercise 7</h3>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="ggplot2.html#cb10-1"></a>ggstudents <span class="op">%&gt;%</span></span>
+<span id="cb10-2"><a href="ggplot2.html#cb10-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> grade)) <span class="op">+</span></span>
+<span id="cb10-3"><a href="ggplot2.html#cb10-3"></a><span class="st">  </span><span class="kw">geom_density</span>(<span class="dt">fill =</span> <span class="st">&quot;light seagreen&quot;</span>, <span class="dt">alpha =</span> <span class="fl">0.5</span>) <span class="op">+</span></span>
+<span id="cb10-4"><a href="ggplot2.html#cb10-4"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Grade&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Count&quot;</span>) <span class="op">+</span></span>
+<span id="cb10-5"><a href="ggplot2.html#cb10-5"></a><span class="st">  </span><span class="kw">theme_minimal</span>()</span></code></pre></div>
+<p><img src="dav_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+</div>
+<div id="exercise-8-1" class="section level3">
+<h3><span class="header-section-number">3.2.3</span> Exercise 8</h3>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="ggplot2.html#cb11-1"></a>ggstudents <span class="op">%&gt;%</span></span>
+<span id="cb11-2"><a href="ggplot2.html#cb11-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> grade)) <span class="op">+</span></span>
+<span id="cb11-3"><a href="ggplot2.html#cb11-3"></a><span class="st">  </span><span class="kw">geom_rug</span>(<span class="dt">col =</span> <span class="st">&quot;light seagreen&quot;</span>, <span class="dt">size =</span> <span class="fl">0.5</span>) <span class="op">+</span></span>
+<span id="cb11-4"><a href="ggplot2.html#cb11-4"></a><span class="st">  </span><span class="kw">geom_density</span>(<span class="dt">fill =</span> <span class="st">&quot;light seagreen&quot;</span>, <span class="dt">alpha =</span> <span class="fl">0.5</span>) <span class="op">+</span></span>
+<span id="cb11-5"><a href="ggplot2.html#cb11-5"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Grade&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Count&quot;</span>) <span class="op">+</span></span>
+<span id="cb11-6"><a href="ggplot2.html#cb11-6"></a><span class="st">  </span><span class="kw">theme_minimal</span>()</span></code></pre></div>
+<p><img src="dav_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+</div>
+<div id="exercise-9-1" class="section level3">
+<h3><span class="header-section-number">3.2.4</span> Exercise 9</h3>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="ggplot2.html#cb12-1"></a>ggstudents <span class="op">%&gt;%</span></span>
+<span id="cb12-2"><a href="ggplot2.html#cb12-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> grade)) <span class="op">+</span></span>
+<span id="cb12-3"><a href="ggplot2.html#cb12-3"></a><span class="st">  </span><span class="kw">geom_rug</span>(<span class="dt">col =</span> <span class="st">&quot;light seagreen&quot;</span>, <span class="dt">size =</span> <span class="fl">0.5</span>) <span class="op">+</span></span>
+<span id="cb12-4"><a href="ggplot2.html#cb12-4"></a><span class="st">  </span><span class="kw">geom_density</span>(<span class="dt">col =</span> <span class="st">&quot;transparent&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;light seagreen&quot;</span>, <span class="dt">alpha =</span> <span class="fl">0.5</span>) <span class="op">+</span></span>
+<span id="cb12-5"><a href="ggplot2.html#cb12-5"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Grade&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;&quot;</span>) <span class="op">+</span></span>
+<span id="cb12-6"><a href="ggplot2.html#cb12-6"></a><span class="st">  </span><span class="kw">xlim</span>(<span class="dv">0</span>, <span class="dv">10</span>) <span class="op">+</span></span>
+<span id="cb12-7"><a href="ggplot2.html#cb12-7"></a><span class="st">  </span><span class="kw">theme_minimal</span>()</span></code></pre></div>
+<p><img src="dav_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+</div>
+<div id="exercise-10-1" class="section level3">
+<h3><span class="header-section-number">3.2.5</span> Exercise 10</h3>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="ggplot2.html#cb13-1"></a>ggstudents <span class="op">%&gt;%</span></span>
+<span id="cb13-2"><a href="ggplot2.html#cb13-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> programme, <span class="dt">y =</span> grade, <span class="dt">fill =</span> programme)) <span class="op">+</span></span>
+<span id="cb13-3"><a href="ggplot2.html#cb13-3"></a><span class="st">  </span><span class="kw">geom_boxplot</span>() <span class="op">+</span></span>
+<span id="cb13-4"><a href="ggplot2.html#cb13-4"></a><span class="st">  </span><span class="kw">scale_fill_brewer</span>(<span class="dt">palette =</span> <span class="st">&quot;Set1&quot;</span>) <span class="op">+</span></span>
+<span id="cb13-5"><a href="ggplot2.html#cb13-5"></a><span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span></span>
+<span id="cb13-6"><a href="ggplot2.html#cb13-6"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
+<p><img src="dav_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+</div>
+<div id="exercise-11-1" class="section level3">
+<h3><span class="header-section-number">3.2.6</span> Exercise 11</h3>
+<p>The upper horizontal line indicates the upper bound of the interquartile range (that is, the middle value / median of the 50% highest scores), and the lower horizontal line indicates the lower bound of the inter-quartile range (that is, the middle value / median of the 50% lowest scores), so that combined, 50% of the data is within this interquartile range. The middle horizontal line indicates the median. The whiskers indicate the point from the upper (lower) bound of the interquartile range to the last point within the 1.5 times the upper (lower) bound of the interquartile range.</p>
+</div>
+<div id="exercise-12-1" class="section level3">
+<h3><span class="header-section-number">3.2.7</span> Exercise 12</h3>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="ggplot2.html#cb14-1"></a>ggstudents <span class="op">%&gt;%</span></span>
+<span id="cb14-2"><a href="ggplot2.html#cb14-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> grade, <span class="dt">fill =</span> programme, <span class="dt">col =</span> programme)) <span class="op">+</span></span>
+<span id="cb14-3"><a href="ggplot2.html#cb14-3"></a><span class="st">  </span><span class="kw">geom_rug</span>(<span class="dt">size =</span> <span class="fl">0.5</span>) <span class="op">+</span></span>
+<span id="cb14-4"><a href="ggplot2.html#cb14-4"></a><span class="st">  </span><span class="kw">geom_density</span>(<span class="dt">col =</span> <span class="st">&quot;transparent&quot;</span>, <span class="dt">alpha =</span> <span class="fl">0.5</span>) <span class="op">+</span></span>
+<span id="cb14-5"><a href="ggplot2.html#cb14-5"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Grade&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;&quot;</span>) <span class="op">+</span></span>
+<span id="cb14-6"><a href="ggplot2.html#cb14-6"></a><span class="st">  </span><span class="kw">xlim</span>(<span class="dv">0</span>, <span class="dv">10</span>) <span class="op">+</span></span>
+<span id="cb14-7"><a href="ggplot2.html#cb14-7"></a><span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span></span>
+<span id="cb14-8"><a href="ggplot2.html#cb14-8"></a><span class="st">  </span><span class="kw">scale_fill_brewer</span>(<span class="dt">palette =</span> <span class="st">&quot;Set1&quot;</span>) <span class="op">+</span></span>
+<span id="cb14-9"><a href="ggplot2.html#cb14-9"></a><span class="st">  </span><span class="kw">scale_color_brewer</span>(<span class="dt">palette =</span> <span class="st">&quot;Set1&quot;</span>)</span></code></pre></div>
+<p><img src="dav_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+</div>
+<div id="exercise-13-1" class="section level3">
+<h3><span class="header-section-number">3.2.8</span> Exercise 13</h3>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="ggplot2.html#cb15-1"></a>Hitters <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb15-2"><a href="ggplot2.html#cb15-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Years)) <span class="op">+</span></span>
+<span id="cb15-3"><a href="ggplot2.html#cb15-3"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">col =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;blue&quot;</span>) <span class="op">+</span></span>
+<span id="cb15-4"><a href="ggplot2.html#cb15-4"></a><span class="st">  </span><span class="kw">theme_minimal</span>()</span></code></pre></div>
+<p><img src="dav_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+</div>
+<div id="exercise-14---17" class="section level3">
+<h3><span class="header-section-number">3.2.9</span> Exercise 14 - 17</h3>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="ggplot2.html#cb16-1"></a>Smarket <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb16-2"><a href="ggplot2.html#cb16-2"></a><span class="st">  </span><span class="kw">rownames_to_column</span>() <span class="op">%&gt;%</span></span>
+<span id="cb16-3"><a href="ggplot2.html#cb16-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">rowname =</span> <span class="kw">as.numeric</span>(rowname)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb16-4"><a href="ggplot2.html#cb16-4"></a><span class="st">  </span><span class="kw">filter</span>(rowname <span class="op">&lt;</span><span class="st"> </span><span class="dv">201</span>) <span class="op">%&gt;%</span></span>
+<span id="cb16-5"><a href="ggplot2.html#cb16-5"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">y =</span> Volume, <span class="dt">x =</span> rowname)) <span class="op">+</span></span>
+<span id="cb16-6"><a href="ggplot2.html#cb16-6"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">size =</span> <span class="fl">0.75</span>, <span class="dt">col =</span> <span class="st">&quot;dark blue&quot;</span>) <span class="op">+</span></span>
+<span id="cb16-7"><a href="ggplot2.html#cb16-7"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">col =</span> <span class="st">&quot;dark blue&quot;</span>, <span class="dt">size =</span> <span class="dv">1</span>) <span class="op">+</span></span>
+<span id="cb16-8"><a href="ggplot2.html#cb16-8"></a><span class="st">  </span><span class="kw">geom_label</span>(<span class="dt">x =</span> <span class="kw">which.max</span>(Smarket<span class="op">$</span>Volume[<span class="dv">1</span><span class="op">:</span><span class="dv">200</span>]), </span>
+<span id="cb16-9"><a href="ggplot2.html#cb16-9"></a>             <span class="dt">y =</span> <span class="kw">max</span>(Smarket<span class="op">$</span>Volume[<span class="dv">1</span><span class="op">:</span><span class="dv">200</span>]), </span>
+<span id="cb16-10"><a href="ggplot2.html#cb16-10"></a>             <span class="dt">label =</span> <span class="kw">paste0</span>(<span class="st">&quot;Peak volume is &quot;</span>, <span class="kw">round</span>(<span class="kw">max</span>(Smarket<span class="op">$</span>Volume[<span class="dv">1</span><span class="op">:</span><span class="dv">200</span>]), <span class="dv">2</span>)), </span>
+<span id="cb16-11"><a href="ggplot2.html#cb16-11"></a>             <span class="dt">col =</span> <span class="st">&quot;dark blue&quot;</span>,</span>
+<span id="cb16-12"><a href="ggplot2.html#cb16-12"></a>             <span class="dt">hjust =</span> <span class="fl">1.1</span>) <span class="op">+</span></span>
+<span id="cb16-13"><a href="ggplot2.html#cb16-13"></a><span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span></span>
+<span id="cb16-14"><a href="ggplot2.html#cb16-14"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Day&quot;</span>)</span></code></pre></div>
+<p><img src="dav_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+</div>
+<div id="exercise-18-1" class="section level3">
+<h3><span class="header-section-number">3.2.10</span> Exercise 18</h3>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="ggplot2.html#cb17-1"></a>baseball &lt;-<span class="st"> </span>Hitters <span class="op">%&gt;%</span></span>
+<span id="cb17-2"><a href="ggplot2.html#cb17-2"></a><span class="st">  </span><span class="kw">filter</span>(<span class="op">!</span><span class="kw">is.na</span>(Salary)) <span class="op">%&gt;%</span></span>
+<span id="cb17-3"><a href="ggplot2.html#cb17-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Salary_cat =</span> <span class="kw">cut</span>(Salary, <span class="dv">3</span>, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Low&quot;</span>, <span class="st">&quot;Middle&quot;</span>, <span class="st">&quot;High&quot;</span>)),</span>
+<span id="cb17-4"><a href="ggplot2.html#cb17-4"></a>         <span class="dt">Cprop_Hmrun =</span> CHmRun <span class="op">/</span><span class="st"> </span>CHits)</span></code></pre></div>
+</div>
+<div id="exercise-19-1" class="section level3">
+<h3><span class="header-section-number">3.2.11</span> Exercise 19</h3>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="ggplot2.html#cb18-1"></a>baseball <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb18-2"><a href="ggplot2.html#cb18-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> CWalks, <span class="dt">y =</span> Cprop_Hmrun)) <span class="op">+</span></span>
+<span id="cb18-3"><a href="ggplot2.html#cb18-3"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">col =</span> <span class="st">&quot;dark blue&quot;</span>) <span class="op">+</span></span>
+<span id="cb18-4"><a href="ggplot2.html#cb18-4"></a><span class="st">  </span><span class="kw">lims</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1600</span>), <span class="dt">y =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">0.4</span>)) <span class="op">+</span></span>
+<span id="cb18-5"><a href="ggplot2.html#cb18-5"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Number of career walks&quot;</span>,</span>
+<span id="cb18-6"><a href="ggplot2.html#cb18-6"></a>       <span class="dt">y =</span> <span class="st">&quot;Proportion of hits that was a home run&quot;</span>) <span class="op">+</span></span>
+<span id="cb18-7"><a href="ggplot2.html#cb18-7"></a><span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span></span>
+<span id="cb18-8"><a href="ggplot2.html#cb18-8"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>Salary_cat)</span></code></pre></div>
+<p><img src="dav_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="eda.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="reg.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/02-ggplot2.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["dav.pdf", "dav.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
