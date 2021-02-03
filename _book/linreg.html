@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Regression I | Data Analysis and Visualization - Practicals</title>
+  <meta name="description" content="This gitbook contains all practical assignments for the course Data Analysis and Visualization." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Regression I | Data Analysis and Visualization - Practicals" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This gitbook contains all practical assignments for the course Data Analysis and Visualization." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Regression I | Data Analysis and Visualization - Practicals" />
+  
+  <meta name="twitter:description" content="This gitbook contains all practical assignments for the course Data Analysis and Visualization." />
+  
+
+<meta name="author" content="Thom Volker" />
+
+
+<meta name="date" content="2021-02-03" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="ggplot2.html"/>
+<link rel="next" href="applications.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
+<li class="chapter" data-level="2" data-path="eda.html"><a href="eda.html"><i class="fa fa-check"></i><b>2</b> Week 1 - Data manipulation and EDA</a><ul>
+<li class="chapter" data-level="2.1" data-path="eda.html"><a href="eda.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.2" data-path="eda.html"><a href="eda.html#data-types"><i class="fa fa-check"></i><b>2.2</b> Data types</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="eda.html"><a href="eda.html#exercise-1"><i class="fa fa-check"></i><b>2.2.1</b> Exercise 1</a></li>
+<li class="chapter" data-level="2.2.2" data-path="eda.html"><a href="eda.html#exercise-2"><i class="fa fa-check"></i><b>2.2.2</b> Exercise 2</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="eda.html"><a href="eda.html#lists-and-data-frames"><i class="fa fa-check"></i><b>2.3</b> Lists and data frames</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="eda.html"><a href="eda.html#exercise-3"><i class="fa fa-check"></i><b>2.3.1</b> Exercise 3</a></li>
+<li class="chapter" data-level="2.3.2" data-path="eda.html"><a href="eda.html#exercise-4"><i class="fa fa-check"></i><b>2.3.2</b> Exercise 4</a></li>
+<li class="chapter" data-level="2.3.3" data-path="eda.html"><a href="eda.html#exercise-5"><i class="fa fa-check"></i><b>2.3.3</b> Exercise 5</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="eda.html"><a href="eda.html#loading-viewing-and-summarising-data"><i class="fa fa-check"></i><b>2.4</b> Loading, viewing and summarising data</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="eda.html"><a href="eda.html#exercise-6"><i class="fa fa-check"></i><b>2.4.1</b> Exercise 6</a></li>
+<li class="chapter" data-level="2.4.2" data-path="eda.html"><a href="eda.html#exercise-7"><i class="fa fa-check"></i><b>2.4.2</b> Exercise 7</a></li>
+<li class="chapter" data-level="2.4.3" data-path="eda.html"><a href="eda.html#exercise-8"><i class="fa fa-check"></i><b>2.4.3</b> Exercise 8</a></li>
+<li class="chapter" data-level="2.4.4" data-path="eda.html"><a href="eda.html#exercise-9"><i class="fa fa-check"></i><b>2.4.4</b> Exercise 9</a></li>
+<li class="chapter" data-level="2.4.5" data-path="eda.html"><a href="eda.html#exercise-10"><i class="fa fa-check"></i><b>2.4.5</b> Exercise 10</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="eda.html"><a href="eda.html#data-transformation-with-dplyr"><i class="fa fa-check"></i><b>2.5</b> Data transformation with <code>dplyr</code></a><ul>
+<li class="chapter" data-level="2.5.1" data-path="eda.html"><a href="eda.html#exercise-11"><i class="fa fa-check"></i><b>2.5.1</b> Exercise 11</a></li>
+<li class="chapter" data-level="2.5.2" data-path="eda.html"><a href="eda.html#exercise-12"><i class="fa fa-check"></i><b>2.5.2</b> Exercise 12</a></li>
+<li class="chapter" data-level="2.5.3" data-path="eda.html"><a href="eda.html#exercise-13"><i class="fa fa-check"></i><b>2.5.3</b> Exercise 13</a></li>
+<li class="chapter" data-level="2.5.4" data-path="eda.html"><a href="eda.html#exercise-14"><i class="fa fa-check"></i><b>2.5.4</b> Exercise 14</a></li>
+<li class="chapter" data-level="2.5.5" data-path="eda.html"><a href="eda.html#exercise-15"><i class="fa fa-check"></i><b>2.5.5</b> Exercise 15</a></li>
+<li class="chapter" data-level="2.5.6" data-path="eda.html"><a href="eda.html#exercise-16"><i class="fa fa-check"></i><b>2.5.6</b> Exercise 16</a></li>
+<li class="chapter" data-level="2.5.7" data-path="eda.html"><a href="eda.html#exercise-17"><i class="fa fa-check"></i><b>2.5.7</b> Exercise 17</a></li>
+<li class="chapter" data-level="2.5.8" data-path="eda.html"><a href="eda.html#exercise-18"><i class="fa fa-check"></i><b>2.5.8</b> Exercise 18</a></li>
+<li class="chapter" data-level="2.5.9" data-path="eda.html"><a href="eda.html#exercise-19"><i class="fa fa-check"></i><b>2.5.9</b> Exercise 19</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="ggplot2.html"><a href="ggplot2.html"><i class="fa fa-check"></i><b>3</b> Data Visualization using ggplot2</a><ul>
+<li class="chapter" data-level="3.1" data-path="ggplot2.html"><a href="ggplot2.html#introduction-1"><i class="fa fa-check"></i><b>3.1</b> Introduction</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="ggplot2.html"><a href="ggplot2.html#exercise-1-1"><i class="fa fa-check"></i><b>3.1.1</b> Exercise 1</a></li>
+<li class="chapter" data-level="3.1.2" data-path="ggplot2.html"><a href="ggplot2.html#exercise-2-1"><i class="fa fa-check"></i><b>3.1.2</b> Exercise 2</a></li>
+<li class="chapter" data-level="3.1.3" data-path="ggplot2.html"><a href="ggplot2.html#exercise-3-1"><i class="fa fa-check"></i><b>3.1.3</b> Exercise 3</a></li>
+<li class="chapter" data-level="3.1.4" data-path="ggplot2.html"><a href="ggplot2.html#exercise-4-1"><i class="fa fa-check"></i><b>3.1.4</b> Exercise 4</a></li>
+<li class="chapter" data-level="3.1.5" data-path="ggplot2.html"><a href="ggplot2.html#exercise-5-1"><i class="fa fa-check"></i><b>3.1.5</b> Exercise 5</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="ggplot2.html"><a href="ggplot2.html#visual-exploratory-data-analysis"><i class="fa fa-check"></i><b>3.2</b> Visual exploratory data analysis</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="ggplot2.html"><a href="ggplot2.html#exercise-6-1"><i class="fa fa-check"></i><b>3.2.1</b> Exercise 6</a></li>
+<li class="chapter" data-level="3.2.2" data-path="ggplot2.html"><a href="ggplot2.html#exercise-7-1"><i class="fa fa-check"></i><b>3.2.2</b> Exercise 7</a></li>
+<li class="chapter" data-level="3.2.3" data-path="ggplot2.html"><a href="ggplot2.html#exercise-8-1"><i class="fa fa-check"></i><b>3.2.3</b> Exercise 8</a></li>
+<li class="chapter" data-level="3.2.4" data-path="ggplot2.html"><a href="ggplot2.html#exercise-9-1"><i class="fa fa-check"></i><b>3.2.4</b> Exercise 9</a></li>
+<li class="chapter" data-level="3.2.5" data-path="ggplot2.html"><a href="ggplot2.html#exercise-10-1"><i class="fa fa-check"></i><b>3.2.5</b> Exercise 10</a></li>
+<li class="chapter" data-level="3.2.6" data-path="ggplot2.html"><a href="ggplot2.html#exercise-11-1"><i class="fa fa-check"></i><b>3.2.6</b> Exercise 11</a></li>
+<li class="chapter" data-level="3.2.7" data-path="ggplot2.html"><a href="ggplot2.html#exercise-12-1"><i class="fa fa-check"></i><b>3.2.7</b> Exercise 12</a></li>
+<li class="chapter" data-level="3.2.8" data-path="ggplot2.html"><a href="ggplot2.html#exercise-13-1"><i class="fa fa-check"></i><b>3.2.8</b> Exercise 13</a></li>
+<li class="chapter" data-level="3.2.9" data-path="ggplot2.html"><a href="ggplot2.html#exercise-14---17"><i class="fa fa-check"></i><b>3.2.9</b> Exercise 14 - 17</a></li>
+<li class="chapter" data-level="3.2.10" data-path="ggplot2.html"><a href="ggplot2.html#exercise-18-1"><i class="fa fa-check"></i><b>3.2.10</b> Exercise 18</a></li>
+<li class="chapter" data-level="3.2.11" data-path="ggplot2.html"><a href="ggplot2.html#exercise-19-1"><i class="fa fa-check"></i><b>3.2.11</b> Exercise 19</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="linreg.html"><a href="linreg.html"><i class="fa fa-check"></i><b>4</b> Regression I</a><ul>
+<li class="chapter" data-level="4.1" data-path="linreg.html"><a href="linreg.html#book"><i class="fa fa-check"></i><b>4.1</b> Book</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="linreg.html"><a href="linreg.html#chapter-3"><i class="fa fa-check"></i><b>4.1.1</b> Chapter 3</a></li>
+<li class="chapter" data-level="4.1.2" data-path="linreg.html"><a href="linreg.html#chapter-6"><i class="fa fa-check"></i><b>4.1.2</b> Chapter 6</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="linreg.html"><a href="linreg.html#lecture"><i class="fa fa-check"></i><b>4.2</b> Lecture</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>5</b> Applications</a><ul>
+<li class="chapter" data-level="5.1" data-path="applications.html"><a href="applications.html#example-one"><i class="fa fa-check"></i><b>5.1</b> Example one</a></li>
+<li class="chapter" data-level="5.2" data-path="applications.html"><a href="applications.html#example-two"><i class="fa fa-check"></i><b>5.2</b> Example two</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>6</b> Final Words</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Data Analysis and Visualization - Practicals</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="linreg" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Regression I</h1>
+<div id="book" class="section level2">
+<h2><span class="header-section-number">4.1</span> Book</h2>
+<div id="chapter-3" class="section level3">
+<h3><span class="header-section-number">4.1.1</span> Chapter 3</h3>
+<div id="prediction" class="section level4">
+<h4><span class="header-section-number">4.1.1.1</span> Prediction</h4>
+<p>In many cases, predictors <span class="math inline">\(X\)</span> are readily available, but <span class="math inline">\(Y\)</span> is not. We can however predict <span class="math inline">\(Y\)</span>, as the error term <span class="math inline">\(\epsilon_i\)</span> averages to zero. Often, <span class="math inline">\(\hat{f}\)</span> is treated as a black box when prediction is of interest, as one is typically not concerned with the exact form of <span class="math inline">\(\hat{f}\)</span>, provided that it yields accurate predictions for <span class="math inline">\(Y\)</span>.</p>
+<ul>
+<li>Reducible error: the misspecification error that is due to the fact that <span class="math inline">\(\hat{f}\)</span> is usually not a perfect estimate of <span class="math inline">\(f\)</span>, that can potentially be improved.</li>
+<li>Irreducible error: <span class="math inline">\(Y\)</span> is not only a function of <span class="math inline">\(f\)</span>, but also of <span class="math inline">\(\epsilon\)</span>; and the variability associated with <span class="math inline">\(\epsilon\)</span> affects our predictions. <span class="math inline">\(\epsilon\)</span> may contain unmeasured variables and/or unmeasured variation.
+<ul>
+<li>Given that <span class="math inline">\(\hat{Y} = \hat{f}(X)\)</span>, assume that <span class="math inline">\(\hat{f}\)</span> and <span class="math inline">\(X\)</span> are fixed.
+<span class="math display">\[\begin{align} E(Y - \hat{Y})^2 &amp;= E[f(X) + \epsilon - \hat{f}(X)]^2 \\
+&amp;= [f(X) - \hat{f}(X)]^2 + Var(\epsilon)
+\end{align}\]</span>
+<span class="math inline">\(E(Y - \hat{Y})^2\)</span> represents the expected value of the squared difference between the predicted and actual value of <span class="math inline">\(Y\)</span> and <span class="math inline">\(Var(\epsilon)\)</span> the variability associated with <span class="math inline">\(\epsilon\)</span></li>
+<li>The irreducible error provides the upper bound of the accuracy of the predictions, but this upper bound is generally unknown in practice.</li>
+</ul></li>
+</ul>
+</div>
+<div id="inference" class="section level4">
+<h4><span class="header-section-number">4.1.1.2</span> Inference</h4>
+<p>The goal of inference is to understand how <span class="math inline">\(Y\)</span> changes as a function of <span class="math inline">\(X\)</span>. If this is the case, <span class="math inline">\(\hat{f}\)</span> cannot be treated as a black box, because we need to know its exact form. Questions of interest can be:</p>
+<ul>
+<li>Which predictors are associated with <span class="math inline">\(Y\)</span>?</li>
+<li>What is the relation between <span class="math inline">\(Y\)</span> and each predictor?</li>
+<li>Can the relationship between <span class="math inline">\(Y\)</span> and each predictor be adequately summarized with a linear equation?</li>
+</ul>
+<p>We want to find a function <span class="math inline">\(\hat{f}\)</span> such that <span class="math inline">\(Y \approx \hat{f}(X)\)</span> for any observation <span class="math inline">\((X, Y)\)</span>.</p>
+</div>
+<div id="parametric-methods" class="section level4">
+<h4><span class="header-section-number">4.1.1.3</span> Parametric methods</h4>
+<ul>
+<li>Parametric methods make an assumptions about the functional form of <span class="math inline">\(f\)</span>.</li>
+<li>After selecting a global model, we need a procedure that trains the model (in linear regression, this refers to estimating the parameters <span class="math inline">\(\beta_0, \beta_1, \dots, \beta_p\)</span>). Parametric approaches reduce the problem of estimating <span class="math inline">\(f\)</span> down to one of estimating a set of parameters.</li>
+</ul>
+<p>Assuming a parametric form for <span class="math inline">\(f\)</span> simplifies the problem of estimating <span class="math inline">\(f\)</span> as it generally is much easier to estimate a set of parameters than it is to fit an entirely arbitrary function. However, a potential drawback is that the model considered in a parametric approach usually not matches the true unknown form of <span class="math inline">\(f\)</span>. This can be partly overcome by fitting more flexible models, which in turn might lead to overfitting.</p>
+</div>
+<div id="non-parametric-approaches" class="section level4">
+<h4><span class="header-section-number">4.1.1.4</span> Non-parametric approaches</h4>
+<ul>
+<li>Seek an estimate that is as close to <span class="math inline">\(f\)</span> as possible without overfitting. Non-parametric approaches usually do not make assumptions about the functional form of <span class="math inline">\(f\)</span>. However, they generally need a much larger number of observations relative to parametric methods to obtain an accurate estimate of <span class="math inline">\(f\)</span>.</li>
+</ul>
+</div>
+<div id="statistical-learning" class="section level4">
+<h4><span class="header-section-number">4.1.1.5</span> Statistical learning</h4>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>Restrictive models are much more interpretable. Very flexible approaches may lead to such complicated estimates of <span class="math inline">\(f\)</span> that it is difficult to understand how any individual predictor is associated with the response. For example, the lasso is more restrictive than OLS in estimating the coefficients and sets some of them to exactly zero. It is more interpretable than OLS, because in the final model there are less coefficients, so one only has to interpret a subset of the coefficients that would have been included in OLS regression. GAMs extend the linear model by allowing non-linear relationships, but the relationship between <span class="math inline">\(Y\)</span> and <span class="math inline">\(X\)</span> is now modeled as a curve, which complicates interpretation.</p>
+<p>Supervised learning: a response <span class="math inline">\(Y\)</span> is related to a set of predictors <span class="math inline">\(X\)</span>, with the aim to predict or infer the relationship between the two.</p>
+<p>Unsupervised learning: We only have predictors <span class="math inline">\(X\)</span> and the goal is to understand relations between the variables or between the observations.</p>
+<p>Regression problems: quantitative response.</p>
+<p>Classification problems: qualitative response.</p>
+<p>However, logistic regression is typically used in a qualitative setting, but as it estimates probabilities, it can be thought of as a regression method as well. Some methods (K-nearest neighbors; boosting) can be used for both quantitative or qualitative responses.</p>
+</div>
+<div id="model-accuracy" class="section level4">
+<h4><span class="header-section-number">4.1.1.6</span> Model accuracy</h4>
+<p><span class="math display">\[
+MSE = 
+\frac{1}{n} \sum^n_{i = 1} (y_i - \hat{f}(x_i))^2 = 
+\frac{1}{n} \sum^n_{i = 1} (y_i - \hat{y}_i)^2
+\]</span></p>
+<p>The mean squared error (MSE) should be calculated on the test data. We want to know whether <span class="math inline">\(\hat{f}(x_0)\)</span> is approximately equal to <span class="math inline">\(y_0\)</span>, where <span class="math inline">\((x_0, y_0)\)</span> is a previously unseen test observation not used to train the statistical learning method. Thus, we want the model with the lowest test MSE
+<span class="math display">\[
+\text{Ave}(y_0-\hat{f}(x_0))^2.
+\]</span></p>
+<p>The expected test MSE for a given value <span class="math inline">\(x_0\)</span> can be decomposed into the sum of three fundamental quantities: the variance of <span class="math inline">\(\hat{f}(x_0)\)</span>, the squared bias of <span class="math inline">\(\hat{f}(x_0)\)</span> and the variance of the error term <span class="math inline">\(\epsilon\)</span>. To minimize the expected test error, we need to select a method that simultaneously achieves low bias and low variance. Note that the expected test MSE cannot be smaller than <span class="math inline">\(\text{Var}(\epsilon)\)</span>.</p>
+<ul>
+<li>Variance: the amount by which <span class="math inline">\(\hat{f}\)</span> would change if we estimated it using a different training set.</li>
+<li>Bias: the error that is introduced by simplifying a complicated real-life problem with a much simpler model.</li>
+</ul>
+<p>Generally, more flexible methods induce less bias but more variance. As we increase the flexibility of a class of methods, the bias initially tends to decrease faster than the variance increases, and thus the MSE declines. At some point, relatively little bias can be removed, but the variance increases, inducing a higher expected MSE.</p>
+</div>
+<div id="residual-sum-of-squares" class="section level4">
+<h4><span class="header-section-number">4.1.1.7</span> Residual sum of squares</h4>
+<p><span class="math display">\[
+\begin{align}
+RSS &amp;= e_1^2 + e_2^2 + \dots + e_n^2 \\
+    &amp;= (y_1 - \hat{\beta}_0 - \hat{\beta}_1x_1)^2 + \dots + (y_n - \hat{\beta}_0 - \hat{\beta}_1x_n),
+\end{align}
+\]</span>
+with</p>
+<p>$$
+\begin{aligned}
+_1 &amp;=  \</p>
+<p>_0 &amp;= {y} - _1{x}.</p>
+<p>\end{aligned}
+$$</p>
+<p>The least squares estimates are unbiased, that is, they do not systematically over or underestimate the true coefficients. We can express the expected amount that the estimates will differ from the truth with the standard error</p>
+<p><span class="math display">\[
+\text{Var}(\hat{\beta}) = \text{SE}(\hat{\beta})^2 = \frac{\sigma^2}{n},
+\]</span>
+where <span class="math inline">\(\sigma\)</span> is the standard deviation of each of the realizations <span class="math inline">\(y_i\)</span> of <span class="math inline">\(Y\)</span>. The estimates of the regression coefficients can be computed fairly easily, but for these formulas to be valid, the errors <span class="math inline">\(\epsilon_i\)</span> must be uncorrelated with a common variance <span class="math inline">\(\sigma^2\)</span>.</p>
+<p>Note that <span class="math inline">\(\text{SE}(\hat{\beta}_1)\)</span> is smaller when the <span class="math inline">\(x_i\)</span> are more spread out. Intuitively, we have more leverage to estimate a slope when this is the case. In general, <span class="math inline">\(\sigma^2\)</span> is not known, but can be estimated from the data. The estimate of <span class="math inline">\(\sigma\)</span> is known as the residual standard error, and is given by the formula <span class="math inline">\(\sqrt{\frac{\text{RSS}}{(n-p-1)}}\)</span>. Then, we can compute a <span class="math inline">\(95\%\)</span> confidence interval by adding and substracting 2 times the standard error of the coefficients, which indicate that with <span class="math inline">\(95\%\)</span> probability, the CI will contain the true value of the parameter. To test a null hypothesis <span class="math inline">\(H_0: \beta_1 = 0\)</span>, we can compute a t-statistic
+<span class="math display">\[
+t = \frac{\hat{\beta}_1 - 0}{\text{SE}(\hat{\beta}_1)},
+\]</span>
+which measures the number of standard deviations <span class="math inline">\(\hat{\beta}_1\)</span> is away from zero. If there is no relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, we expect that <span class="math inline">\(t\)</span> will have a <span class="math inline">\(t\)</span>-distribution with <span class="math inline">\(n-2\)</span> degrees of freedom. Then, we can compute the <span class="math inline">\(p\)</span>-value, which is the probability that we observe any number equal to <span class="math inline">\(|t|\)</span> or larger in absolute value.</p>
+</div>
+<div id="accuracy-of-the-model" class="section level4">
+<h4><span class="header-section-number">4.1.1.8</span> Accuracy of the model</h4>
+<p>The quality of a linear regression model is typically assessed using the residual standard error (RSE) and the <span class="math inline">\(R^2\)</span> statistic. The RSE is an estimate of the average amount that the response will deviate from the true regression line, and can be calculated with
+<span class="math display">\[
+\text{RSE} = 
+\sqrt{\frac{1}{n-p-1}\text{RSS}} = 
+\sqrt{\frac{1}{n-p-1}\sum^n_{i = 1} (y_i - \hat{y}_i)^2}.
+\]</span></p>
+<p>The <span class="math inline">\(R^2\)</span> statistic provides an absolute measure of lack of fit of the model to the data
+<span class="math display">\[
+R^2 = \frac{\text{TSS} - \text{RSS}}{\text{TSS}} = 1 - \frac{\text{RSS}}{TSS},
+\]</span>
+where
+<span class="math display">\[
+TSS = \sum^n_{i=1}(y_i - \bar{y})^2.
+\]</span></p>
+<p>However, determining what a good value of <span class="math inline">\(R^2\)</span> is depends on the data. In the social sciences, a different value can be expected than sometimes in physics, where an <span class="math inline">\(R^2\)</span> that approaches <span class="math inline">\(1\)</span> is not unrealistic.</p>
+</div>
+<div id="multiple-linear-regression" class="section level4">
+<h4><span class="header-section-number">4.1.1.9</span> Multiple linear regression</h4>
+<p>We interpret the regression coefficients <span class="math inline">\(\beta_j\)</span> as the average effect on <span class="math inline">\(Y\)</span> of a one-unit increase in <span class="math inline">\(X_j\)</span>, holding all other predictors <span class="math inline">\(X_{j&#39;}\)</span> fixed. To test whether there is a relationship between the response and the predictors, we can compute the <span class="math inline">\(F\)</span>-statistic,
+<span class="math display">\[
+F = \frac{(\text{TSS} - \text{RSS}) / p}{\text{RSS} / (n - p - 1)}.
+\]</span>
+If the linear model assumptions are correct, one can show that
+<span class="math display">\[
+E\Bigg\{\frac{\text{RSS}}{n-p-1}\Bigg\} = \sigma^2,
+\]</span>
+and that, provided that <span class="math inline">\(H_0\)</span> is true
+<span class="math display">\[
+E\Bigg\{\frac{\text{TSS} - \text{RSS}}{p}\Bigg\} = \sigma^2.
+\]</span>
+Hence, when there is no relationship between the response and the predictors, one would expect a value of the <span class="math inline">\(F\)</span>-statistic close to <span class="math inline">\(1\)</span>. If <span class="math inline">\(H_a\)</span> is true, <span class="math inline">\(E\{(\text{TSS} - \text{RSS)/p}\} &gt; \sigma^2\)</span>, so we expect <span class="math inline">\(F &gt; 1\)</span>. To test whether a subset of the regression coefficients are all equal to <span class="math inline">\(0\)</span>, we can test a second model without all predictors of interest (next to the one including all predictors), and test whether the reduction in residual sum of squares of the model containing all parameters is significant. For each individual predictor, the <span class="math inline">\(t\)</span> statistic is exactly equivalent to computing the <span class="math inline">\(F\)</span>-statistic with a model excluding that single parameter. However, the <span class="math inline">\(F\)</span>-statistic accounts for the number of predictors in the model, while all individual <span class="math inline">\(t\)</span>-statistics do not.</p>
+</div>
+<div id="variable-selection" class="section level4">
+<h4><span class="header-section-number">4.1.1.10</span> Variable selection</h4>
+<p>Investigating all possible combinations of variables is generally infeasible, because the possible number of combinations is generally extremely large. An alternative can be forward selection - adding the predictor that is most informative (largest reduction in RSS) - or backward selection - remove the variable with the largest p-value. Eventually, we could choose mixed selection - we add the most informative predictors, and remove the predictors with a p-value above a certain threshold in the meantime.</p>
+</div>
+<div id="model-fit" class="section level4">
+<h4><span class="header-section-number">4.1.1.11</span> Model fit</h4>
+<p><span class="math inline">\(R^2\)</span> will always increase when adding new predictors. However, the residual standard error (RSE) can increase if new predictors to the model <span class="math inline">\(\text{RSE} = \sqrt{\frac{1}{n - p -1}\text{RSS}}\)</span>, when the decrease in RSS is small relative to the increase in <span class="math inline">\(p\)</span>.</p>
+</div>
+<div id="predictions---sources-of-uncertainty" class="section level4">
+<h4><span class="header-section-number">4.1.1.12</span> Predictions - sources of uncertainty</h4>
+<ul>
+<li>The estimated regression coefficients do not necessarily represent the truth (i.e., reducible error).</li>
+<li>A linear model is at best an approximation of the truth (i.e., also reducible error called model bias).</li>
+<li>Random error - irreducible error, can be taken into account with a prediction interval.</li>
+</ul>
+</div>
+<div id="assumptions-of-additivity-and-linearity" class="section level4">
+<h4><span class="header-section-number">4.1.1.13</span> Assumptions of additivity and linearity</h4>
+<ul>
+<li>Additivity: the effect of changes in <span class="math inline">\(X_j\)</span> on <span class="math inline">\(Y\)</span> is independent from the values of <span class="math inline">\(X_{j&#39;}\)</span>. However, this assumption can be relaxed / overcome by including interaction terms, so that the effect of <span class="math inline">\(X_j\)</span> on <span class="math inline">\(Y\)</span> is no longer constant.</li>
+<li>Linearity: the change in <span class="math inline">\(Y\)</span> due to a one-unit increase in <span class="math inline">\(X_j\)</span> is constant, regardless of the value of <span class="math inline">\(X_j\)</span>. Can be relaxed by using polynomial regression.</li>
+</ul>
+</div>
+<div id="potential-problems" class="section level4">
+<h4><span class="header-section-number">4.1.1.14</span> Potential problems</h4>
+<ul>
+<li><strong>Non-linearity</strong>: inspect using residual plots, problems can be overcome by using non-linear transformations of the predictors.</li>
+<li><strong>Correlated error terms</strong>: results in underestimated standard errors. Correlated error terms may show up as tracking of the residuals.</li>
+<li><strong>Non-constant variance of error terms</strong>: possibly, <span class="math inline">\(Y\)</span> can be transformed to overcome this problem (<span class="math inline">\(\text{log}Y\)</span> or <span class="math inline">\(\sqrt{Y}\)</span>).</li>
+<li><strong>Outliers</strong>: when outliers are due to coding errors, they may be removed. However, outliers may also be due to model misspecification.</li>
+<li><strong>High leverage points</strong>: have an unusual value on <span class="math inline">\(x_i\)</span> and tend to influence the estimated coefficients. They may be indicated by the leverage statistics.</li>
+<li><strong>Collinearity</strong>: can make it difficult to separate out the effects of collinear variables on the response.</li>
+<li><strong>Multicollinearity</strong>: a high correlation between three or more variables, even if no pairs of observations have a particularly high correlation. Can be assessed using VIF.</li>
+</ul>
+</div>
+<div id="summary" class="section level4">
+<h4><span class="header-section-number">4.1.1.15</span> Summary</h4>
+<p>Parametric methods are easy to fit, because one only needs to estimate a relatively small number of coefficients, and if linear regression is used, coefficients have a simple interpretation. However, by definition, parametric models make strong assumptions about the functional form of <span class="math inline">\(f(X)\)</span>. If the specified functional form is far from the truth, and predictive accuracy is our goal, the parametric method will perform poorly. Non-parametric methods do not explicitly assume a parametric form for <span class="math inline">\(f(X)\)</span>, and thereby provide more flexibility.</p>
+<p>K-nearest neighbor regression - given a value for <span class="math inline">\(K\)</span> and a prediction point <span class="math inline">\(x_0\)</span>, KNN regression identifies the <span class="math inline">\(K\)</span> training observations closest to <span class="math inline">\(x_0\)</span> (denoted <span class="math inline">\(\mathcal{N}_0\)</span>) and estimates <span class="math inline">\(f(x_0)\)</span> using the average of all training reponses in <span class="math inline">\(\mathcal{N}_0\)</span>. The optimal value for <span class="math inline">\(K\)</span> depends on the bias / variance trade-off.</p>
+<p>Parametric approaches will outperform non-parametric approaches if the selected parametric form is close to the true form of <span class="math inline">\(f\)</span>. Also, in higher dimensions, KNN often performs worse than linear regression, due to the curse of dimensionality (the nearest observations to a given test observation <span class="math inline">\(x_0\)</span> may be far away from <span class="math inline">\(x_0\)</span> in <span class="math inline">\(p\)</span>-dimensional space, especially when <span class="math inline">\(p\)</span> is large), leading to poor predictions.</p>
+</div>
+</div>
+<div id="chapter-6" class="section level3">
+<h3><span class="header-section-number">4.1.2</span> Chapter 6</h3>
+<div id="prediction-accuracy" class="section level4">
+<h4><span class="header-section-number">4.1.2.1</span> Prediction accuracy</h4>
+<p>If the true relationships are approximately linear, least squares estimates generally have low bias, and if <span class="math inline">\(n\)</span> is much larger than <span class="math inline">\(p\)</span>, least squares estimates also have low variance. If <span class="math inline">\(n\)</span> is not much larger than <span class="math inline">\(p\)</span>, there can be a lot of variability in the least squares fit, resulting in overfitting and poor predictions on test data. If <span class="math inline">\(p &gt; n\)</span>, there is no unique least squares coefficient estimate: the variance is infinite. By constraining or shrinking the estimated coefficients, we can often substantially reduce the variance, while only slightly increasing the variance. By removing irrelevant variables, the model interpretability increases, as we have to look at less estimated coefficients.</p>
+</div>
+<div id="subset-selection" class="section level4">
+<h4><span class="header-section-number">4.1.2.2</span> Subset selection</h4>
+</div>
+</div>
+</div>
+<div id="lecture" class="section level2">
+<h2><span class="header-section-number">4.2</span> Lecture</h2>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ggplot2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="applications.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/03-linreg.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Week 1 - Data manipulation and EDA | A Minimal Book Example</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Week 1 - Data manipulation and EDA | A Minimal Book Example" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Week 1 - Data manipulation and EDA | A Minimal Book Example" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Yihui Xie" />
+
+
+<meta name="date" content="2021-02-02" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="literature.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
+<li class="chapter" data-level="2" data-path="eda.html"><a href="eda.html"><i class="fa fa-check"></i><b>2</b> Week 1 - Data manipulation and EDA</a><ul>
+<li class="chapter" data-level="2.1" data-path="eda.html"><a href="eda.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.2" data-path="eda.html"><a href="eda.html#data-types"><i class="fa fa-check"></i><b>2.2</b> Data types</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="eda.html"><a href="eda.html#exercise-1"><i class="fa fa-check"></i><b>2.2.1</b> Exercise 1</a></li>
+<li class="chapter" data-level="2.2.2" data-path="eda.html"><a href="eda.html#exercise-2"><i class="fa fa-check"></i><b>2.2.2</b> Exercise 2</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="eda.html"><a href="eda.html#lists-and-data-frames"><i class="fa fa-check"></i><b>2.3</b> Lists and data frames</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="eda.html"><a href="eda.html#exercise-3"><i class="fa fa-check"></i><b>2.3.1</b> Exercise 3</a></li>
+<li class="chapter" data-level="2.3.2" data-path="eda.html"><a href="eda.html#exercise-4"><i class="fa fa-check"></i><b>2.3.2</b> Exercise 4</a></li>
+<li class="chapter" data-level="2.3.3" data-path="eda.html"><a href="eda.html#exercise-5"><i class="fa fa-check"></i><b>2.3.3</b> Exercise 5</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="eda.html"><a href="eda.html#loading-viewing-and-summarising-data"><i class="fa fa-check"></i><b>2.4</b> Loading, viewing and summarising data</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="eda.html"><a href="eda.html#exercise-6"><i class="fa fa-check"></i><b>2.4.1</b> Exercise 6</a></li>
+<li class="chapter" data-level="2.4.2" data-path="eda.html"><a href="eda.html#exercise-7"><i class="fa fa-check"></i><b>2.4.2</b> Exercise 7</a></li>
+<li class="chapter" data-level="2.4.3" data-path="eda.html"><a href="eda.html#exercise-8"><i class="fa fa-check"></i><b>2.4.3</b> Exercise 8</a></li>
+<li class="chapter" data-level="2.4.4" data-path="eda.html"><a href="eda.html#exercise-9"><i class="fa fa-check"></i><b>2.4.4</b> Exercise 9</a></li>
+<li class="chapter" data-level="2.4.5" data-path="eda.html"><a href="eda.html#exercise-10"><i class="fa fa-check"></i><b>2.4.5</b> Exercise 10</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="eda.html"><a href="eda.html#data-transformation-with-dplyr"><i class="fa fa-check"></i><b>2.5</b> Data transformation with <code>dplyr</code></a><ul>
+<li class="chapter" data-level="2.5.1" data-path="eda.html"><a href="eda.html#exercise-11"><i class="fa fa-check"></i><b>2.5.1</b> Exercise 11</a></li>
+<li class="chapter" data-level="2.5.2" data-path="eda.html"><a href="eda.html#exercise-12"><i class="fa fa-check"></i><b>2.5.2</b> Exercise 12</a></li>
+<li class="chapter" data-level="2.5.3" data-path="eda.html"><a href="eda.html#exercise-13"><i class="fa fa-check"></i><b>2.5.3</b> Exercise 13</a></li>
+<li class="chapter" data-level="2.5.4" data-path="eda.html"><a href="eda.html#exercise-14"><i class="fa fa-check"></i><b>2.5.4</b> Exercise 14</a></li>
+<li class="chapter" data-level="2.5.5" data-path="eda.html"><a href="eda.html#exercise-15"><i class="fa fa-check"></i><b>2.5.5</b> Exercise 15</a></li>
+<li class="chapter" data-level="2.5.6" data-path="eda.html"><a href="eda.html#exercise-16"><i class="fa fa-check"></i><b>2.5.6</b> Exercise 16</a></li>
+<li class="chapter" data-level="2.5.7" data-path="eda.html"><a href="eda.html#exercise-17"><i class="fa fa-check"></i><b>2.5.7</b> Exercise 17</a></li>
+<li class="chapter" data-level="2.5.8" data-path="eda.html"><a href="eda.html#exercise-18"><i class="fa fa-check"></i><b>2.5.8</b> Exercise 18</a></li>
+<li class="chapter" data-level="2.5.9" data-path="eda.html"><a href="eda.html#exercise-19"><i class="fa fa-check"></i><b>2.5.9</b> Exercise 19</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>3</b> Literature</a></li>
+<li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a></li>
+<li class="chapter" data-level="5" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>5</b> Applications</a><ul>
+<li class="chapter" data-level="5.1" data-path="applications.html"><a href="applications.html#example-one"><i class="fa fa-check"></i><b>5.1</b> Example one</a></li>
+<li class="chapter" data-level="5.2" data-path="applications.html"><a href="applications.html#example-two"><i class="fa fa-check"></i><b>5.2</b> Example two</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>6</b> Final Words</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Minimal Book Example</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="eda" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Week 1 - Data manipulation and EDA</h1>
+<div id="introduction" class="section level2">
+<h2><span class="header-section-number">2.1</span> Introduction</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="eda.html#cb1-1"></a><span class="kw">library</span>(ISLR)</span>
+<span id="cb1-2"><a href="eda.html#cb1-2"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="eda.html#cb1-3"></a><span class="kw">library</span>(haven)</span>
+<span id="cb1-4"><a href="eda.html#cb1-4"></a><span class="kw">library</span>(readxl)</span></code></pre></div>
+</div>
+<div id="data-types" class="section level2">
+<h2><span class="header-section-number">2.2</span> Data types</h2>
+<div id="exercise-1" class="section level3">
+<h3><span class="header-section-number">2.2.1</span> Exercise 1</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="eda.html#cb2-1"></a>object_<span class="dv">1</span> &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">5</span></span>
+<span id="cb2-2"><a href="eda.html#cb2-2"></a>object_<span class="dv">2</span> &lt;-<span class="st"> </span>1L<span class="op">:</span>5L</span>
+<span id="cb2-3"><a href="eda.html#cb2-3"></a>object_<span class="dv">3</span> &lt;-<span class="st"> &quot;-123.456&quot;</span></span>
+<span id="cb2-4"><a href="eda.html#cb2-4"></a>object_<span class="dv">4</span> &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(object_<span class="dv">2</span>)</span>
+<span id="cb2-5"><a href="eda.html#cb2-5"></a>object_<span class="dv">5</span> &lt;-<span class="st"> </span>letters[object_<span class="dv">1</span>]</span>
+<span id="cb2-6"><a href="eda.html#cb2-6"></a>object_<span class="dv">6</span> &lt;-<span class="st"> </span><span class="kw">as.factor</span>(<span class="kw">rep</span>(object_<span class="dv">5</span>, <span class="dv">2</span>))</span>
+<span id="cb2-7"><a href="eda.html#cb2-7"></a>object_<span class="dv">7</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="st">&quot;4&quot;</span>, <span class="st">&quot;5&quot;</span>, <span class="st">&quot;6&quot;</span>)</span></code></pre></div>
+</div>
+<div id="exercise-2" class="section level3">
+<h3><span class="header-section-number">2.2.2</span> Exercise 2</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="eda.html#cb3-1"></a><span class="kw">as.numeric</span>(object_<span class="dv">7</span>)</span></code></pre></div>
+<pre><code>## [1] 1 2 3 4 5 6</code></pre>
+</div>
+</div>
+<div id="lists-and-data-frames" class="section level2">
+<h2><span class="header-section-number">2.3</span> Lists and data frames</h2>
+<div id="exercise-3" class="section level3">
+<h3><span class="header-section-number">2.3.1</span> Exercise 3</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="eda.html#cb5-1"></a>objects &lt;-<span class="st"> </span><span class="kw">mget</span>(<span class="kw">ls</span>(<span class="dt">pattern =</span> <span class="st">&quot;^object_</span><span class="ch">\\</span><span class="st">d{1}$&quot;</span>), .GlobalEnv)</span></code></pre></div>
+</div>
+<div id="exercise-4" class="section level3">
+<h3><span class="header-section-number">2.3.2</span> Exercise 4</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="eda.html#cb6-1"></a>df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(object_<span class="dv">1</span>, object_<span class="dv">2</span>, object_<span class="dv">5</span>)</span></code></pre></div>
+</div>
+<div id="exercise-5" class="section level3">
+<h3><span class="header-section-number">2.3.3</span> Exercise 5</h3>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="eda.html#cb7-1"></a><span class="kw">ncol</span>(df)</span></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="eda.html#cb9-1"></a><span class="kw">nrow</span>(df)</span></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+</div>
+</div>
+<div id="loading-viewing-and-summarising-data" class="section level2">
+<h2><span class="header-section-number">2.4</span> Loading, viewing and summarising data</h2>
+<div id="exercise-6" class="section level3">
+<h3><span class="header-section-number">2.4.1</span> Exercise 6</h3>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="eda.html#cb11-1"></a>apps &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/googleplaystore.csv&quot;</span>)</span></code></pre></div>
+</div>
+<div id="exercise-7" class="section level3">
+<h3><span class="header-section-number">2.4.2</span> Exercise 7</h3>
+<p>Yes, the variables <code>size</code>, <code>installs</code> and <code>price</code> could have been numeric variables, rather than character variables.</p>
+</div>
+<div id="exercise-8" class="section level3">
+<h3><span class="header-section-number">2.4.3</span> Exercise 8</h3>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="eda.html#cb12-1"></a>knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">head</span>(apps[,<span class="op">-</span><span class="dv">1</span>]), <span class="dt">booktabs =</span> T) <span class="op">%&gt;%</span></span>
+<span id="cb12-2"><a href="eda.html#cb12-2"></a><span class="st">  </span>kableExtra<span class="op">::</span><span class="kw">kable_styling</span>(<span class="dt">bootstrap_options =</span> <span class="kw">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>))</span></code></pre></div>
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Category
+</th>
+<th style="text-align:right;">
+Rating
+</th>
+<th style="text-align:right;">
+Reviews
+</th>
+<th style="text-align:left;">
+Size
+</th>
+<th style="text-align:left;">
+Installs
+</th>
+<th style="text-align:left;">
+Type
+</th>
+<th style="text-align:left;">
+Price
+</th>
+<th style="text-align:left;">
+Content Rating
+</th>
+<th style="text-align:left;">
+Genres
+</th>
+<th style="text-align:left;">
+Last Updated
+</th>
+<th style="text-align:left;">
+Current Ver
+</th>
+<th style="text-align:left;">
+Android Ver
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+ART_AND_DESIGN
+</td>
+<td style="text-align:right;">
+4.1
+</td>
+<td style="text-align:right;">
+159
+</td>
+<td style="text-align:left;">
+19M
+</td>
+<td style="text-align:left;">
+10,000+
+</td>
+<td style="text-align:left;">
+Free
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+Everyone
+</td>
+<td style="text-align:left;">
+Art &amp; Design
+</td>
+<td style="text-align:left;">
+January 7, 2018
+</td>
+<td style="text-align:left;">
+1.0.0
+</td>
+<td style="text-align:left;">
+4.0.3 and up
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ART_AND_DESIGN
+</td>
+<td style="text-align:right;">
+3.9
+</td>
+<td style="text-align:right;">
+967
+</td>
+<td style="text-align:left;">
+14M
+</td>
+<td style="text-align:left;">
+500,000+
+</td>
+<td style="text-align:left;">
+Free
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+Everyone
+</td>
+<td style="text-align:left;">
+Art &amp; Design;Pretend Play
+</td>
+<td style="text-align:left;">
+January 15, 2018
+</td>
+<td style="text-align:left;">
+2.0.0
+</td>
+<td style="text-align:left;">
+4.0.3 and up
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ART_AND_DESIGN
+</td>
+<td style="text-align:right;">
+4.7
+</td>
+<td style="text-align:right;">
+87510
+</td>
+<td style="text-align:left;">
+8.7M
+</td>
+<td style="text-align:left;">
+5,000,000+
+</td>
+<td style="text-align:left;">
+Free
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+Everyone
+</td>
+<td style="text-align:left;">
+Art &amp; Design
+</td>
+<td style="text-align:left;">
+August 1, 2018
+</td>
+<td style="text-align:left;">
+1.2.4
+</td>
+<td style="text-align:left;">
+4.0.3 and up
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ART_AND_DESIGN
+</td>
+<td style="text-align:right;">
+4.5
+</td>
+<td style="text-align:right;">
+215644
+</td>
+<td style="text-align:left;">
+25M
+</td>
+<td style="text-align:left;">
+50,000,000+
+</td>
+<td style="text-align:left;">
+Free
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+Teen
+</td>
+<td style="text-align:left;">
+Art &amp; Design
+</td>
+<td style="text-align:left;">
+June 8, 2018
+</td>
+<td style="text-align:left;">
+Varies with device
+</td>
+<td style="text-align:left;">
+4.2 and up
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ART_AND_DESIGN
+</td>
+<td style="text-align:right;">
+4.3
+</td>
+<td style="text-align:right;">
+967
+</td>
+<td style="text-align:left;">
+2.8M
+</td>
+<td style="text-align:left;">
+100,000+
+</td>
+<td style="text-align:left;">
+Free
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+Everyone
+</td>
+<td style="text-align:left;">
+Art &amp; Design;Creativity
+</td>
+<td style="text-align:left;">
+June 20, 2018
+</td>
+<td style="text-align:left;">
+1.1
+</td>
+<td style="text-align:left;">
+4.4 and up
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ART_AND_DESIGN
+</td>
+<td style="text-align:right;">
+4.4
+</td>
+<td style="text-align:right;">
+167
+</td>
+<td style="text-align:left;">
+5.6M
+</td>
+<td style="text-align:left;">
+50,000+
+</td>
+<td style="text-align:left;">
+Free
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+Everyone
+</td>
+<td style="text-align:left;">
+Art &amp; Design
+</td>
+<td style="text-align:left;">
+March 26, 2017
+</td>
+<td style="text-align:left;">
+1.0
+</td>
+<td style="text-align:left;">
+2.3 and up
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="exercise-9" class="section level3">
+<h3><span class="header-section-number">2.4.4</span> Exercise 9</h3>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="eda.html#cb13-1"></a>students &lt;-<span class="st"> </span>readxl<span class="op">::</span><span class="kw">read_xlsx</span>(<span class="st">&quot;data/students.xlsx&quot;</span>)</span>
+<span id="cb13-2"><a href="eda.html#cb13-2"></a>students<span class="op">$</span>student_number &lt;-<span class="st"> </span><span class="kw">as.character</span>(students<span class="op">$</span>student_number)</span>
+<span id="cb13-3"><a href="eda.html#cb13-3"></a></span>
+<span id="cb13-4"><a href="eda.html#cb13-4"></a><span class="kw">head</span>(students) <span class="op">%&gt;%</span></span>
+<span id="cb13-5"><a href="eda.html#cb13-5"></a><span class="st">  </span><span class="kw">kable</span>() <span class="op">%&gt;%</span></span>
+<span id="cb13-6"><a href="eda.html#cb13-6"></a><span class="st">  </span><span class="kw">kable_styling</span>(<span class="dt">bootstrap_options =</span> <span class="kw">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>))</span></code></pre></div>
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+student_number
+</th>
+<th style="text-align:right;">
+grade
+</th>
+<th style="text-align:left;">
+programme
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+5117250
+</td>
+<td style="text-align:right;">
+6.540712
+</td>
+<td style="text-align:left;">
+A
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6562582
+</td>
+<td style="text-align:right;">
+7.572885
+</td>
+<td style="text-align:left;">
+A
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6000241
+</td>
+<td style="text-align:right;">
+6.081056
+</td>
+<td style="text-align:left;">
+B
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4862862
+</td>
+<td style="text-align:right;">
+7.707184
+</td>
+<td style="text-align:left;">
+A
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6561723
+</td>
+<td style="text-align:right;">
+6.573150
+</td>
+<td style="text-align:left;">
+B
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+5625916
+</td>
+<td style="text-align:right;">
+7.900654
+</td>
+<td style="text-align:left;">
+B
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="exercise-10" class="section level3">
+<h3><span class="header-section-number">2.4.5</span> Exercise 10</h3>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="eda.html#cb14-1"></a><span class="kw">summary</span>(students)</span></code></pre></div>
+<pre><code>##  student_number         grade        programme        
+##  Length:37          Min.   :4.844   Length:37         
+##  Class :character   1st Qu.:6.390   Class :character  
+##  Mode  :character   Median :7.151   Mode  :character  
+##                     Mean   :6.991                     
+##                     3rd Qu.:7.573                     
+##                     Max.   :9.291</code></pre>
+</div>
+</div>
+<div id="data-transformation-with-dplyr" class="section level2">
+<h2><span class="header-section-number">2.5</span> Data transformation with <code>dplyr</code></h2>
+<div id="exercise-11" class="section level3">
+<h3><span class="header-section-number">2.5.1</span> Exercise 11</h3>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="eda.html#cb16-1"></a>students <span class="op">%&gt;%</span></span>
+<span id="cb16-2"><a href="eda.html#cb16-2"></a><span class="st">  </span><span class="kw">filter</span>(grade <span class="op">&lt;</span><span class="st"> </span><span class="fl">5.5</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 3 x 3
+##   student_number grade programme
+##   &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;    
+## 1 6114656         5.16 A        
+## 2 5265402         5.49 B        
+## 3 4639846         4.84 A</code></pre>
+</div>
+<div id="exercise-12" class="section level3">
+<h3><span class="header-section-number">2.5.2</span> Exercise 12</h3>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="eda.html#cb18-1"></a>students <span class="op">%&gt;%</span></span>
+<span id="cb18-2"><a href="eda.html#cb18-2"></a><span class="st">  </span><span class="kw">filter</span>(grade <span class="op">&gt;</span><span class="st"> </span><span class="dv">8</span> <span class="op">&amp;</span><span class="st"> </span>programme <span class="op">==</span><span class="st"> &quot;A&quot;</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 5 x 3
+##   student_number grade programme
+##   &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;    
+## 1 6352581         8.09 A        
+## 2 6165611         8.02 A        
+## 3 4133949         8.40 A        
+## 4 4011659         8.94 A        
+## 5 6553913         8.24 A</code></pre>
+</div>
+<div id="exercise-13" class="section level3">
+<h3><span class="header-section-number">2.5.3</span> Exercise 13</h3>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="eda.html#cb20-1"></a>students <span class="op">%&gt;%</span></span>
+<span id="cb20-2"><a href="eda.html#cb20-2"></a><span class="st">  </span><span class="kw">arrange</span>(programme, <span class="kw">desc</span>(grade))</span></code></pre></div>
+<pre><code>## # A tibble: 37 x 3
+##    student_number grade programme
+##    &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;    
+##  1 4011659         8.94 A        
+##  2 4133949         8.40 A        
+##  3 6553913         8.24 A        
+##  4 6352581         8.09 A        
+##  5 6165611         8.02 A        
+##  6 6997130         7.75 A        
+##  7 4862862         7.71 A        
+##  8 6562582         7.57 A        
+##  9 4483974         7.46 A        
+## 10 5128923         7.26 A        
+## # … with 27 more rows</code></pre>
+</div>
+<div id="exercise-14" class="section level3">
+<h3><span class="header-section-number">2.5.4</span> Exercise 14</h3>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="eda.html#cb22-1"></a>students <span class="op">%&gt;%</span></span>
+<span id="cb22-2"><a href="eda.html#cb22-2"></a><span class="st">  </span><span class="kw">select</span>(student_number, programme)</span></code></pre></div>
+<pre><code>## # A tibble: 37 x 2
+##    student_number programme
+##    &lt;chr&gt;          &lt;chr&gt;    
+##  1 5117250        A        
+##  2 6562582        A        
+##  3 6000241        B        
+##  4 4862862        A        
+##  5 6561723        B        
+##  6 5625916        B        
+##  7 4096023        A        
+##  8 6114656        A        
+##  9 5265402        B        
+## 10 5977188        B        
+## # … with 27 more rows</code></pre>
+</div>
+<div id="exercise-15" class="section level3">
+<h3><span class="header-section-number">2.5.5</span> Exercise 15</h3>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="eda.html#cb24-1"></a>students_recoded &lt;-<span class="st"> </span>students <span class="op">%&gt;%</span></span>
+<span id="cb24-2"><a href="eda.html#cb24-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">programme =</span> <span class="kw">recode</span>(programme, <span class="st">&quot;A&quot;</span> =<span class="st"> &quot;Science&quot;</span>, <span class="st">&quot;B&quot;</span> =<span class="st"> &quot;Social Science&quot;</span>))</span></code></pre></div>
+</div>
+<div id="exercise-16" class="section level3">
+<h3><span class="header-section-number">2.5.6</span> Exercise 16</h3>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="eda.html#cb25-1"></a>popular_apps &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/googleplaystore.csv&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb25-2"><a href="eda.html#cb25-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Installs =</span> <span class="kw">parse_number</span>(Installs)) <span class="op">%&gt;%</span></span>
+<span id="cb25-3"><a href="eda.html#cb25-3"></a><span class="st">  </span><span class="kw">filter</span>(Installs <span class="op">&gt;</span><span class="st"> </span><span class="dv">500000000</span>) <span class="op">%&gt;%</span></span>
+<span id="cb25-4"><a href="eda.html#cb25-4"></a><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(Rating)) <span class="op">%&gt;%</span></span>
+<span id="cb25-5"><a href="eda.html#cb25-5"></a><span class="st">  </span><span class="kw">select</span>(Category, Rating, Reviews, Size, Installs, Type, Price)</span></code></pre></div>
+</div>
+<div id="exercise-17" class="section level3">
+<h3><span class="header-section-number">2.5.7</span> Exercise 17</h3>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="eda.html#cb26-1"></a>popular_apps <span class="op">%&gt;%</span></span>
+<span id="cb26-2"><a href="eda.html#cb26-2"></a><span class="st">  </span><span class="kw">summarise_if</span>(is.numeric, </span>
+<span id="cb26-3"><a href="eda.html#cb26-3"></a>               <span class="dt">.funs =</span> <span class="kw">list</span>(<span class="dt">median =</span> median, <span class="dt">min =</span> min, <span class="dt">max =</span> max))</span></code></pre></div>
+<pre><code>## # A tibble: 1 x 9
+##   Rating_median Reviews_median Installs_median Rating_min Reviews_min
+##           &lt;dbl&gt;          &lt;dbl&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;
+## 1           4.3       9642554.      1000000000        3.7      877635
+## # … with 4 more variables: Installs_min &lt;dbl&gt;, Rating_max &lt;dbl&gt;,
+## #   Reviews_max &lt;dbl&gt;, Installs_max &lt;dbl&gt;</code></pre>
+</div>
+<div id="exercise-18" class="section level3">
+<h3><span class="header-section-number">2.5.8</span> Exercise 18</h3>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="eda.html#cb28-1"></a>mad &lt;-<span class="st"> </span><span class="cf">function</span>(x) <span class="kw">median</span>(<span class="kw">abs</span>(x <span class="op">-</span><span class="st"> </span><span class="kw">median</span>(x)))</span>
+<span id="cb28-2"><a href="eda.html#cb28-2"></a></span>
+<span id="cb28-3"><a href="eda.html#cb28-3"></a>popular_apps <span class="op">%&gt;%</span></span>
+<span id="cb28-4"><a href="eda.html#cb28-4"></a><span class="st">  </span><span class="kw">summarise_if</span>(is.numeric, </span>
+<span id="cb28-5"><a href="eda.html#cb28-5"></a>               <span class="dt">.funs =</span> <span class="kw">list</span>(<span class="dt">median =</span> median, </span>
+<span id="cb28-6"><a href="eda.html#cb28-6"></a>                            <span class="dt">min =</span> min, </span>
+<span id="cb28-7"><a href="eda.html#cb28-7"></a>                            <span class="dt">max =</span> max,</span>
+<span id="cb28-8"><a href="eda.html#cb28-8"></a>                            <span class="dt">mad =</span> mad))</span></code></pre></div>
+<pre><code>## # A tibble: 1 x 12
+##   Rating_median Reviews_median Installs_median Rating_min Reviews_min
+##           &lt;dbl&gt;          &lt;dbl&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;
+## 1           4.3       9642554.      1000000000        3.7      877635
+## # … with 7 more variables: Installs_min &lt;dbl&gt;, Rating_max &lt;dbl&gt;,
+## #   Reviews_max &lt;dbl&gt;, Installs_max &lt;dbl&gt;, Rating_mad &lt;dbl&gt;, Reviews_mad &lt;dbl&gt;,
+## #   Installs_mad &lt;dbl&gt;</code></pre>
+</div>
+<div id="exercise-19" class="section level3">
+<h3><span class="header-section-number">2.5.9</span> Exercise 19</h3>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="eda.html#cb30-1"></a>popular_apps <span class="op">%&gt;%</span></span>
+<span id="cb30-2"><a href="eda.html#cb30-2"></a><span class="st">  </span><span class="kw">group_by</span>(Category) <span class="op">%&gt;%</span></span>
+<span id="cb30-3"><a href="eda.html#cb30-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean =</span> <span class="kw">mean</span>(Rating),</span>
+<span id="cb30-4"><a href="eda.html#cb30-4"></a>            <span class="dt">median =</span> <span class="kw">median</span>(Rating),</span>
+<span id="cb30-5"><a href="eda.html#cb30-5"></a>            <span class="dt">sd =</span> <span class="kw">sd</span>(Rating),</span>
+<span id="cb30-6"><a href="eda.html#cb30-6"></a>            <span class="dt">min =</span> <span class="kw">min</span>(Rating),</span>
+<span id="cb30-7"><a href="eda.html#cb30-7"></a>            <span class="dt">max =</span> <span class="kw">max</span>(Rating),</span>
+<span id="cb30-8"><a href="eda.html#cb30-8"></a>            <span class="dt">mad =</span> <span class="kw">mad</span>(Rating))</span></code></pre></div>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<pre><code>## # A tibble: 12 x 7
+##    Category             mean median      sd   min   max   mad
+##    &lt;chr&gt;               &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+##  1 BOOKS_AND_REFERENCE  3.9    3.9  NA        3.9   3.9 0    
+##  2 COMMUNICATION        4.17   4.1   0.163    4     4.4 0.100
+##  3 ENTERTAINMENT        4.3    4.3  NA        4.3   4.3 0    
+##  4 FAMILY               4.3    4.3  NA        4.3   4.3 0    
+##  5 GAME                 4.5    4.5   0        4.5   4.5 0    
+##  6 NEWS_AND_MAGAZINES   3.9    3.9   0        3.9   3.9 0    
+##  7 PHOTOGRAPHY          4.5    4.5   0        4.5   4.5 0    
+##  8 PRODUCTIVITY         4.4    4.4   0        4.4   4.4 0    
+##  9 SOCIAL               4.32   4.35  0.191    4.1   4.5 0.15 
+## 10 TOOLS                4.4    4.4   0        4.4   4.4 0    
+## 11 TRAVEL_AND_LOCAL     4.26   4.3   0.0548   4.2   4.3 0    
+## 12 VIDEO_PLAYERS        4.1    4.3   0.346    3.7   4.3 0</code></pre>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="literature.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/01-eda.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
