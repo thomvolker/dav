@@ -1,0 +1,184 @@
+# Data Visualization using ggplot2 {#ggplot2}
+
+## Introduction
+
+```{r}
+library(ISLR)
+library(tidyverse)
+```
+
+### Exercise 1
+
+- `aesthetics`: x = Hits, y = homeruns
+- `geoms`: points, 2d density
+- `scales`: identity
+- `facets`: none
+- `transformations`: none
+- `coordinate systems`: cartesian
+
+### Exercise 2
+
+```{r}
+set.seed(1234)
+ggstudents <- data.frame(grade = rnorm(32, 7),
+                         number = round(runif(32) * 2e6 + 5e6),
+                         programme = sample(c("Science", "Social Science"), 
+                                            32, replace = TRUE))
+```
+
+### Exercise 3
+
+```{r}
+ggplot(Hitters, aes(y = Hits, x = HmRun)) +
+  geom_point() +
+  labs(y = "Hits", x = "Home runs") +
+  geom_density_2d() +
+  labs(title = "Density and scatter plot of baseball data") +
+  theme_minimal()
+```
+
+### Exercise 4
+
+```{r}
+ggplot(Hitters, aes(y = Hits, x = HmRun, col = League, size = Salary)) +
+  geom_point() +
+  labs(y = "Hits", x = "Home runs") +
+  geom_density_2d() +
+  labs(title = "Density and scatter plot of baseball data") +
+  scale_color_brewer(palette = "Set1") +
+  theme_minimal()
+```
+
+### Exercise 5
+
+Done.
+
+## Visual exploratory data analysis
+
+### Exercise 6
+
+```{r}
+ggstudents %>%
+  ggplot(aes(x = grade)) +
+  geom_histogram(binwidth = 0.5, col = "black", fill = "transparent") +
+  labs(x = "Grade", y = "Count") +
+  ggthemes::theme_tufte()
+```
+
+### Exercise 7
+
+```{r}
+ggstudents %>%
+  ggplot(aes(x = grade)) +
+  geom_density(fill = "light seagreen", alpha = 0.5) +
+  labs(x = "Grade", y = "Count") +
+  theme_minimal()
+```
+
+### Exercise 8
+
+```{r}
+ggstudents %>%
+  ggplot(aes(x = grade)) +
+  geom_rug(col = "light seagreen", size = 0.5) +
+  geom_density(fill = "light seagreen", alpha = 0.5) +
+  labs(x = "Grade", y = "Count") +
+  theme_minimal()
+```
+
+### Exercise 9
+
+```{r}
+ggstudents %>%
+  ggplot(aes(x = grade)) +
+  geom_rug(col = "light seagreen", size = 0.5) +
+  geom_density(col = "transparent", fill = "light seagreen", alpha = 0.5) +
+  labs(x = "Grade", y = "") +
+  xlim(0, 10) +
+  theme_minimal()
+```
+
+### Exercise 10
+
+```{r}
+ggstudents %>%
+  ggplot(aes(x = programme, y = grade, fill = programme)) +
+  geom_boxplot() +
+  scale_fill_brewer(palette = "Set1") +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+
+### Exercise 11
+
+The upper horizontal line indicates the upper bound of the interquartile range (that is, the middle value / median of the 50% highest scores), and the lower horizontal line indicates the lower bound of the inter-quartile range (that is, the middle value / median of the 50% lowest scores), so that combined, 50% of the data is within this interquartile range. The middle horizontal line indicates the median. The whiskers indicate the point from the upper (lower) bound of the interquartile range to the last point within the 1.5 times the upper (lower) bound of the interquartile range.
+
+### Exercise 12
+
+```{r}
+ggstudents %>%
+  ggplot(aes(x = grade, fill = programme, col = programme)) +
+  geom_rug(size = 0.5) +
+  geom_density(col = "transparent", alpha = 0.5) +
+  labs(x = "Grade", y = "") +
+  xlim(0, 10) +
+  theme_minimal() +
+  scale_fill_brewer(palette = "Set1") +
+  scale_color_brewer(palette = "Set1")
+```
+
+### Exercise 13
+
+```{r}
+Hitters %>% 
+  ggplot(aes(x = Years)) +
+  geom_bar(col = "black", fill = "blue") +
+  theme_minimal()
+```
+
+### Exercise 14 - 17
+
+```{r}
+Smarket %>% 
+  rownames_to_column() %>%
+  mutate(rowname = as.numeric(rowname)) %>% 
+  filter(rowname < 201) %>%
+  ggplot(aes(y = Volume, x = rowname)) +
+  geom_line(size = 0.75, col = "dark blue") +
+  geom_point(col = "dark blue", size = 1) +
+  geom_label(x = which.max(Smarket$Volume[1:200]), 
+             y = max(Smarket$Volume[1:200]), 
+             label = paste0("Peak volume is ", round(max(Smarket$Volume[1:200]), 2)), 
+             col = "dark blue",
+             hjust = 1.1) +
+  theme_minimal() +
+  labs(x = "Day")
+```
+
+
+### Exercise 18
+
+```{r}
+baseball <- Hitters %>%
+  filter(!is.na(Salary)) %>%
+  mutate(Salary_cat = cut(Salary, 3, labels = c("Low", "Middle", "High")),
+         Cprop_Hmrun = CHmRun / CHits)
+```
+
+### Exercise 19
+
+```{r}
+baseball %>% 
+  ggplot(aes(x = CWalks, y = Cprop_Hmrun)) +
+  geom_point(col = "dark blue") +
+  lims(x = c(0, 1600), y = c(0, 0.4)) +
+  labs(x = "Number of career walks",
+       y = "Proportion of hits that was a home run") +
+  theme_minimal() +
+  facet_wrap(~ Salary_cat)
+```
+
+
+
+
+
