@@ -24,7 +24,7 @@
 <meta name="author" content="Thom Volker" />
 
 
-<meta name="date" content="2021-02-03" />
+<meta name="date" content="2021-02-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,6 +52,70 @@
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -70,7 +134,7 @@
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
-<li class="chapter" data-level="2" data-path="eda.html"><a href="eda.html"><i class="fa fa-check"></i><b>2</b> Week 1 - Data manipulation and EDA</a><ul>
+<li class="chapter" data-level="2" data-path="eda.html"><a href="eda.html"><i class="fa fa-check"></i><b>2</b> Week 1 Data manipulation and EDA</a><ul>
 <li class="chapter" data-level="2.1" data-path="eda.html"><a href="eda.html#introduction-1"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
 <li class="chapter" data-level="2.2" data-path="eda.html"><a href="eda.html#data-types"><i class="fa fa-check"></i><b>2.2</b> Data types</a><ul>
 <li class="chapter" data-level="2.2.1" data-path="eda.html"><a href="eda.html#exercise-1"><i class="fa fa-check"></i><b>2.2.1</b> Exercise 1</a></li>
@@ -146,9 +210,127 @@
 <li class="chapter" data-level="4.4.4" data-path="reg.html"><a href="reg.html#splines"><i class="fa fa-check"></i><b>4.4.4</b> Splines</a></li>
 <li class="chapter" data-level="4.4.5" data-path="reg.html"><a href="reg.html#local-regression-1"><i class="fa fa-check"></i><b>4.4.5</b> Local regression</a></li>
 </ul></li>
-<li class="chapter" data-level="4.5" data-path="reg.html"><a href="reg.html#practical-regression-i"><i class="fa fa-check"></i><b>4.5</b> Practical Regression I</a></li>
+<li class="chapter" data-level="4.5" data-path="reg.html"><a href="reg.html#practical-regression-i"><i class="fa fa-check"></i><b>4.5</b> Practical Regression I</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="reg.html"><a href="reg.html#exercise-1-2"><i class="fa fa-check"></i><b>4.5.1</b> Exercise 1</a></li>
+<li class="chapter" data-level="4.5.2" data-path="reg.html"><a href="reg.html#exercise-2-2"><i class="fa fa-check"></i><b>4.5.2</b> Exercise 2</a></li>
+<li class="chapter" data-level="4.5.3" data-path="reg.html"><a href="reg.html#exercise-3-2"><i class="fa fa-check"></i><b>4.5.3</b> Exercise 3</a></li>
+<li class="chapter" data-level="4.5.4" data-path="reg.html"><a href="reg.html#exercise-4-2"><i class="fa fa-check"></i><b>4.5.4</b> Exercise 4</a></li>
+<li class="chapter" data-level="4.5.5" data-path="reg.html"><a href="reg.html#exercise-5-2"><i class="fa fa-check"></i><b>4.5.5</b> Exercise 5</a></li>
+<li class="chapter" data-level="4.5.6" data-path="reg.html"><a href="reg.html#exercise-6-2"><i class="fa fa-check"></i><b>4.5.6</b> Exercise 6</a></li>
+<li class="chapter" data-level="4.5.7" data-path="reg.html"><a href="reg.html#exercise-7-2"><i class="fa fa-check"></i><b>4.5.7</b> Exercise 7</a></li>
+<li class="chapter" data-level="4.5.8" data-path="reg.html"><a href="reg.html#exercise-8-2"><i class="fa fa-check"></i><b>4.5.8</b> Exercise 8</a></li>
+<li class="chapter" data-level="4.5.9" data-path="reg.html"><a href="reg.html#exercise-9-2"><i class="fa fa-check"></i><b>4.5.9</b> Exercise 9</a></li>
+<li class="chapter" data-level="4.5.10" data-path="reg.html"><a href="reg.html#exercise-10-2"><i class="fa fa-check"></i><b>4.5.10</b> Exercise 10</a></li>
+<li class="chapter" data-level="4.5.11" data-path="reg.html"><a href="reg.html#exercise-11-2"><i class="fa fa-check"></i><b>4.5.11</b> Exercise 11</a></li>
+<li class="chapter" data-level="4.5.12" data-path="reg.html"><a href="reg.html#exercise-12-2"><i class="fa fa-check"></i><b>4.5.12</b> Exercise 12</a></li>
+<li class="chapter" data-level="4.5.13" data-path="reg.html"><a href="reg.html#exercise-13-2"><i class="fa fa-check"></i><b>4.5.13</b> Exercise 13</a></li>
+<li class="chapter" data-level="4.5.14" data-path="reg.html"><a href="reg.html#exercise-14-1"><i class="fa fa-check"></i><b>4.5.14</b> Exercise 14</a></li>
+<li class="chapter" data-level="4.5.15" data-path="reg.html"><a href="reg.html#exercise-15-1"><i class="fa fa-check"></i><b>4.5.15</b> Exercise 15</a></li>
+<li class="chapter" data-level="4.5.16" data-path="reg.html"><a href="reg.html#exercise-16-1"><i class="fa fa-check"></i><b>4.5.16</b> Exercise 16</a></li>
+<li class="chapter" data-level="4.5.17" data-path="reg.html"><a href="reg.html#exercise-17-1"><i class="fa fa-check"></i><b>4.5.17</b> Exercise 17</a></li>
+<li class="chapter" data-level="4.5.18" data-path="reg.html"><a href="reg.html#exercise-18-2"><i class="fa fa-check"></i><b>4.5.18</b> Exercise 18</a></li>
+<li class="chapter" data-level="4.5.19" data-path="reg.html"><a href="reg.html#exercise-19-2"><i class="fa fa-check"></i><b>4.5.19</b> Exercise 19</a></li>
+<li class="chapter" data-level="4.5.20" data-path="reg.html"><a href="reg.html#exercise-20"><i class="fa fa-check"></i><b>4.5.20</b> Exercise 20</a></li>
+<li class="chapter" data-level="4.5.21" data-path="reg.html"><a href="reg.html#exercise-21"><i class="fa fa-check"></i><b>4.5.21</b> Exercise 21</a></li>
+<li class="chapter" data-level="4.5.22" data-path="reg.html"><a href="reg.html#exercise-22"><i class="fa fa-check"></i><b>4.5.22</b> Exercise 22</a></li>
+<li class="chapter" data-level="4.5.23" data-path="reg.html"><a href="reg.html#exercise-23"><i class="fa fa-check"></i><b>4.5.23</b> Exercise 23</a></li>
+<li class="chapter" data-level="4.5.24" data-path="reg.html"><a href="reg.html#exercise-24"><i class="fa fa-check"></i><b>4.5.24</b> Exercise 24</a></li>
+<li class="chapter" data-level="4.5.25" data-path="reg.html"><a href="reg.html#exercise-25"><i class="fa fa-check"></i><b>4.5.25</b> Exercise 25</a></li>
+<li class="chapter" data-level="4.5.26" data-path="reg.html"><a href="reg.html#exercise-26"><i class="fa fa-check"></i><b>4.5.26</b> Exercise 26</a></li>
+<li class="chapter" data-level="4.5.27" data-path="reg.html"><a href="reg.html#exercise-27"><i class="fa fa-check"></i><b>4.5.27</b> Exercise 27</a></li>
+<li class="chapter" data-level="4.5.28" data-path="reg.html"><a href="reg.html#exercise-28"><i class="fa fa-check"></i><b>4.5.28</b> Exercise 28</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="class.html"><a href="class.html"><i class="fa fa-check"></i><b>5</b> Classification</a></li>
+<li class="chapter" data-level="4.6" data-path="reg.html"><a href="reg.html#practical-regression-ii"><i class="fa fa-check"></i><b>4.6</b> Practical regression II</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="reg.html"><a href="reg.html#exercise-1-3"><i class="fa fa-check"></i><b>4.6.1</b> Exercise 1</a></li>
+<li class="chapter" data-level="4.6.2" data-path="reg.html"><a href="reg.html#exercise-2-3"><i class="fa fa-check"></i><b>4.6.2</b> Exercise 2</a></li>
+<li class="chapter" data-level="4.6.3" data-path="reg.html"><a href="reg.html#exercise-3-3"><i class="fa fa-check"></i><b>4.6.3</b> Exercise 3</a></li>
+<li class="chapter" data-level="4.6.4" data-path="reg.html"><a href="reg.html#exercise-4-3"><i class="fa fa-check"></i><b>4.6.4</b> Exercise 4</a></li>
+<li class="chapter" data-level="4.6.5" data-path="reg.html"><a href="reg.html#exercise-5-3"><i class="fa fa-check"></i><b>4.6.5</b> Exercise 5</a></li>
+<li class="chapter" data-level="4.6.6" data-path="reg.html"><a href="reg.html#exercise-6-3"><i class="fa fa-check"></i><b>4.6.6</b> Exercise 6</a></li>
+<li class="chapter" data-level="4.6.7" data-path="reg.html"><a href="reg.html#exercise-7-3"><i class="fa fa-check"></i><b>4.6.7</b> Exercise 7</a></li>
+<li class="chapter" data-level="4.6.8" data-path="reg.html"><a href="reg.html#exercise-8-3"><i class="fa fa-check"></i><b>4.6.8</b> Exercise 8</a></li>
+<li class="chapter" data-level="4.6.9" data-path="reg.html"><a href="reg.html#exercise-9-3"><i class="fa fa-check"></i><b>4.6.9</b> Exercise 9</a></li>
+<li class="chapter" data-level="4.6.10" data-path="reg.html"><a href="reg.html#exercise-10-3"><i class="fa fa-check"></i><b>4.6.10</b> Exercise 10</a></li>
+<li class="chapter" data-level="4.6.11" data-path="reg.html"><a href="reg.html#exercise-11-3"><i class="fa fa-check"></i><b>4.6.11</b> Exercise 11</a></li>
+<li class="chapter" data-level="4.6.12" data-path="reg.html"><a href="reg.html#exercise-12-3"><i class="fa fa-check"></i><b>4.6.12</b> Exercise 12</a></li>
+<li class="chapter" data-level="4.6.13" data-path="reg.html"><a href="reg.html#exercise-13-3"><i class="fa fa-check"></i><b>4.6.13</b> Exercise 13</a></li>
+<li class="chapter" data-level="4.6.14" data-path="reg.html"><a href="reg.html#exercise-14-2"><i class="fa fa-check"></i><b>4.6.14</b> Exercise 14</a></li>
+<li class="chapter" data-level="4.6.15" data-path="reg.html"><a href="reg.html#exercise-15-2"><i class="fa fa-check"></i><b>4.6.15</b> Exercise 15</a></li>
+<li class="chapter" data-level="4.6.16" data-path="reg.html"><a href="reg.html#exercise-16-2"><i class="fa fa-check"></i><b>4.6.16</b> Exercise 16</a></li>
+<li class="chapter" data-level="4.6.17" data-path="reg.html"><a href="reg.html#exercise-17-2"><i class="fa fa-check"></i><b>4.6.17</b> Exercise 17</a></li>
+<li class="chapter" data-level="4.6.18" data-path="reg.html"><a href="reg.html#exercise-18-3"><i class="fa fa-check"></i><b>4.6.18</b> Exercise 18</a></li>
+<li class="chapter" data-level="4.6.19" data-path="reg.html"><a href="reg.html#exercise-19-3"><i class="fa fa-check"></i><b>4.6.19</b> Exercise 19</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="reg.html"><a href="reg.html#practical-regression-iii"><i class="fa fa-check"></i><b>4.7</b> Practical regression III</a><ul>
+<li class="chapter" data-level="4.7.1" data-path="reg.html"><a href="reg.html#exercise-1-4"><i class="fa fa-check"></i><b>4.7.1</b> Exercise 1</a></li>
+<li class="chapter" data-level="4.7.2" data-path="reg.html"><a href="reg.html#exercise-2-4"><i class="fa fa-check"></i><b>4.7.2</b> Exercise 2</a></li>
+<li class="chapter" data-level="4.7.3" data-path="reg.html"><a href="reg.html#exercise-3-4"><i class="fa fa-check"></i><b>4.7.3</b> Exercise 3</a></li>
+<li class="chapter" data-level="4.7.4" data-path="reg.html"><a href="reg.html#exercise-4-4"><i class="fa fa-check"></i><b>4.7.4</b> Exercise 4</a></li>
+<li class="chapter" data-level="4.7.5" data-path="reg.html"><a href="reg.html#exercise-5-4"><i class="fa fa-check"></i><b>4.7.5</b> Exercise 5</a></li>
+<li class="chapter" data-level="4.7.6" data-path="reg.html"><a href="reg.html#exercise-6-4"><i class="fa fa-check"></i><b>4.7.6</b> Exercise 6</a></li>
+<li class="chapter" data-level="4.7.7" data-path="reg.html"><a href="reg.html#exercise-7-4"><i class="fa fa-check"></i><b>4.7.7</b> Exercise 7</a></li>
+<li class="chapter" data-level="4.7.8" data-path="reg.html"><a href="reg.html#exercise-8-4"><i class="fa fa-check"></i><b>4.7.8</b> Exercise 8</a></li>
+<li class="chapter" data-level="4.7.9" data-path="reg.html"><a href="reg.html#exercise-9-4"><i class="fa fa-check"></i><b>4.7.9</b> Exercise 9</a></li>
+<li class="chapter" data-level="4.7.10" data-path="reg.html"><a href="reg.html#exercise-10-4"><i class="fa fa-check"></i><b>4.7.10</b> Exercise 10</a></li>
+<li class="chapter" data-level="4.7.11" data-path="reg.html"><a href="reg.html#exercise-11-4"><i class="fa fa-check"></i><b>4.7.11</b> Exercise 11</a></li>
+<li class="chapter" data-level="4.7.12" data-path="reg.html"><a href="reg.html#exercise-12-4"><i class="fa fa-check"></i><b>4.7.12</b> Exercise 12</a></li>
+<li class="chapter" data-level="4.7.13" data-path="reg.html"><a href="reg.html#exercise-13-4"><i class="fa fa-check"></i><b>4.7.13</b> Exercise 13</a></li>
+<li class="chapter" data-level="4.7.14" data-path="reg.html"><a href="reg.html#exercise-14-3"><i class="fa fa-check"></i><b>4.7.14</b> Exercise 14</a></li>
+<li class="chapter" data-level="4.7.15" data-path="reg.html"><a href="reg.html#exercise-15-3"><i class="fa fa-check"></i><b>4.7.15</b> Exercise 15</a></li>
+<li class="chapter" data-level="4.7.16" data-path="reg.html"><a href="reg.html#exercise-16-3"><i class="fa fa-check"></i><b>4.7.16</b> Exercise 16</a></li>
+<li class="chapter" data-level="4.7.17" data-path="reg.html"><a href="reg.html#exercise-17-3"><i class="fa fa-check"></i><b>4.7.17</b> Exercise 17</a></li>
+<li class="chapter" data-level="4.7.18" data-path="reg.html"><a href="reg.html#exercise-19-4"><i class="fa fa-check"></i><b>4.7.18</b> Exercise 19</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="class.html"><a href="class.html"><i class="fa fa-check"></i><b>5</b> Classification</a><ul>
+<li class="chapter" data-level="5.1" data-path="class.html"><a href="class.html#book-1"><i class="fa fa-check"></i><b>5.1</b> Book</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="class.html"><a href="class.html#regression-trees"><i class="fa fa-check"></i><b>5.1.1</b> Regression trees</a></li>
+<li class="chapter" data-level="5.1.2" data-path="class.html"><a href="class.html#tree-pruning"><i class="fa fa-check"></i><b>5.1.2</b> Tree pruning</a></li>
+<li class="chapter" data-level="5.1.3" data-path="class.html"><a href="class.html#cost-complexity-pruning-weakest-link-pruning"><i class="fa fa-check"></i><b>5.1.3</b> Cost-complexity pruning / weakest-link pruning</a></li>
+<li class="chapter" data-level="5.1.4" data-path="class.html"><a href="class.html#building-a-regression-tree"><i class="fa fa-check"></i><b>5.1.4</b> Building a regression tree</a></li>
+<li class="chapter" data-level="5.1.5" data-path="class.html"><a href="class.html#trees-versus-linear-models"><i class="fa fa-check"></i><b>5.1.5</b> Trees versus linear models</a></li>
+<li class="chapter" data-level="5.1.6" data-path="class.html"><a href="class.html#bagging"><i class="fa fa-check"></i><b>5.1.6</b> Bagging</a></li>
+<li class="chapter" data-level="5.1.7" data-path="class.html"><a href="class.html#out-of-bag-error-estimation"><i class="fa fa-check"></i><b>5.1.7</b> Out-of-bag error estimation</a></li>
+<li class="chapter" data-level="5.1.8" data-path="class.html"><a href="class.html#variable-importance-measures"><i class="fa fa-check"></i><b>5.1.8</b> Variable importance measures</a></li>
+<li class="chapter" data-level="5.1.9" data-path="class.html"><a href="class.html#random-forests"><i class="fa fa-check"></i><b>5.1.9</b> Random forests</a></li>
+<li class="chapter" data-level="5.1.10" data-path="class.html"><a href="class.html#boosting"><i class="fa fa-check"></i><b>5.1.10</b> Boosting</a></li>
+<li class="chapter" data-level="5.1.11" data-path="class.html"><a href="class.html#boosting-algorithm"><i class="fa fa-check"></i><b>5.1.11</b> Boosting algorithm</a></li>
+<li class="chapter" data-level="5.1.12" data-path="class.html"><a href="class.html#classification"><i class="fa fa-check"></i><b>5.1.12</b> Classification</a></li>
+<li class="chapter" data-level="5.1.13" data-path="class.html"><a href="class.html#the-bayes-classifier"><i class="fa fa-check"></i><b>5.1.13</b> The Bayes classifier</a></li>
+<li class="chapter" data-level="5.1.14" data-path="class.html"><a href="class.html#k-nearest-neighbors"><i class="fa fa-check"></i><b>5.1.14</b> K-nearest neighbors</a></li>
+<li class="chapter" data-level="5.1.15" data-path="class.html"><a href="class.html#logistic-regression---skipped"><i class="fa fa-check"></i><b>5.1.15</b> Logistic regression - skipped</a></li>
+<li class="chapter" data-level="5.1.16" data-path="class.html"><a href="class.html#linear-discriminant-analysis"><i class="fa fa-check"></i><b>5.1.16</b> Linear discriminant analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="class.html"><a href="class.html#lecture-classification-i"><i class="fa fa-check"></i><b>5.2</b> Lecture Classification I</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="class.html"><a href="class.html#classification-1"><i class="fa fa-check"></i><b>5.2.1</b> Classification</a></li>
+<li class="chapter" data-level="5.2.2" data-path="class.html"><a href="class.html#evaluating-classifiers"><i class="fa fa-check"></i><b>5.2.2</b> Evaluating classifiers</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="class.html"><a href="class.html#lecture-classification-ii"><i class="fa fa-check"></i><b>5.3</b> Lecture Classification II</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="class.html"><a href="class.html#bagging-1"><i class="fa fa-check"></i><b>5.3.1</b> Bagging</a></li>
+<li class="chapter" data-level="5.3.2" data-path="class.html"><a href="class.html#random-forests-1"><i class="fa fa-check"></i><b>5.3.2</b> Random forests</a></li>
+<li class="chapter" data-level="5.3.3" data-path="class.html"><a href="class.html#boosting-1"><i class="fa fa-check"></i><b>5.3.3</b> Boosting</a></li>
+<li class="chapter" data-level="5.3.4" data-path="class.html"><a href="class.html#conclusion"><i class="fa fa-check"></i><b>5.3.4</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="class.html"><a href="class.html#practical-classification-1"><i class="fa fa-check"></i><b>5.4</b> Practical classification 1</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="class.html"><a href="class.html#exercise-1-5"><i class="fa fa-check"></i><b>5.4.1</b> Exercise 1</a></li>
+<li class="chapter" data-level="5.4.2" data-path="class.html"><a href="class.html#exercise-2-5"><i class="fa fa-check"></i><b>5.4.2</b> Exercise 2</a></li>
+<li class="chapter" data-level="5.4.3" data-path="class.html"><a href="class.html#exercise-3-5"><i class="fa fa-check"></i><b>5.4.3</b> Exercise 3</a></li>
+<li class="chapter" data-level="5.4.4" data-path="class.html"><a href="class.html#exercise-4-5"><i class="fa fa-check"></i><b>5.4.4</b> Exercise 4</a></li>
+<li class="chapter" data-level="5.4.5" data-path="class.html"><a href="class.html#exercise-5-5"><i class="fa fa-check"></i><b>5.4.5</b> Exercise 5</a></li>
+<li class="chapter" data-level="5.4.6" data-path="class.html"><a href="class.html#exercise-6-5"><i class="fa fa-check"></i><b>5.4.6</b> Exercise 6</a></li>
+<li class="chapter" data-level="5.4.7" data-path="class.html"><a href="class.html#exercise-7-5"><i class="fa fa-check"></i><b>5.4.7</b> Exercise 7</a></li>
+<li class="chapter" data-level="5.4.8" data-path="class.html"><a href="class.html#exercise-8-5"><i class="fa fa-check"></i><b>5.4.8</b> Exercise 8</a></li>
+<li class="chapter" data-level="5.4.9" data-path="class.html"><a href="class.html#exercise-9-5"><i class="fa fa-check"></i><b>5.4.9</b> Exercise 9</a></li>
+<li class="chapter" data-level="5.4.10" data-path="class.html"><a href="class.html#exercise-10-5"><i class="fa fa-check"></i><b>5.4.10</b> Exercise 10</a></li>
+<li class="chapter" data-level="5.4.11" data-path="class.html"><a href="class.html#exercise-11-5"><i class="fa fa-check"></i><b>5.4.11</b> Exercise 11</a></li>
+<li class="chapter" data-level="5.4.12" data-path="class.html"><a href="class.html#exercise-12-5"><i class="fa fa-check"></i><b>5.4.12</b> Exercise 12</a></li>
+<li class="chapter" data-level="5.4.13" data-path="class.html"><a href="class.html#exercise-13-5"><i class="fa fa-check"></i><b>5.4.13</b> Exercise 13</a></li>
+<li class="chapter" data-level="5.4.14" data-path="class.html"><a href="class.html#exercise-14-4"><i class="fa fa-check"></i><b>5.4.14</b> Exercise 14</a></li>
+<li class="chapter" data-level="5.4.15" data-path="class.html"><a href="class.html#exercise-15-4"><i class="fa fa-check"></i><b>5.4.15</b> Exercise 15</a></li>
+<li class="chapter" data-level="5.4.16" data-path="class.html"><a href="class.html#exercise-16-4"><i class="fa fa-check"></i><b>5.4.16</b> Exercise 16</a></li>
+<li class="chapter" data-level="5.4.17" data-path="class.html"><a href="class.html#exercise-17-4"><i class="fa fa-check"></i><b>5.4.17</b> Exercise 17</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="6" data-path="unsup.html"><a href="unsup.html"><i class="fa fa-check"></i><b>6</b> Unsupervised learning</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -173,8 +355,539 @@
             <section class="normal" id="section-">
 <div id="class" class="section level1">
 <h1><span class="header-section-number">Chapter 5</span> Classification</h1>
-<p>This is yet to come.</p>
+<div id="book-1" class="section level2">
+<h2><span class="header-section-number">5.1</span> Book</h2>
+<div id="regression-trees" class="section level3">
+<h3><span class="header-section-number">5.1.1</span> Regression trees</h3>
+<p>The final regions of a tree are known as terminal nodes or leaves. Decision trees are typically drawn upside-down, with the leaves at the bottom. The points along the tree where the predictor space is split are referred to as internal nodes. We refer to the segments of the trees that connect the nodes as branches. An advantage of trees over other regression methods is that they have a nice graphical representation and that they are relatively easy to interpret.</p>
+<p>Prediction via stratification of the feature space. Roughly speaking, there are two steps involved in building a regression tree.</p>
+<ol style="list-style-type: decimal">
+<li>We divide the predictor space - that is, the set of possible values for <span class="math inline">\(X_1, X_2, \dots, X_p\)</span> - into <span class="math inline">\(J\)</span> distinct and non-overlapping regions <span class="math inline">\(R_1, R_2, \dots, R_J\)</span>.</li>
+<li>For every observation in region <span class="math inline">\(R_j\)</span>, we make the same prediction, which is simply the mean of the response values for the training observations in <span class="math inline">\(R_j\)</span>.</li>
+</ol>
+<p>In theory, we could choose any shape for the regions, but we choose to divide the predictor space into high dimensional rectangles, or boxes, for simplicity and interpretation. The goal then is to find the boxes <span class="math inline">\(R_1, \dots, R_J\)</span> that minimize the RSS, given by
+<span class="math display">\[
+\sum^J_{j=1} \sum_{j \in R_J} (y_i - \hat{y}_{R_j})^2.
+\]</span>
+Unfortunately, it is computationally infeasible to consider every possible partition of the feature space into <span class="math inline">\(J\)</span> boxes. For this reason, we take a top-down, greedy approach that is known as recursive binary splitting. The approach is top-down because it begins at the top of the tree (where all observations belong to a single region) and then successively splits the predictor space; each split is indicated via two new branches further down the tree. It is greedy because at each step of the tree building process, the best split is made at that particular step, rather than looking ahead and picking a split that will lead to a better tree in some future step.</p>
+<p>We first select the predictor <span class="math inline">\(X_j\)</span> and the cutpoint <span class="math inline">\(s\)</span> such that splitting the predictor space into the regions <span class="math inline">\(\{X|X_j &lt; s\}\)</span> and <span class="math inline">\(\{X|X_j \geq X_j\}\)</span> leads to the greatest reduction in RSS (considering all predictors <span class="math inline">\(X_1, \dots, X_p\)</span> and all possible cutpoints). We repeat this process looking for the best predictor and best cutpoint in order to split the data further so as to minimize the RSS within each of the resulting regions, so we only split one of the two previously identified regions. This process is continued until some stopping criterion is reached.</p>
+</div>
+<div id="tree-pruning" class="section level3">
+<h3><span class="header-section-number">5.1.2</span> Tree pruning</h3>
+<p>The process described above is likely to overfit the data, leading to poor test set performance, because the resulting tree might be too complex. A smaller tree with fewer splits (fewer regions) might lead to lower variance and a better interpretation at the cost of a little bias. A possible solution then is to build the tree only as long as the decrease in the RSS due to each split exceeds some (high) threshold. This strategy will result in smaller trees, but is too short-sighted because a seemingly worthless split early on might be followed by a very good split later on.</p>
+<p>A better strategy is to grow a very large tree <span class="math inline">\(T_0\)</span> and then prune it back in order to obtain a subtree. The goal is to select a subtree that leads to the lowest test error rate. Given a subtree, we could use the validation set or cross-validation approach, but this is not feasible for every possible subtree. Instead, we need a small set of subtrees for consideration.</p>
+</div>
+<div id="cost-complexity-pruning-weakest-link-pruning" class="section level3">
+<h3><span class="header-section-number">5.1.3</span> Cost-complexity pruning / weakest-link pruning</h3>
+<p>Rather than considering every possible subtree, we consider a sequence of trees indexed by a non-negative tuning parameter <span class="math inline">\(\alpha\)</span>. For each value of <span class="math inline">\(\alpha\)</span> there corresponds a subtree <span class="math inline">\(T \subset T_0\)</span> such that
+<span class="math display">\[
+\sum^{|T|}_{m=1} \sum_{x_i \in R_m} (y_i - \hat{y}_{R_m})^2 + \alpha |T|
+\]</span>
+is as small as possible. Here <span class="math inline">\(|T|\)</span> indicates the number of terminal nodes of the tree <span class="math inline">\(T\)</span>, <span class="math inline">\(R_m\)</span> is the rectangle corresponding to the <span class="math inline">\(m^{th}\)</span> terminal node and <span class="math inline">\(\hat{y}_{R_m}\)</span> is the predicted response associated with <span class="math inline">\(R_m\)</span>.</p>
+<p>The fitting parameter <span class="math inline">\(\alpha\)</span> controls the trade-off between the subtrees complexity and its fit to the training data. When <span class="math inline">\(\alpha = 0\)</span>, subtree <span class="math inline">\(T\)</span> will equal <span class="math inline">\(T_0\)</span>. As <span class="math inline">\(\alpha\)</span> increases, there is a price to pay for having a tree with many terminal nodes, and so this equation will tend to be minimized for a smaller subtree. As we increase <span class="math inline">\(\alpha\)</span>, branches get pruned from a tree in a nested and predictable fashion, so obtaining the whole sequence of subtrees of <span class="math inline">\(\alpha\)</span> is easy. We can select a value for <span class="math inline">\(\alpha\)</span> using a validation set or using cross-validation. We then return to the full dataset and obtain the subtree corresponding to <span class="math inline">\(\alpha\)</span>.</p>
+</div>
+<div id="building-a-regression-tree" class="section level3">
+<h3><span class="header-section-number">5.1.4</span> Building a regression tree</h3>
+<ol style="list-style-type: decimal">
+<li><p>Use recursive binary splitting to grow a large tree on the training data, stopping only when each terminal node has fewer than some minimum number of observations.</p></li>
+<li><p>Apply cost-complexity pruning to the large tree in order to obtain a sequence of best subtrees as a function of <span class="math inline">\(\alpha\)</span>.</p></li>
+<li><p>Use <span class="math inline">\(K\)</span>-fold cross-validation to choose <span class="math inline">\(\alpha\)</span>. That is, divide the training observations into <span class="math inline">\(K\)</span> folds. For each <span class="math inline">\(k = 1, \dots, K\)</span></p>
+<p>3.1 Repeat steps 1 and 2 on all but the <span class="math inline">\(k^{th}\)</span> fold of the training data.</p>
+<p>3.2 Evaluate the MSE on the data in the validation set - fold <span class="math inline">\(k\)</span>.</p></li>
+<li><p>Return the subtree from step 2 corresponding to optimal <span class="math inline">\(\alpha\)</span>.</p></li>
+</ol>
+</div>
+<div id="trees-versus-linear-models" class="section level3">
+<h3><span class="header-section-number">5.1.5</span> Trees versus linear models</h3>
+<p>If the relationship between the features and the response is well approximated by a linear model, a linear regression model will likely outperform a regression tree. If there instead is a highly nonlinear and complex relationship, decision trees may outperform classical approaches. The relative performance of tree-based and classical approaches can be assessed by estimating the test error, using cross-validation or the validation set approach. Sometimes, a tree might be preferred for the sake of interpretability and visualization.</p>
+<p><strong>Advantages and disadvantages of trees</strong></p>
+<ul>
+<li>Pro: Trees are easy to explain (easier than linear regression).</li>
+<li>Pro: Trees mirror human decision making more closely than classical regression and classification approaches.</li>
+<li>Pro: Easily interpreted, even by non-experts, and displayed graphically.</li>
+<li>Pro: Can handle categorical predictors without needing dummies.</li>
+<li>Con: Generally less predictive accuracy than other approaches.</li>
+<li>Con: Trees can be very non-robust (i.e., a slight change in the data can yield dramatically different results.)</li>
+</ul>
+</div>
+<div id="bagging" class="section level3">
+<h3><span class="header-section-number">5.1.6</span> Bagging</h3>
+<p>Decision trees suffer from high variance (splitting the data into two parts could yield very different results). Bootstrap aggregation / bagging is a general purpose procedure for reducing the variance of a statistical learning method. Recall that given a set of <span class="math inline">\(n\)</span> independent observations <span class="math inline">\(Z_1, \dots, Z_n\)</span>, each with common variance <span class="math inline">\(\sigma^2\)</span>, the variance of the mean <span class="math inline">\(\bar{Z}\)</span> of the observations is given by <span class="math inline">\(\sigma^2/n\)</span>. In other words, averaging a set of observations reduces the variance. A natural way to reduce the variance and hence increase the prediction accuracy of a method is to take many training sets, build a separate prediction model using each training set and average the resulting predictions. That is, we calculate <span class="math inline">\(\hat{f}^1(x), \hat{f}^2(x), \dots, \hat{f}^B{x}\)</span> using <span class="math inline">\(B\)</span> separate training sets and average them in order to obtain a single, low-variance statistical learning model, given by
+<span class="math display">\[
+\hat{f}_{\text{avg}}(x) = \frac{1}{B}\sum^B_{b=1}\hat{f}^b(x).
+\]</span>
+While bagging can improve predictions for many regression methods, it is particularly useful for decision trees. For regression trees, bagging entails constructing <span class="math inline">\(B\)</span> regression trees using <span class="math inline">\(B\)</span> bootstrapped training sets, and average the resulting predictions. These trees are grown deep, and are not pruned, so each individual tree has high variance, but low bias. Averaging <span class="math inline">\(B\)</span> trees reduces the variance. Bagging gives impressive improvements in accuracy by combining hundreds or thousands of trees into a single procedure. When <span class="math inline">\(Y\)</span> is qualitative, there are a few possible approaches of which the simplest is to take the majority vote: the overall prediction is the most commony occuring class among the <span class="math inline">\(B\)</span> predictions.</p>
+</div>
+<div id="out-of-bag-error-estimation" class="section level3">
+<h3><span class="header-section-number">5.1.7</span> Out-of-bag error estimation</h3>
+<p>There is a very straightforward way to estimate the test error of a bagged model, without the need to perform cross-validation or the validation set approach. On average, each bagged tree makes use of around two-thirds of the observations. The remaining one-third of the observations not used to fit a given bagged tree are referred to as the out-of-bag (OOB) observations. We can predict the response for the <span class="math inline">\(i^{th}\)</span> observation using each of the trees in which the observation was OOB, which will yield approximately <span class="math inline">\(B/3\)</span> predictions for observation <span class="math inline">\(i\)</span>. In order to obtain a single prediction for the <span class="math inline">\(i^{th}\)</span> observation, we can average these predicted responses (regression) or take a majority vote (classification), leading to a single OOB prediction for observation <span class="math inline">\(i\)</span>. Doing this this for all <span class="math inline">\(n\)</span> observations, we can calculate the overall OOB MSE (regression) or OOB classification error (classification). The resulting OOB error is a valid estimate of the test error for the bagged model. With <span class="math inline">\(B\)</span> sufficiently large, the OOB error is virtually equivalent to the LOOCV error. The OOB approach for estimating the test error is particularly convenient when performing bagging on large datasets for which cross-validation would be computationally onerus.</p>
+</div>
+<div id="variable-importance-measures" class="section level3">
+<h3><span class="header-section-number">5.1.8</span> Variable importance measures</h3>
+<p>Bagging typically results in improved accuracy over prediction using a single tree. However, it can be difficult to interpret the resulting model. After bagging, we can no longer represent the results using a single tree. One can obtain an overall summary of the importance of each predictor using the RSS (regression) or the Gini index (classification).</p>
+<ul>
+<li>Record the total amount that the RSS is decreased due to splits over a given predictor, averaged over all <span class="math inline">\(B\)</span> trees. So a large value indicates an important predictor.</li>
+<li>Add up the total amount that the Gini index is decreased by splits over a given predictor, averaged over all <span class="math inline">\(B\)</span> trees.</li>
+</ul>
+<p>We can displayvariable importance graphically using the relative decrease of each predictor to the predictor that is most influential.</p>
+</div>
+<div id="random-forests" class="section level3">
+<h3><span class="header-section-number">5.1.9</span> Random forests</h3>
+<p>Random forests provide an improvement over bagged trees by a small tweak that decorrelates the trees. As in bagging, we vuild <span class="math inline">\(B\)</span> trees on bootstrapped samples, but when building these trees, each time a split in a tree is considered, a random sample of <span class="math inline">\(m\)</span> predictors is chosen as split candidates from all <span class="math inline">\(p\)</span> predictors. The split is allowed to use only those <span class="math inline">\(m\)</span> predictors (usually, <span class="math inline">\(m=\sqrt{p}\)</span>). Assume one very strong predictor, along with a number of moderately strong predictors. In the collection of bagged trees, most or all trees will use this strong predictor in the top split, so all of the bagged trees will look quite similar, and hence the predictions from all trees will look quite similar (i.e., they are highly correlated). Averaging many highly correlated quantities does not lead to as large of a reduction in variance as averaging many uncorrelated quantities. In random forests, on average <span class="math inline">\((p - m)/p\)</span> of the splits will not even consider the strong predictor, and so other predictors will have more chance. We can think of this process as decorrelating the trees, making the average of the resulting trees less variable, and hence more reliable. If <span class="math inline">\(m=p\)</span>, one simply performs bagging, but <span class="math inline">\(m&lt;p\)</span> usually provides much better results than bagging (lower test error and OOB error). Using a small number <span class="math inline">\(m\)</span> will typically be helpful when we have a large number of correlated predictors.</p>
+</div>
+<div id="boosting" class="section level3">
+<h3><span class="header-section-number">5.1.10</span> Boosting</h3>
+<p>Like bagging, boosting is a general approach that can be applied to many statistical learning methods for regression or classification. In bagging, each tree is built on a bootstrap dataset, independent of other trees. Boosting works similar to bagging, but trees are grown sequentially: each tree is grown using information from previously grown trees. Boosting does not involve bootstrap sampling, instead, each tree is fit on a modified version of the original dataset.</p>
+<p>Unlike fitting a single large decision tree to the data, which amounts to fitting the data hard and potentially overfitting, the boosting approach learns slowly. Given the current model, we fit a decision tree to the residuals from the model. That is, we fit a tree using the current residuals, rather than the outcome <span class="math inline">\(Y\)</span>, as the response. We then add this new decision tree into the fitted function, in order to update the residuals. Each of these trees can be rather small, with just a few terminal nodes, determined by the parameter <span class="math inline">\(d\)</span> in the algorithm. By fitting slow trees to the residuals, we slowly improve <span class="math inline">\(\hat{f}\)</span> in areas where it does not perform well. We shrinkage parameter <span class="math inline">\(\lambda\)</span> slows the process down even further, allowing more and more different shaped trees to attack the residuals. In general, statistical learning approaches that learn slowly tend to perform well. In boosting, unlike bagging, the construction of each tree depends strongly on the trees that have been already grown.</p>
+<p>Boosting has three tuning parameters</p>
+<ol style="list-style-type: decimal">
+<li>The number of trees <span class="math inline">\(B\)</span>. Unlike bagging and random forests, boosting can overfit if <span class="math inline">\(B\)</span> is too large, although this overfitting tends to occur slowly, if at all. <span class="math inline">\(B\)</span> can be determined using cross-validation.</li>
+<li>Shrinkage parameter <span class="math inline">\(\lambda\)</span>, a small positive number. <span class="math inline">\(\lambda\)</span> controls the rate at which boosting learns. Typical values are <span class="math inline">\(0.01\)</span> or <span class="math inline">\(0.001\)</span> and the right choice can depend on the problem. Very small <span class="math inline">\(\lambda\)</span> can require using a very large <span class="math inline">\(B\)</span> in order to achieve good performance.</li>
+<li>The number of splits <span class="math inline">\(d\)</span> in each tree, which controls the complexity of the boosted ensemble. Often, <span class="math inline">\(d = 1\)</span> works well, in which case each tree is a stump, consisting of a single split. In this case, the boosted ensemble is fitting an additive model, since each term involves only a single variable. More generally, <span class="math inline">\(d\)</span> is the interaction depth, and controls the interaction order of the boosted model, since <span class="math inline">\(d\)</span> splits can involve at most <span class="math inline">\(d\)</span> variables.</li>
+</ol>
+</div>
+<div id="boosting-algorithm" class="section level3">
+<h3><span class="header-section-number">5.1.11</span> Boosting algorithm</h3>
+<ol style="list-style-type: decimal">
+<li><p>Set <span class="math inline">\(\hat{f}(x)=0\)</span> and <span class="math inline">\(r_i=y_i\)</span> for all <span class="math inline">\(i\)</span> in the training set.</p></li>
+<li><p>For <span class="math inline">\(b = 1, 2, \dots, B\)</span> repeat</p>
+<p>2.1 Fit a tree <span class="math inline">\(\hat{f}^b\)</span> with <span class="math inline">\(d\)</span> splits (<span class="math inline">\(d+1\)</span> terminal nodes) to the training data <span class="math inline">\((X,r)\)</span>.</p>
+<p>2.2 Update <span class="math inline">\(\hat{f}\)</span> by adding in a shrunken version of the new tree
+<span class="math display">\[\hat{f}(x) &lt;- \hat{f}(x) + \lambda \hat{f}^b(x)\]</span></p>
+<p>2.3 Update the residuals <span class="math inline">\(r_i &lt;- r_i - \lambda \hat{f}^b(x_i)\)</span>.</p></li>
+<li><p>Output the boosted model <span class="math display">\[\hat{f}(x) = \sum^B_{b=1} \lambda \hat{f}^b(x).\]</span></p></li>
+</ol>
+</div>
+<div id="classification" class="section level3">
+<h3><span class="header-section-number">5.1.12</span> Classification</h3>
+<p>Suppose that we seek to estimate <span class="math inline">\(f\)</span> on the basis of training observations <span class="math inline">\(\{(x_1,y_1), \dots, (x_n, y_n)\}\)</span>, where <span class="math inline">\(Y\)</span> is quantitative. The most common approach for quantifying the accuracy of the estimate <span class="math inline">\(\hat{f}\)</span> is the training error rate, the proportion of mistakes that are made if we apply our estimate <span class="math inline">\(\hat{f}\)</span> to the training observations
+<span class="math display">\[
+\frac{1}{n} \sum^n_{i=1} I(y_i \neq \hat{y_0}),
+\]</span>
+with <span class="math inline">\(y_i\)</span> the predicted class label for observation <span class="math inline">\(i\)</span>. Hence, we compute the fraction of incorrect classifications. Note that this gives the training error rate. The test error rate is given by
+<span class="math display">\[
+\text{Ave}(I(y_0\neq\hat{y}_0)).
+\]</span></p>
+</div>
+<div id="the-bayes-classifier" class="section level3">
+<h3><span class="header-section-number">5.1.13</span> The Bayes classifier</h3>
+<p>It is possible to show that the test error rate is minimized, on average, by a very simple classifier that assigns each observation to the most likely class given its predictor values. That is, we could assign a test observation with predictor vector <span class="math inline">\(x_0\)</span> to the class <span class="math inline">\(j\)</span> for which
+<span class="math display">\[
+Pr(Y=j|X=x_0)
+\]</span>
+is largest. Note that this equation gives a conditional probability, and this very simple classifier is called the Bayes classifier.</p>
+<p>In a two-dimensional plot, the line that represents the points where the probability to be in class <span class="math inline">\(j\)</span> equals exactly <span class="math inline">\(50\%\)</span> with <span class="math inline">\(j \in (1,2)\)</span>, is called the Bayes decision boundary. The Bayesian decision boundary basically determines which class observation <span class="math inline">\(i\)</span> will be assigned to. The Bayes classifier produces the lowest possible test error rate, called the Bayes error rate. Since the Bayes classifier will always choose the class for which the conditional probability is largest, the error rate at <span class="math inline">\(X=x_0\)</span> will be <span class="math inline">\(1 - \text{max}_j\text{Pr}(Y=j|X=x_0)\)</span>. In generall, the overall Bayes error rate is given by
+<span class="math display">\[
+1 - E(\text{max Pr}(Y=j|X)),
+\]</span>
+where the expectation averages the probability over all possible values of <span class="math inline">\(X\)</span>. The Bayes error rate is analogous to the irreducible error.</p>
+</div>
+<div id="k-nearest-neighbors" class="section level3">
+<h3><span class="header-section-number">5.1.14</span> K-nearest neighbors</h3>
+<p>In theory, we would always like to predict qualitative responses using the Bayes classifier. For real data, we do not know the conditional distribution of <span class="math inline">\(Y\)</span> given <span class="math inline">\(X\)</span>, and so computing the Bayes classifier is impossible. Therefore, the Bayes classifier serves as an unattainable gold standard against which to compare other methods. Given a positive integer <span class="math inline">\(K\)</span> and a test observation <span class="math inline">\(x_0\)</span>, the KNN classifier first identifies the <span class="math inline">\(K\)</span> points in the training data that are closest to <span class="math inline">\(x_0\)</span>, represented by <span class="math inline">\(\mathcal{N}_0\)</span>. It then estimates the conditional probability for class <span class="math inline">\(j\)</span> as the fraction of points in <span class="math inline">\(\mathcal{N}_0\)</span> whose response values equal <span class="math inline">\(j\)</span>:
+<span class="math display">\[
+\text{Pr}(Y=j|X=x_0) = \frac{1}{K} \sum_{i \in \mathcal{N}_0} I(y_i=j).
+\]</span>
+Finally, KNN applies Bayes rule and classifies the test observation <span class="math inline">\(x_0\)</span> to the class with the largest probability. Despite the fact that it is a very simple approach, KNN can often produce classifiers that are surprisingly close to the optimal Bayes classifier. The choice of <span class="math inline">\(K\)</span> has a drastic effect on the KNN classifier obtained. With <span class="math inline">\(K=1\)</span>, the decision boundary is overly flexible and finds patterns in the data that don’t correspond to the Bayes decision boundary. This corresponds to a classifier with low bias but very high variance. As <span class="math inline">\(K\)</span> increases, the method becomes less flexible.</p>
+</div>
+<div id="logistic-regression---skipped" class="section level3">
+<h3><span class="header-section-number">5.1.15</span> Logistic regression - skipped</h3>
+</div>
+<div id="linear-discriminant-analysis" class="section level3">
+<h3><span class="header-section-number">5.1.16</span> Linear discriminant analysis</h3>
+<p>Logistic regression directly involves model <span class="math inline">\(\text{Pr}(Y=k|X=x)\)</span> using the logistic function for the case of two response classes. Using linear discriminant analysis (LDA), we model the distribution of the predictors <span class="math inline">\(X\)</span> separately in each of the response classes (i.e., given <span class="math inline">\(Y\)</span>), and use Bayes’ theorem to flip these around into estimates for <span class="math inline">\(\text{Pr}(Y=k|X=x)\)</span>. When these distributions are normal, it turns out that the model is very similar in form to logistic regression.</p>
+<p>Why do we then need LDA if we have logistic regression</p>
+<ul>
+<li>When the classes are well separated, the parameter estimates for the logistic regression model are surprisingly instable. LDA does not suffer from this problem.</li>
+<li>If <span class="math inline">\(n\)</span> is small and the predictors <span class="math inline">\(X\)</span> are approximately normally distributed, LDA is again more stable than logistic regression.</li>
+<li>LDA is popular when we have more than 2 response classes.</li>
+</ul>
+<p>Logistic regression and LDA differ only in their fitting procedures, so often the two approaches give similar results. However, LDA assumes that the observations are drawn form a Gaussian distribution with a common covariance matrix in each class, and so can give improvements over logistic regression when this assumption holds. Conversely, logistic regression can outperform LDA if these Gaussian assumptions are not met. KNN is a completely non-parametric approach, so no assumptions are made about the shape of the decision boundary. Therefore, we can expect this approach to dominate LDA and logistic regression when the decision boundary is highly non-linear. On the other hand, KNN does not tell us which predictors are important.</p>
+</div>
+</div>
+<div id="lecture-classification-i" class="section level2">
+<h2><span class="header-section-number">5.2</span> Lecture Classification I</h2>
+<div id="classification-1" class="section level3">
+<h3><span class="header-section-number">5.2.1</span> Classification</h3>
+<p>A discrete outcome variable - qualitative.</p>
+<p>Prediction / classification trees predict the probability that <span class="math inline">\(\text{Pr}(Y=j|X=x)\)</span>, by using recursive partition: first, the split is find that make the observations as similar as possible (Gini index measures purity within a class) on the outcome within that split, and within each resulting group, we perform step one again until some threshold has been reached.</p>
+<p>Criteria for “as similar as possible” are the purity, the reduction in MSE. Also, we could stop (early stopping) - then we stop partitioning when there are fewer than <span class="math inline">\(n_{min}\)</span> observations in the group (typically 10); or when the total complexity of the model becomes more than <span class="math inline">\(cp\)</span> (typically cp = 0.05).</p>
+</div>
+<div id="evaluating-classifiers" class="section level3">
+<h3><span class="header-section-number">5.2.2</span> Evaluating classifiers</h3>
+<ul>
+<li><p><span class="math inline">\(\text{Specificity:} \frac{TN}{TN + FP} = \frac{TN}{Total Negative}\)</span></p></li>
+<li><p><span class="math inline">\(\text{Sensitivity (&quot;recall&quot;):} \frac{TP}{TP + FN}\)</span></p></li>
+<li><p><span class="math inline">\(\text{Accuracy (ACC):} \frac{TP + TN}{TP + FP + TN + FN} = \frac{correct}{total}\)</span></p></li>
+<li><p><span class="math inline">\(\text{Error rate:} 1 - \text{Accuracy}\)</span></p></li>
+<li><p><span class="math inline">\(\text{Negative Predictive Value (NPV):} \frac{TN}{TN + FN}\)</span></p></li>
+<li><p><span class="math inline">\(\text{Positive Predictive Value (PPV):} \frac{TP}{TP + FP}\)</span></p></li>
+<li><p><span class="math inline">\(\text{F}_1 = 2 \cdot \frac{1}{\frac{1}{\text{recall}} + \frac{1}{\text{precision}}} = 2 \cdot \frac{\text{precision}\cdot\text{recall}}{\text{precision + recall}}\)</span></p></li>
+<li><p>Like accuracy, the <span class="math inline">\(F_1\)</span> quantifies the overall amount of error, but unlike the accuracy, the <span class="math inline">\(F_1\)</span> score is not as affected by uneven class distributions.</p></li>
+</ul>
+<p>When the sensitivity or the specificity is of particular interest, one can move the threshold of classifying an observation (for example, <span class="math inline">\(1 \text{ if } p &gt; .3\)</span>). So, moving the threshold affects the sensitivity and specificity.</p>
+<ul>
+<li>ROC curve - false positive rate on the x-axis (<span class="math inline">\(1 - \text{specificity}\)</span>) and true positive rate (recall) on the y-axis.</li>
+</ul>
+<p>Perfect ROC is a 90 degree angle, because then one reaches a sensitivity of 1 at a specificity of 1 (and 1 - specificity of zero).</p>
+<p>Besides the quality of a single-shot predicted class (“yes/no”, “survive/die”), we could be interested in the predicted probability (e.g., risk scores in medicine, betting).</p>
+<p>A probability is a number <span class="math inline">\(p\)</span> such that the proportion of events given that number is about <span class="math inline">\(p\)</span>. So ideally, the classification procedure (e.g., a classification tree) outputs a predicted probability directly. However, unfortunately not all classifiers output something like a predicted probability (e.g., support vector machines); and for many classifiers that do give a number between 0 and 1 called a “predicted probability”, the predicted probability does not give the correct proportion of events.</p>
+<ul>
+<li>This is called the <strong><em>calibration problem</em></strong>.</li>
+</ul>
+<p>A predicted probability is calibrated when it conforms to the definition above (that is, the probability equals the proportion of events).</p>
+<p>The calibration plot can be used to assess whether the outputted “predicted probabilities” also give the correct proportion of events.</p>
+<p>Some libraries allow you to tweak the predicted probabilities so they fit on the curve in the calibration plot. This is called probability calibration. There are many methods that can do this, but the most commonly used one takes a classification model we know is calibrated (usually logistic regression) and applies it to the uncalibrated scores outputted by the classifier.</p>
+<p>The Brier score - MSE for classification problems.
+By saying <span class="math inline">\(\text{yes}=1\)</span> and <span class="math inline">\(\text{no}=0\)</span>, we can also evaluate the Mean Squared Error
+<span class="math display">\[
+\text{Brier score MSE} = \frac{1}{n} \sum^n_{i=1}(\hat{p}_i - y_i)^2
+\]</span></p>
+<p>It turns out that the MSE can be reworked into two terms:
+<span class="math display">\[
+\text{Brier score MSE} = \text{Calibration term + AUC term}
+\]</span>
+and both terms are such that smaller means better. In other words, the MSE conflates calibration and AUC, so the Brier score is useful if you are interested in both terms.</p>
+<p>Class imbalance - when at least one class has very few observations. However, measures such as the sensitivity, specificity, accuracy and F_1 measure emphasize larger classes. Sometimes, the smaller classes can be most interesting. Then, one could use oversampling or undersampling and weighting.</p>
+</div>
+</div>
+<div id="lecture-classification-ii" class="section level2">
+<h2><span class="header-section-number">5.3</span> Lecture Classification II</h2>
+<p>Trees are generally low in bias, but high in variance, therefore, they generally do not have the same level of predictive accuracy as other approaches. However, by aggregating many trees, the predictive performance of trees can be substantially improved.</p>
+<div id="bagging-1" class="section level3">
+<h3><span class="header-section-number">5.3.1</span> Bagging</h3>
+<p>The predictions from a single tree might differ strongly and meaninglessly across training sets, due to a high variance. However, by using different training sets to create different models that all have low bias but high variance and averaging the predictions, the variance can decrease substantially at the cost of a small increase in bias.</p>
+<p>By means of bootstrapping, one can get different models to fit a tree to, all with different observations. So, we do the following <span class="math inline">\(B\)</span> times:</p>
+<ul>
+<li>Resample <span class="math inline">\(N\)</span> values <strong>with replacement</strong> from the training sample (with <span class="math inline">\(N\)</span> observations).</li>
+<li>We fit the model (tree) on each bootstrap sample (that contains on average 2/3 of the training observations).</li>
+<li>The other observations are <em>out of bag</em></li>
+</ul>
+<p>For new data, we combine the predictions of the <span class="math inline">\(B\)</span> models - for classification by means of the majority vote; for regression we simply use the average.</p>
+<p>Out-of-bag instances can be used as a validation set for each model.</p>
+</div>
+<div id="random-forests-1" class="section level3">
+<h3><span class="header-section-number">5.3.2</span> Random forests</h3>
+<p>Wisdom of the crowd: the collective knowledge of a diverse and independent body of people typically exceeds the knowledge of any single individual, and can be harnessed by voting. However, bagged trees are not diverse and independent; they are likely to choose similar splits at the higher levels, because the observations are highly similar.</p>
+<p>A random forest is a bootstrap aggregated set of trees with a handicap: at each split, we consider only <span class="math inline">\(m\)</span> out of the <span class="math inline">\(p\)</span> predictors, so that we decorrelate the trees. Namely, is an important predictor is not considered, it cannot be chosen that often, so that other predictors have a chance to be influential as well.</p>
+<p>When <span class="math inline">\(m=p\)</span>, we have standard bagging, but usually, <span class="math inline">\(m = \sqrt{p}\)</span>, which can result in a substantial improvement of the test error.</p>
+</div>
+<div id="boosting-1" class="section level3">
+<h3><span class="header-section-number">5.3.3</span> Boosting</h3>
+<p>With high bias, but low variance models, the predictions are stable, but systematically wrong for some proportion of the training data. The idea of boosting is to consecutively fit high bias, low variance models to parts where previous models don’t fit well. That is, boosting learns from mistakes of the previous models. Ultimately, they average the predictions for new data by combining “weak” classifiers (relatively simple trees with a small number of splits) into a powerful “committee”.</p>
+<p>That is, we can fit consecutively a tree with a single split on the data, where some residuals are weighted more important, so that at the next split, there is given more importance to these residuals. If this is done consecutively, and the predictions are averaged, one can get very good predictions.</p>
+</div>
+<div id="conclusion" class="section level3">
+<h3><span class="header-section-number">5.3.4</span> Conclusion</h3>
+<p>Ensemble methods combine sets of base models (e.g., trees), the prediction from on ensemble is simply the average, or the majority vote. Bagging uses an ensemble of bootstraps of high variance but low bias models; boosting uses an ensemble from high residuals of high bias and low variance models.</p>
+<p>Overall, ensemble methods have been proven to be very useful, they often work well out of the box and are state-of-the-art in many competitions.</p>
+</div>
+</div>
+<div id="practical-classification-1" class="section level2">
+<h2><span class="header-section-number">5.4</span> Practical classification 1</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="class.html#cb1-1"></a><span class="kw">library</span>(MASS)</span>
+<span id="cb1-2"><a href="class.html#cb1-2"></a><span class="kw">library</span>(class)</span>
+<span id="cb1-3"><a href="class.html#cb1-3"></a><span class="kw">library</span>(ISLR)</span>
+<span id="cb1-4"><a href="class.html#cb1-4"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb1-5"><a href="class.html#cb1-5"></a><span class="kw">set.seed</span>(<span class="dv">1234</span>)</span></code></pre></div>
+<div id="exercise-1-5" class="section level3">
+<h3><span class="header-section-number">5.4.1</span> Exercise 1</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="class.html#cb2-1"></a><span class="kw">ggplot</span>(Default, <span class="kw">aes</span>(<span class="dt">x =</span> balance, <span class="dt">y =</span> income, <span class="dt">col =</span> default)) <span class="op">+</span></span>
+<span id="cb2-2"><a href="class.html#cb2-2"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="dv">1</span>) <span class="op">+</span></span>
+<span id="cb2-3"><a href="class.html#cb2-3"></a><span class="st">  </span><span class="kw">scale_color_brewer</span>(<span class="dt">name =</span> <span class="st">&quot;Default&quot;</span>, <span class="dt">palette =</span> <span class="st">&quot;Set1&quot;</span>) <span class="op">+</span></span>
+<span id="cb2-4"><a href="class.html#cb2-4"></a><span class="st">  </span><span class="kw">theme_minimal</span>()</span></code></pre></div>
+<p><img src="dav_files/figure-html/unnamed-chunk-3-1.png" width="672" />
+People who default generally have a much higher balance score. That is, there is quite a clear split after a balance score of 1500.</p>
+</div>
+<div id="exercise-2-5" class="section level3">
+<h3><span class="header-section-number">5.4.2</span> Exercise 2</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="class.html#cb3-1"></a><span class="kw">ggplot</span>(Default, <span class="kw">aes</span>(<span class="dt">x =</span> balance, <span class="dt">y =</span> income, <span class="dt">col =</span> default)) <span class="op">+</span></span>
+<span id="cb3-2"><a href="class.html#cb3-2"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="dv">1</span>) <span class="op">+</span></span>
+<span id="cb3-3"><a href="class.html#cb3-3"></a><span class="st">  </span><span class="kw">scale_color_brewer</span>(<span class="dt">name =</span> <span class="st">&quot;Default&quot;</span>, <span class="dt">palette =</span> <span class="st">&quot;Set1&quot;</span>) <span class="op">+</span></span>
+<span id="cb3-4"><a href="class.html#cb3-4"></a><span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span></span>
+<span id="cb3-5"><a href="class.html#cb3-5"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>student)</span></code></pre></div>
+<p><img src="dav_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>Students generally have a much lower income, but students with a balance score are seemingly just as likely to default as non-students.</p>
+</div>
+<div id="exercise-3-5" class="section level3">
+<h3><span class="header-section-number">5.4.3</span> Exercise 3</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="class.html#cb4-1"></a>Default<span class="op">$</span>student &lt;-<span class="st"> </span><span class="kw">ifelse</span>(Default<span class="op">$</span>student <span class="op">==</span><span class="st"> &quot;Yes&quot;</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb4-2"><a href="class.html#cb4-2"></a></span>
+<span id="cb4-3"><a href="class.html#cb4-3"></a>train &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="kw">nrow</span>(Default), <span class="fl">0.8</span> <span class="op">*</span><span class="st"> </span><span class="kw">nrow</span>(Default))</span>
+<span id="cb4-4"><a href="class.html#cb4-4"></a>default_train &lt;-<span class="st"> </span>Default[train,]</span>
+<span id="cb4-5"><a href="class.html#cb4-5"></a>default_test &lt;-<span class="st"> </span>Default[<span class="op">-</span>train,]</span></code></pre></div>
+</div>
+<div id="exercise-4-5" class="section level3">
+<h3><span class="header-section-number">5.4.4</span> Exercise 4</h3>
+<p>K-nearest neighbors (KNN) classification</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="class.html#cb5-1"></a>knn_<span class="dv">5</span>_pred &lt;-<span class="st"> </span><span class="kw">knn</span>(default_train <span class="op">%&gt;%</span><span class="st"> </span>dplyr<span class="op">::</span><span class="kw">select</span>(student, balance, income), </span>
+<span id="cb5-2"><a href="class.html#cb5-2"></a>                  default_test <span class="op">%&gt;%</span><span class="st"> </span>dplyr<span class="op">::</span><span class="kw">select</span>(student, balance, income), </span>
+<span id="cb5-3"><a href="class.html#cb5-3"></a>                  <span class="dt">cl =</span> default_train<span class="op">$</span>default, <span class="dt">k =</span> <span class="dv">5</span>)</span></code></pre></div>
+</div>
+<div id="exercise-5-5" class="section level3">
+<h3><span class="header-section-number">5.4.5</span> Exercise 5</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="class.html#cb6-1"></a>cowplot<span class="op">::</span><span class="kw">plot_grid</span>(<span class="kw">ggplot</span>(<span class="dt">data =</span> default_test, <span class="kw">aes</span>(<span class="dt">x =</span> balance, <span class="dt">y =</span> income, <span class="dt">col =</span> default)) <span class="op">+</span></span>
+<span id="cb6-2"><a href="class.html#cb6-2"></a><span class="st">                     </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="dv">1</span>) <span class="op">+</span></span>
+<span id="cb6-3"><a href="class.html#cb6-3"></a><span class="st">                     </span><span class="kw">scale_color_brewer</span>(<span class="dt">name =</span> <span class="st">&quot;Default&quot;</span>, <span class="dt">palette =</span> <span class="st">&quot;Set1&quot;</span>) <span class="op">+</span></span>
+<span id="cb6-4"><a href="class.html#cb6-4"></a><span class="st">                     </span><span class="kw">theme_minimal</span>() <span class="op">+</span></span>
+<span id="cb6-5"><a href="class.html#cb6-5"></a><span class="st">                     </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>student),</span>
+<span id="cb6-6"><a href="class.html#cb6-6"></a>                   <span class="kw">ggplot</span>(<span class="dt">data =</span> default_test, <span class="kw">aes</span>(<span class="dt">x =</span> balance, <span class="dt">y =</span> income, <span class="dt">col =</span> knn_<span class="dv">5</span>_pred)) <span class="op">+</span></span>
+<span id="cb6-7"><a href="class.html#cb6-7"></a><span class="st">                     </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="dv">1</span>) <span class="op">+</span></span>
+<span id="cb6-8"><a href="class.html#cb6-8"></a><span class="st">                     </span><span class="kw">scale_color_brewer</span>(<span class="dt">name =</span> <span class="st">&quot;Default&quot;</span>, <span class="dt">palette =</span> <span class="st">&quot;Set1&quot;</span>) <span class="op">+</span></span>
+<span id="cb6-9"><a href="class.html#cb6-9"></a><span class="st">                     </span><span class="kw">theme_minimal</span>() <span class="op">+</span></span>
+<span id="cb6-10"><a href="class.html#cb6-10"></a><span class="st">                     </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>student), <span class="dt">nrow =</span> <span class="dv">2</span>)</span></code></pre></div>
+<p><img src="dav_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>There are quite some misclassifications - many “no” predictions with “yes” true class; the other way around seems less present.</p>
+</div>
+<div id="exercise-6-5" class="section level3">
+<h3><span class="header-section-number">5.4.6</span> Exercise 6</h3>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="class.html#cb7-1"></a>knn_<span class="dv">2</span>_pred &lt;-<span class="st">  </span><span class="kw">knn</span>(default_train <span class="op">%&gt;%</span><span class="st"> </span>dplyr<span class="op">::</span><span class="kw">select</span>(student, balance, income), </span>
+<span id="cb7-2"><a href="class.html#cb7-2"></a>                   default_test <span class="op">%&gt;%</span><span class="st"> </span>dplyr<span class="op">::</span><span class="kw">select</span>(student, balance, income), </span>
+<span id="cb7-3"><a href="class.html#cb7-3"></a>                   <span class="dt">cl =</span> default_train<span class="op">$</span>default, <span class="dt">k =</span> <span class="dv">2</span>)</span>
+<span id="cb7-4"><a href="class.html#cb7-4"></a></span>
+<span id="cb7-5"><a href="class.html#cb7-5"></a></span>
+<span id="cb7-6"><a href="class.html#cb7-6"></a>cowplot<span class="op">::</span><span class="kw">plot_grid</span>(<span class="kw">ggplot</span>(<span class="dt">data =</span> default_test, <span class="kw">aes</span>(<span class="dt">x =</span> balance, <span class="dt">y =</span> income, <span class="dt">col =</span> default)) <span class="op">+</span></span>
+<span id="cb7-7"><a href="class.html#cb7-7"></a><span class="st">                     </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="dv">1</span>) <span class="op">+</span></span>
+<span id="cb7-8"><a href="class.html#cb7-8"></a><span class="st">                     </span><span class="kw">scale_color_brewer</span>(<span class="dt">name =</span> <span class="st">&quot;Default&quot;</span>, <span class="dt">palette =</span> <span class="st">&quot;Set1&quot;</span>) <span class="op">+</span></span>
+<span id="cb7-9"><a href="class.html#cb7-9"></a><span class="st">                     </span><span class="kw">theme_minimal</span>() <span class="op">+</span></span>
+<span id="cb7-10"><a href="class.html#cb7-10"></a><span class="st">                     </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>student),</span>
+<span id="cb7-11"><a href="class.html#cb7-11"></a>                   <span class="kw">ggplot</span>(<span class="dt">data =</span> default_test, <span class="kw">aes</span>(<span class="dt">x =</span> balance, <span class="dt">y =</span> income, <span class="dt">col =</span> knn_<span class="dv">2</span>_pred)) <span class="op">+</span></span>
+<span id="cb7-12"><a href="class.html#cb7-12"></a><span class="st">                     </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="dv">1</span>) <span class="op">+</span></span>
+<span id="cb7-13"><a href="class.html#cb7-13"></a><span class="st">                     </span><span class="kw">scale_color_brewer</span>(<span class="dt">name =</span> <span class="st">&quot;Default&quot;</span>, <span class="dt">palette =</span> <span class="st">&quot;Set1&quot;</span>) <span class="op">+</span></span>
+<span id="cb7-14"><a href="class.html#cb7-14"></a><span class="st">                     </span><span class="kw">theme_minimal</span>() <span class="op">+</span></span>
+<span id="cb7-15"><a href="class.html#cb7-15"></a><span class="st">                     </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>student), <span class="dt">nrow =</span> <span class="dv">2</span>)</span></code></pre></div>
+<p><img src="dav_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>This seems better already, but still it’s not great.</p>
+</div>
+<div id="exercise-7-5" class="section level3">
+<h3><span class="header-section-number">5.4.7</span> Exercise 7</h3>
+<p>Confusion matrix</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="class.html#cb8-1"></a><span class="co">### The perfect table.</span></span>
+<span id="cb8-2"><a href="class.html#cb8-2"></a><span class="kw">table</span>(<span class="dt">true =</span> default_test<span class="op">$</span>default, default_test<span class="op">$</span>default)</span></code></pre></div>
+<pre><code>##      
+## true    No  Yes
+##   No  1935    0
+##   Yes    0   65</code></pre>
+</div>
+<div id="exercise-8-5" class="section level3">
+<h3><span class="header-section-number">5.4.8</span> Exercise 8</h3>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="class.html#cb10-1"></a><span class="kw">table</span>(<span class="dt">true =</span> default_test<span class="op">$</span>default, <span class="dt">predicted =</span> knn_<span class="dv">5</span>_pred)</span></code></pre></div>
+<pre><code>##      predicted
+## true    No  Yes
+##   No  1925   10
+##   Yes   58    7</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="class.html#cb12-1"></a><span class="kw">table</span>(<span class="dt">true =</span> default_test<span class="op">$</span>default, <span class="dt">predicted =</span> knn_<span class="dv">2</span>_pred)</span></code></pre></div>
+<pre><code>##      predicted
+## true    No  Yes
+##   No  1894   41
+##   Yes   46   19</code></pre>
+<p>In terms of accuracy and specificity, the 5-nearest neighbors method performs best, while in terms of sensitivity, the 2-nearest neighbors model performs best (although still very bad).</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="class.html#cb14-1"></a>caret<span class="op">::</span><span class="kw">confusionMatrix</span>(knn_<span class="dv">5</span>_pred, default_test<span class="op">$</span>default, <span class="dt">positive =</span> <span class="st">&quot;Yes&quot;</span>)</span></code></pre></div>
+<pre><code>## Confusion Matrix and Statistics
+## 
+##           Reference
+## Prediction   No  Yes
+##        No  1925   58
+##        Yes   10    7
+##                                           
+##                Accuracy : 0.966           
+##                  95% CI : (0.9571, 0.9735)
+##     No Information Rate : 0.9675          
+##     P-Value [Acc &gt; NIR] : 0.6762          
+##                                           
+##                   Kappa : 0.1594          
+##                                           
+##  Mcnemar&#39;s Test P-Value : 1.201e-08       
+##                                           
+##             Sensitivity : 0.1077          
+##             Specificity : 0.9948          
+##          Pos Pred Value : 0.4118          
+##          Neg Pred Value : 0.9708          
+##              Prevalence : 0.0325          
+##          Detection Rate : 0.0035          
+##    Detection Prevalence : 0.0085          
+##       Balanced Accuracy : 0.5513          
+##                                           
+##        &#39;Positive&#39; Class : Yes             
+## </code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="class.html#cb16-1"></a>caret<span class="op">::</span><span class="kw">confusionMatrix</span>(knn_<span class="dv">2</span>_pred, default_test<span class="op">$</span>default, <span class="dt">positive =</span> <span class="st">&quot;Yes&quot;</span>)</span></code></pre></div>
+<pre><code>## Confusion Matrix and Statistics
+## 
+##           Reference
+## Prediction   No  Yes
+##        No  1894   46
+##        Yes   41   19
+##                                          
+##                Accuracy : 0.9565         
+##                  95% CI : (0.9466, 0.965)
+##     No Information Rate : 0.9675         
+##     P-Value [Acc &gt; NIR] : 0.9967         
+##                                          
+##                   Kappa : 0.2816         
+##                                          
+##  Mcnemar&#39;s Test P-Value : 0.6680         
+##                                          
+##             Sensitivity : 0.2923         
+##             Specificity : 0.9788         
+##          Pos Pred Value : 0.3167         
+##          Neg Pred Value : 0.9763         
+##              Prevalence : 0.0325         
+##          Detection Rate : 0.0095         
+##    Detection Prevalence : 0.0300         
+##       Balanced Accuracy : 0.6356         
+##                                          
+##        &#39;Positive&#39; Class : Yes            
+## </code></pre>
+</div>
+<div id="exercise-9-5" class="section level3">
+<h3><span class="header-section-number">5.4.9</span> Exercise 9</h3>
+<p>KNN directly predicts the class of a new observation using a majority vote of the existing observations close the it, while logistic regression predicts the log odds of belonging to category 1. Therefore, logistic regression is a probabilistic classifier as opposed to a direct classifier such as KNN: indirectly, it outputs a probability which can then be used in conjunction with a cutoff (usually 0.5) to classify new observations.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="class.html#cb18-1"></a>lr_mod &lt;-<span class="st"> </span><span class="kw">glm</span>(default <span class="op">~</span><span class="st"> </span>., <span class="dt">family =</span> <span class="st">&quot;binomial&quot;</span>, default_train)</span></code></pre></div>
+</div>
+<div id="exercise-10-5" class="section level3">
+<h3><span class="header-section-number">5.4.10</span> Exercise 10</h3>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="class.html#cb19-1"></a><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">y =</span> <span class="kw">predict</span>(lr_mod, <span class="dt">type =</span> <span class="st">&quot;response&quot;</span>), </span>
+<span id="cb19-2"><a href="class.html#cb19-2"></a>                     <span class="dt">x =</span> default_train<span class="op">$</span>default,</span>
+<span id="cb19-3"><a href="class.html#cb19-3"></a>                     <span class="dt">fill =</span> default_train<span class="op">$</span>default)) <span class="op">+</span></span>
+<span id="cb19-4"><a href="class.html#cb19-4"></a><span class="st">  </span><span class="kw">geom_boxplot</span>() <span class="op">+</span></span>
+<span id="cb19-5"><a href="class.html#cb19-5"></a><span class="st">  </span><span class="kw">scale_fill_brewer</span>(<span class="dt">name =</span> <span class="st">&quot;Default&quot;</span>, <span class="dt">palette =</span> <span class="st">&quot;Set1&quot;</span>) <span class="op">+</span></span>
+<span id="cb19-6"><a href="class.html#cb19-6"></a><span class="st">  </span><span class="kw">theme_minimal</span>()</span></code></pre></div>
+<p><img src="dav_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p>So we see that people who have not defaulted have much lower predicted probabilities. However, the median of the predicted probabilities of the people that do default is still below 0.50, meaning that these are still mainly classified as people who do not default.</p>
+</div>
+<div id="exercise-11-5" class="section level3">
+<h3><span class="header-section-number">5.4.11</span> Exercise 11</h3>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="class.html#cb20-1"></a><span class="kw">coef</span>(lr_mod)[<span class="st">&quot;balance&quot;</span>]</span></code></pre></div>
+<pre><code>##     balance 
+## 0.005632118</code></pre>
+<p>So with every dollar increase in balance, the logodds for defaulting increase by 0.005.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="class.html#cb22-1"></a><span class="dv">1</span> <span class="op">/</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="kw">exp</span>(<span class="op">-</span><span class="kw">sum</span>(<span class="kw">coef</span>(lr_mod) <span class="op">*</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">3000</span>, <span class="dv">40000</span>))))</span></code></pre></div>
+<pre><code>## [1] 0.9981847</code></pre>
+</div>
+<div id="exercise-12-5" class="section level3">
+<h3><span class="header-section-number">5.4.12</span> Exercise 12</h3>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="class.html#cb24-1"></a>balance_df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">student =</span> <span class="kw">rep</span>(<span class="dv">0</span>, <span class="dv">500</span>),</span>
+<span id="cb24-2"><a href="class.html#cb24-2"></a>                         <span class="dt">balance =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">3000</span>, <span class="dt">length.out =</span> <span class="dv">500</span>),</span>
+<span id="cb24-3"><a href="class.html#cb24-3"></a>                         <span class="dt">income =</span> <span class="kw">mean</span>(default_train<span class="op">$</span>income))</span></code></pre></div>
+</div>
+<div id="exercise-13-5" class="section level3">
+<h3><span class="header-section-number">5.4.13</span> Exercise 13</h3>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="class.html#cb25-1"></a>pred_prob &lt;-<span class="st"> </span><span class="kw">predict</span>(lr_mod, balance_df, <span class="dt">type =</span> <span class="st">&quot;response&quot;</span>)</span>
+<span id="cb25-2"><a href="class.html#cb25-2"></a></span>
+<span id="cb25-3"><a href="class.html#cb25-3"></a><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(balance_df<span class="op">$</span>balance, pred_prob)) <span class="op">+</span></span>
+<span id="cb25-4"><a href="class.html#cb25-4"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">col =</span> <span class="st">&quot;dark blue&quot;</span>) <span class="op">+</span></span>
+<span id="cb25-5"><a href="class.html#cb25-5"></a><span class="st">  </span><span class="kw">theme_minimal</span>()</span></code></pre></div>
+<p><img src="dav_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<p>Yes, we see the S-curve of the predicted probabilities nicely displayed. Also, we see that the predicted probabilities approximate 1 after a balance score of 2000 onwards.</p>
+</div>
+<div id="exercise-14-4" class="section level3">
+<h3><span class="header-section-number">5.4.14</span> Exercise 14</h3>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="class.html#cb26-1"></a><span class="kw">table</span>(<span class="dt">true =</span> default_train<span class="op">$</span>default,</span>
+<span id="cb26-2"><a href="class.html#cb26-2"></a>      <span class="dt">predicted =</span> <span class="kw">ifelse</span>(<span class="kw">predict</span>(lr_mod, <span class="dt">type =</span> <span class="st">&quot;response&quot;</span>) <span class="op">&gt;</span><span class="st"> </span><span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dv">0</span>))</span></code></pre></div>
+<pre><code>##      predicted
+## true     0    1
+##   No  7701   31
+##   Yes  190   78</code></pre>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="class.html#cb28-1"></a>caret<span class="op">::</span><span class="kw">confusionMatrix</span>(<span class="kw">as.factor</span>(<span class="kw">ifelse</span>(<span class="kw">predict</span>(lr_mod, <span class="dt">type =</span> <span class="st">&quot;response&quot;</span>) <span class="op">&gt;</span><span class="st"> </span><span class="fl">0.5</span>,</span>
+<span id="cb28-2"><a href="class.html#cb28-2"></a>                                        <span class="st">&quot;Yes&quot;</span>, <span class="st">&quot;No&quot;</span>)),</span>
+<span id="cb28-3"><a href="class.html#cb28-3"></a>                       default_train<span class="op">$</span>default, </span>
+<span id="cb28-4"><a href="class.html#cb28-4"></a>                       <span class="dt">positive =</span> <span class="st">&quot;Yes&quot;</span>)</span></code></pre></div>
+<pre><code>## Confusion Matrix and Statistics
+## 
+##           Reference
+## Prediction   No  Yes
+##        No  7701  190
+##        Yes   31   78
+##                                           
+##                Accuracy : 0.9724          
+##                  95% CI : (0.9685, 0.9759)
+##     No Information Rate : 0.9665          
+##     P-Value [Acc &gt; NIR] : 0.001506        
+##                                           
+##                   Kappa : 0.4022          
+##                                           
+##  Mcnemar&#39;s Test P-Value : &lt; 2.2e-16       
+##                                           
+##             Sensitivity : 0.29104         
+##             Specificity : 0.99599         
+##          Pos Pred Value : 0.71560         
+##          Neg Pred Value : 0.97592         
+##              Prevalence : 0.03350         
+##          Detection Rate : 0.00975         
+##    Detection Prevalence : 0.01362         
+##       Balanced Accuracy : 0.64352         
+##                                           
+##        &#39;Positive&#39; Class : Yes             
+## </code></pre>
+<p>Logistic regression performs somewhat better in terms of the sensitivity, but at the cost of a little decrease in the specificity.</p>
+</div>
+<div id="exercise-15-4" class="section level3">
+<h3><span class="header-section-number">5.4.15</span> Exercise 15</h3>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="class.html#cb30-1"></a>lda_mod &lt;-<span class="st"> </span><span class="kw">lda</span>(default <span class="op">~</span><span class="st"> </span>., default_train)</span></code></pre></div>
+</div>
+<div id="exercise-16-4" class="section level3">
+<h3><span class="header-section-number">5.4.16</span> Exercise 16</h3>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="class.html#cb31-1"></a>lda_mod</span></code></pre></div>
+<pre><code>## Call:
+## lda(default ~ ., data = default_train)
+## 
+## Prior probabilities of groups:
+##     No    Yes 
+## 0.9665 0.0335 
+## 
+## Group means:
+##       student  balance   income
+## No  0.2928091  808.032 33544.16
+## Yes 0.3880597 1740.049 31533.47
+## 
+## Coefficients of linear discriminants:
+##                   LD1
+## student -2.435748e-01
+## balance  2.242054e-03
+## income   4.182612e-07</code></pre>
+<p>People who default are more often students, they tend to have much higher balance scores, but there is not really a big difference in income.</p>
+</div>
+<div id="exercise-17-4" class="section level3">
+<h3><span class="header-section-number">5.4.17</span> Exercise 17</h3>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="class.html#cb33-1"></a><span class="kw">table</span>(<span class="dt">true =</span> default_train<span class="op">$</span>default,</span>
+<span id="cb33-2"><a href="class.html#cb33-2"></a>      <span class="dt">predicted =</span> <span class="kw">predict</span>(lda_mod)<span class="op">$</span>class)</span></code></pre></div>
+<pre><code>##      predicted
+## true    No  Yes
+##   No  7714   18
+##   Yes  206   62</code></pre>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="class.html#cb35-1"></a>caret<span class="op">::</span><span class="kw">confusionMatrix</span>(<span class="kw">predict</span>(lda_mod)<span class="op">$</span>class,</span>
+<span id="cb35-2"><a href="class.html#cb35-2"></a>                       default_train<span class="op">$</span>default,</span>
+<span id="cb35-3"><a href="class.html#cb35-3"></a>                       <span class="dt">positive =</span> <span class="st">&quot;Yes&quot;</span>)</span></code></pre></div>
+<pre><code>## Confusion Matrix and Statistics
+## 
+##           Reference
+## Prediction   No  Yes
+##        No  7714  206
+##        Yes   18   62
+##                                           
+##                Accuracy : 0.972           
+##                  95% CI : (0.9681, 0.9755)
+##     No Information Rate : 0.9665          
+##     P-Value [Acc &gt; NIR] : 0.002814        
+##                                           
+##                   Kappa : 0.3463          
+##                                           
+##  Mcnemar&#39;s Test P-Value : &lt; 2.2e-16       
+##                                           
+##             Sensitivity : 0.23134         
+##             Specificity : 0.99767         
+##          Pos Pred Value : 0.77500         
+##          Neg Pred Value : 0.97399         
+##              Prevalence : 0.03350         
+##          Detection Rate : 0.00775         
+##    Detection Prevalence : 0.01000         
+##       Balanced Accuracy : 0.61451         
+##                                           
+##        &#39;Positive&#39; Class : Yes             
+## </code></pre>
 
+</div>
+</div>
 </div>
             </section>
 
@@ -232,6 +945,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
