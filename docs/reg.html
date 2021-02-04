@@ -240,6 +240,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.5.27" data-path="reg.html"><a href="reg.html#exercise-27"><i class="fa fa-check"></i><b>4.5.27</b> Exercise 27</a></li>
 <li class="chapter" data-level="4.5.28" data-path="reg.html"><a href="reg.html#exercise-28"><i class="fa fa-check"></i><b>4.5.28</b> Exercise 28</a></li>
 </ul></li>
+<li class="chapter" data-level="4.6" data-path="reg.html"><a href="reg.html#practical-regression-ii"><i class="fa fa-check"></i><b>4.6</b> Practical regression II</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="reg.html"><a href="reg.html#exercise-1-3"><i class="fa fa-check"></i><b>4.6.1</b> Exercise 1</a></li>
+<li class="chapter" data-level="4.6.2" data-path="reg.html"><a href="reg.html#exercise-2-3"><i class="fa fa-check"></i><b>4.6.2</b> Exercise 2</a></li>
+<li class="chapter" data-level="4.6.3" data-path="reg.html"><a href="reg.html#exercise-3-3"><i class="fa fa-check"></i><b>4.6.3</b> Exercise 3</a></li>
+<li class="chapter" data-level="4.6.4" data-path="reg.html"><a href="reg.html#exercise-4-3"><i class="fa fa-check"></i><b>4.6.4</b> Exercise 4</a></li>
+<li class="chapter" data-level="4.6.5" data-path="reg.html"><a href="reg.html#exercise-5-3"><i class="fa fa-check"></i><b>4.6.5</b> Exercise 5</a></li>
+<li class="chapter" data-level="4.6.6" data-path="reg.html"><a href="reg.html#exercise-6-3"><i class="fa fa-check"></i><b>4.6.6</b> Exercise 6</a></li>
+<li class="chapter" data-level="4.6.7" data-path="reg.html"><a href="reg.html#exercise-7-3"><i class="fa fa-check"></i><b>4.6.7</b> Exercise 7</a></li>
+<li class="chapter" data-level="4.6.8" data-path="reg.html"><a href="reg.html#exercise-8-3"><i class="fa fa-check"></i><b>4.6.8</b> Exercise 8</a></li>
+<li class="chapter" data-level="4.6.9" data-path="reg.html"><a href="reg.html#exercise-9-3"><i class="fa fa-check"></i><b>4.6.9</b> Exercise 9</a></li>
+<li class="chapter" data-level="4.6.10" data-path="reg.html"><a href="reg.html#exercise-10-3"><i class="fa fa-check"></i><b>4.6.10</b> Exercise 10</a></li>
+<li class="chapter" data-level="4.6.11" data-path="reg.html"><a href="reg.html#exercise-11-3"><i class="fa fa-check"></i><b>4.6.11</b> Exercise 11</a></li>
+<li class="chapter" data-level="4.6.12" data-path="reg.html"><a href="reg.html#exercise-12-3"><i class="fa fa-check"></i><b>4.6.12</b> Exercise 12</a></li>
+<li class="chapter" data-level="4.6.13" data-path="reg.html"><a href="reg.html#exercise-13-3"><i class="fa fa-check"></i><b>4.6.13</b> Exercise 13</a></li>
+<li class="chapter" data-level="4.6.14" data-path="reg.html"><a href="reg.html#exercise-14-2"><i class="fa fa-check"></i><b>4.6.14</b> Exercise 14</a></li>
+<li class="chapter" data-level="4.6.15" data-path="reg.html"><a href="reg.html#exercise-15-2"><i class="fa fa-check"></i><b>4.6.15</b> Exercise 15</a></li>
+<li class="chapter" data-level="4.6.16" data-path="reg.html"><a href="reg.html#exercise-16-2"><i class="fa fa-check"></i><b>4.6.16</b> Exercise 16</a></li>
+<li class="chapter" data-level="4.6.17" data-path="reg.html"><a href="reg.html#exercise-17-2"><i class="fa fa-check"></i><b>4.6.17</b> Exercise 17</a></li>
+<li class="chapter" data-level="4.6.18" data-path="reg.html"><a href="reg.html#exercise-18-3"><i class="fa fa-check"></i><b>4.6.18</b> Exercise 18</a></li>
+<li class="chapter" data-level="4.6.19" data-path="reg.html"><a href="reg.html#exercise-19-3"><i class="fa fa-check"></i><b>4.6.19</b> Exercise 19</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="class.html"><a href="class.html"><i class="fa fa-check"></i><b>5</b> Classification</a></li>
 <li class="chapter" data-level="6" data-path="unsup.html"><a href="unsup.html"><i class="fa fa-check"></i><b>6</b> Unsupervised learning</a></li>
@@ -1011,7 +1032,7 @@ x_i - 50, &amp; \text{if} ~ x &lt; 50 \\
 </div>
 <div id="exercise-20" class="section level3">
 <h3><span class="header-section-number">4.5.20</span> Exercise 20</h3>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="reg.html#cb27-1"></a><span class="kw">set.seed</span>(<span class="dv">123</span>)</span>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="reg.html#cb27-1"></a><span class="kw">set.seed</span>(<span class="dv">1</span>)</span>
 <span id="cb27-2"><a href="reg.html#cb27-2"></a>boston_master &lt;-<span class="st"> </span><span class="kw">mutate</span>(Boston, <span class="dt">splits =</span> <span class="kw">sample</span>(splits))</span></code></pre></div>
 </div>
 <div id="exercise-21" class="section level3">
@@ -1045,7 +1066,7 @@ x_i - 50, &amp; \text{if} ~ x &lt; 50 \\
 <div id="exercise-27" class="section level3">
 <h3><span class="header-section-number">4.5.27</span> Exercise 27</h3>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="reg.html#cb33-1"></a>model_<span class="dv">2</span>_mse_test &lt;-<span class="st"> </span><span class="kw">mse</span>(boston_test<span class="op">$</span>medv, <span class="kw">predict</span>(model_<span class="dv">2</span>, boston_test))</span></code></pre></div>
-<p>This number tells me that on average, the squared error between the observed and predicted median houseprices within a region equals 48.39.</p>
+<p>This number tells me that on average, the squared error between the observed and predicted median houseprices within a region equals 44.14.</p>
 </div>
 <div id="exercise-28" class="section level3">
 <h3><span class="header-section-number">4.5.28</span> Exercise 28</h3>
@@ -1059,9 +1080,232 @@ x_i - 50, &amp; \text{if} ~ x &lt; 50 \\
 <span id="cb34-8"><a href="reg.html#cb34-8"></a>}</span>
 <span id="cb34-9"><a href="reg.html#cb34-9"></a></span>
 <span id="cb34-10"><a href="reg.html#cb34-10"></a><span class="kw">k_fold</span>(medv <span class="op">~</span><span class="st"> </span>lstat <span class="op">+</span><span class="st"> </span>age <span class="op">+</span><span class="st"> </span>tax, Boston, <span class="dv">9</span>)</span></code></pre></div>
-<pre><code>## [1] 37.94916</code></pre>
+<pre><code>## [1] 38.19403</code></pre>
 <div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="reg.html#cb36-1"></a><span class="kw">k_fold</span>(medv <span class="op">~</span><span class="st"> </span>lstat <span class="op">+</span><span class="st"> </span><span class="kw">I</span>(lstat<span class="op">^</span><span class="dv">2</span>) <span class="op">+</span><span class="st"> </span>age <span class="op">+</span><span class="st"> </span>tax, Boston, <span class="dv">9</span>)</span></code></pre></div>
-<pre><code>## [1] 28.20862</code></pre>
+<pre><code>## [1] 27.92824</code></pre>
+</div>
+</div>
+<div id="practical-regression-ii" class="section level2">
+<h2><span class="header-section-number">4.6</span> Practical regression II</h2>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="reg.html#cb38-1"></a><span class="kw">library</span>(ISLR)</span>
+<span id="cb38-2"><a href="reg.html#cb38-2"></a><span class="kw">library</span>(glmnet)</span>
+<span id="cb38-3"><a href="reg.html#cb38-3"></a><span class="kw">library</span>(tidyverse)</span></code></pre></div>
+<div id="exercise-1-3" class="section level3">
+<h3><span class="header-section-number">4.6.1</span> Exercise 1</h3>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="reg.html#cb39-1"></a>baseball &lt;-<span class="st"> </span>Hitters <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="op">!</span><span class="kw">is.na</span>(Salary))</span></code></pre></div>
+<p>There are 263 players left.</p>
+</div>
+<div id="exercise-2-3" class="section level3">
+<h3><span class="header-section-number">4.6.2</span> Exercise 2</h3>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="reg.html#cb40-1"></a>splits &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;train&quot;</span>, <span class="st">&quot;valid&quot;</span>, <span class="st">&quot;test&quot;</span>),</span>
+<span id="cb40-2"><a href="reg.html#cb40-2"></a>              <span class="dt">times =</span> <span class="kw">c</span>(<span class="kw">round</span>(<span class="kw">nrow</span>(baseball) <span class="op">*</span><span class="st"> </span><span class="kw">c</span>(<span class="fl">0.5</span>, <span class="fl">0.3</span>)),</span>
+<span id="cb40-3"><a href="reg.html#cb40-3"></a>                        <span class="kw">nrow</span>(baseball) <span class="op">-</span><span class="st"> </span><span class="kw">sum</span>(<span class="kw">round</span>(<span class="kw">nrow</span>(baseball) <span class="op">*</span><span class="st"> </span><span class="kw">c</span>(<span class="fl">0.5</span>, <span class="fl">0.3</span>)))))</span>
+<span id="cb40-4"><a href="reg.html#cb40-4"></a>baseball &lt;-<span class="st"> </span>baseball <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">splits =</span> <span class="kw">sample</span>(splits))</span>
+<span id="cb40-5"><a href="reg.html#cb40-5"></a>baseball_train &lt;-<span class="st"> </span>baseball <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(splits <span class="op">==</span><span class="st"> &quot;train&quot;</span>)</span>
+<span id="cb40-6"><a href="reg.html#cb40-6"></a>baseball_valid &lt;-<span class="st"> </span>baseball <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(splits <span class="op">==</span><span class="st"> &quot;valid&quot;</span>)</span>
+<span id="cb40-7"><a href="reg.html#cb40-7"></a>baseball_test  &lt;-<span class="st"> </span>baseball <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(splits <span class="op">==</span><span class="st"> &quot;test&quot;</span>)</span></code></pre></div>
+</div>
+<div id="exercise-3-3" class="section level3">
+<h3><span class="header-section-number">4.6.3</span> Exercise 3</h3>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="reg.html#cb41-1"></a>lm_mse &lt;-<span class="st"> </span><span class="cf">function</span>(formula, training_set, test_set) {</span>
+<span id="cb41-2"><a href="reg.html#cb41-2"></a>  train &lt;-<span class="st"> </span><span class="kw">lm</span>(formula, training_set)</span>
+<span id="cb41-3"><a href="reg.html#cb41-3"></a>  <span class="kw">mean</span>((<span class="kw">model.frame</span>(formula, test_set)[,<span class="dv">1</span>] <span class="op">-</span><span class="st"> </span><span class="kw">predict</span>(train, test_set))<span class="op">^</span><span class="dv">2</span>)</span>
+<span id="cb41-4"><a href="reg.html#cb41-4"></a>}</span></code></pre></div>
+</div>
+<div id="exercise-4-3" class="section level3">
+<h3><span class="header-section-number">4.6.4</span> Exercise 4</h3>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="reg.html#cb42-1"></a><span class="kw">lm_mse</span>(Salary <span class="op">~</span><span class="st"> </span>Hits <span class="op">+</span><span class="st"> </span>Runs, baseball_train, baseball_valid)</span></code></pre></div>
+<pre><code>## [1] 232378.2</code></pre>
+</div>
+<div id="exercise-5-3" class="section level3">
+<h3><span class="header-section-number">4.6.5</span> Exercise 5</h3>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="reg.html#cb44-1"></a><span class="kw">source</span>(<span class="st">&quot;data/generate_formulas.R&quot;</span>)</span>
+<span id="cb44-2"><a href="reg.html#cb44-2"></a></span>
+<span id="cb44-3"><a href="reg.html#cb44-3"></a>preds &lt;-<span class="st"> </span>Hitters <span class="op">%&gt;%</span><span class="st"> </span>dplyr<span class="op">::</span><span class="kw">select</span>(<span class="op">-</span>Salary) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">colnames</span>()</span></code></pre></div>
+</div>
+<div id="exercise-6-3" class="section level3">
+<h3><span class="header-section-number">4.6.6</span> Exercise 6</h3>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="reg.html#cb45-1"></a>formulas &lt;-<span class="st"> </span><span class="kw">generate_formulas</span>(<span class="dv">3</span>, preds, <span class="st">&quot;Salary&quot;</span>)</span></code></pre></div>
+</div>
+<div id="exercise-7-3" class="section level3">
+<h3><span class="header-section-number">4.6.7</span> Exercise 7</h3>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="reg.html#cb46-1"></a>best_subset_mse_<span class="dv">3</span> &lt;-<span class="st"> </span><span class="kw">map_dbl</span>(formulas, <span class="cf">function</span>(x) <span class="kw">lm_mse</span>(x, baseball_train, baseball_valid))</span>
+<span id="cb46-2"><a href="reg.html#cb46-2"></a></span>
+<span id="cb46-3"><a href="reg.html#cb46-3"></a>formulas[<span class="kw">which.min</span>(best_subset_mse_<span class="dv">3</span>)]</span></code></pre></div>
+<pre><code>## [1] &quot;Salary ~ Runs + CRBI + PutOuts&quot;</code></pre>
+</div>
+<div id="exercise-8-3" class="section level3">
+<h3><span class="header-section-number">4.6.8</span> Exercise 8</h3>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="reg.html#cb48-1"></a>mses_<span class="dv">1234</span> &lt;-<span class="st"> </span><span class="kw">map</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>), <span class="cf">function</span>(p) {</span>
+<span id="cb48-2"><a href="reg.html#cb48-2"></a>  formulas &lt;-<span class="st"> </span><span class="kw">generate_formulas</span>(p, preds, <span class="st">&quot;Salary&quot;</span>)</span>
+<span id="cb48-3"><a href="reg.html#cb48-3"></a>  </span>
+<span id="cb48-4"><a href="reg.html#cb48-4"></a>  models  &lt;-<span class="st"> </span>formulas <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">map</span>(<span class="cf">function</span>(x) <span class="kw">lm</span>(x, baseball_train))</span>
+<span id="cb48-5"><a href="reg.html#cb48-5"></a>  y_preds &lt;-<span class="st"> </span>models <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">map</span>(<span class="cf">function</span>(x) <span class="kw">predict</span>(x, baseball_valid))</span>
+<span id="cb48-6"><a href="reg.html#cb48-6"></a>  mses    &lt;-<span class="st"> </span>y_preds <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">map_dbl</span>(<span class="cf">function</span>(x) <span class="kw">mean</span>((baseball_valid<span class="op">$</span>Salary <span class="op">-</span><span class="st"> </span>x)<span class="op">^</span><span class="dv">2</span>))</span>
+<span id="cb48-7"><a href="reg.html#cb48-7"></a>  </span>
+<span id="cb48-8"><a href="reg.html#cb48-8"></a>  <span class="kw">list</span>(<span class="dt">models =</span> models, <span class="dt">formulas =</span> formulas, <span class="dt">mses =</span> mses)</span>
+<span id="cb48-9"><a href="reg.html#cb48-9"></a>})</span>
+<span id="cb48-10"><a href="reg.html#cb48-10"></a></span>
+<span id="cb48-11"><a href="reg.html#cb48-11"></a>best_models &lt;-<span class="st"> </span>mses_<span class="dv">1234</span> <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">map_chr</span>(<span class="cf">function</span>(x) x<span class="op">$</span>formulas[<span class="kw">which.min</span>(x<span class="op">$</span>mses)])</span>
+<span id="cb48-12"><a href="reg.html#cb48-12"></a></span>
+<span id="cb48-13"><a href="reg.html#cb48-13"></a>lowest_mses &lt;-<span class="st"> </span>mses_<span class="dv">1234</span> <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">map_dbl</span>(<span class="cf">function</span>(x) <span class="kw">min</span>(x<span class="op">$</span>mses))</span>
+<span id="cb48-14"><a href="reg.html#cb48-14"></a></span>
+<span id="cb48-15"><a href="reg.html#cb48-15"></a>best_models[<span class="kw">which.min</span>(lowest_mses)]</span></code></pre></div>
+<pre><code>## [1] &quot;Salary ~ AtBat + Hits + CHmRun + PutOuts&quot;</code></pre>
+<p>So in this case, the most complex model is the best model.</p>
+</div>
+<div id="exercise-9-3" class="section level3">
+<h3><span class="header-section-number">4.6.9</span> Exercise 9</h3>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="reg.html#cb50-1"></a>best_mse_test &lt;-<span class="st"> </span><span class="kw">lm_mse</span>(<span class="kw">as.formula</span>(best_models[<span class="kw">which.min</span>(lowest_mses)]),</span>
+<span id="cb50-2"><a href="reg.html#cb50-2"></a>                        baseball_train,</span>
+<span id="cb50-3"><a href="reg.html#cb50-3"></a>                        baseball_test)</span>
+<span id="cb50-4"><a href="reg.html#cb50-4"></a></span>
+<span id="cb50-5"><a href="reg.html#cb50-5"></a><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">predict</span>(<span class="kw">lm</span>(<span class="kw">as.formula</span>(best_models[<span class="kw">which.min</span>(lowest_mses)]), baseball_train), baseball_test),</span>
+<span id="cb50-6"><a href="reg.html#cb50-6"></a>                     <span class="dt">y =</span> baseball_test<span class="op">$</span>Salary)) <span class="op">+</span></span>
+<span id="cb50-7"><a href="reg.html#cb50-7"></a><span class="st">         </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
+<span id="cb50-8"><a href="reg.html#cb50-8"></a><span class="st">         </span><span class="kw">theme_minimal</span>()</span></code></pre></div>
+<p><img src="dav_files/figure-html/unnamed-chunk-41-1.png" width="672" /></p>
+</div>
+<div id="exercise-10-3" class="section level3">
+<h3><span class="header-section-number">4.6.10</span> Exercise 10</h3>
+<p>The data should be in matrices (i.e., x should be a matrix, y should be a vector).</p>
+</div>
+<div id="exercise-11-3" class="section level3">
+<h3><span class="header-section-number">4.6.11</span> Exercise 11</h3>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="reg.html#cb51-1"></a>x_train &lt;-<span class="st"> </span>baseball_train <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb51-2"><a href="reg.html#cb51-2"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">select</span>(<span class="op">-</span>splits) <span class="op">%&gt;%</span></span>
+<span id="cb51-3"><a href="reg.html#cb51-3"></a><span class="st">  </span><span class="kw">model.matrix</span>(Salary <span class="op">~</span><span class="st"> </span>. <span class="op">-</span><span class="st"> </span><span class="dv">1</span>, .)</span></code></pre></div>
+</div>
+<div id="exercise-12-3" class="section level3">
+<h3><span class="header-section-number">4.6.12</span> Exercise 12</h3>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="reg.html#cb52-1"></a>lasso &lt;-<span class="st"> </span><span class="kw">glmnet</span>(x_train, <span class="dt">y =</span> baseball_train<span class="op">$</span>Salary, </span>
+<span id="cb52-2"><a href="reg.html#cb52-2"></a>                <span class="dt">family =</span> <span class="st">&quot;gaussian&quot;</span>, <span class="dt">alpha =</span> <span class="dv">1</span>, <span class="dt">lambda =</span> <span class="dv">15</span>, )</span></code></pre></div>
+</div>
+<div id="exercise-13-3" class="section level3">
+<h3><span class="header-section-number">4.6.13</span> Exercise 13</h3>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="reg.html#cb53-1"></a><span class="kw">coef</span>(lasso)</span></code></pre></div>
+<pre><code>## 21 x 1 sparse Matrix of class &quot;dgCMatrix&quot;
+##                       s0
+## (Intercept)  -47.4285169
+## AtBat          .        
+## Hits           2.1998117
+## HmRun          .        
+## Runs           .        
+## RBI            0.1856448
+## Walks          3.4546838
+## Years          .        
+## CAtBat         .        
+## CHits          0.1466286
+## CHmRun         .        
+## CRuns          .        
+## CRBI           0.2668845
+## CWalks         .        
+## LeagueA        .        
+## LeagueN        .        
+## DivisionW   -122.8557870
+## PutOuts        0.1771276
+## Assists       -0.1383094
+## Errors         .        
+## NewLeagueN     .</code></pre>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="reg.html#cb55-1"></a><span class="kw">coef</span>(lasso) -&gt;<span class="st"> </span>coefs</span>
+<span id="cb55-2"><a href="reg.html#cb55-2"></a></span>
+<span id="cb55-3"><a href="reg.html#cb55-3"></a><span class="kw">as.matrix</span>(coefs)[<span class="kw">abs</span>(<span class="kw">as.matrix</span>(coefs)) <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>,]</span></code></pre></div>
+<pre><code>##  (Intercept)         Hits          RBI        Walks        CHits         CRBI 
+##  -47.4285169    2.1998117    0.1856448    3.4546838    0.1466286    0.2668845 
+##    DivisionW      PutOuts      Assists 
+## -122.8557870    0.1771276   -0.1383094</code></pre>
+</div>
+<div id="exercise-14-2" class="section level3">
+<h3><span class="header-section-number">4.6.14</span> Exercise 14</h3>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="reg.html#cb57-1"></a>lasso_pred &lt;-<span class="st"> </span><span class="kw">predict</span>(lasso, </span>
+<span id="cb57-2"><a href="reg.html#cb57-2"></a>                      <span class="dt">newx =</span> <span class="kw">model.matrix</span>(Salary <span class="op">~</span><span class="st"> </span>. <span class="op">-</span><span class="st"> </span><span class="dv">1</span>, </span>
+<span id="cb57-3"><a href="reg.html#cb57-3"></a>                                          baseball_valid <span class="op">%&gt;%</span><span class="st"> </span>dplyr<span class="op">::</span><span class="kw">select</span>(<span class="op">-</span>splits)))</span>
+<span id="cb57-4"><a href="reg.html#cb57-4"></a></span>
+<span id="cb57-5"><a href="reg.html#cb57-5"></a><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> lasso_pred, <span class="dt">y =</span> baseball_valid<span class="op">$</span>Salary)) <span class="op">+</span></span>
+<span id="cb57-6"><a href="reg.html#cb57-6"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
+<span id="cb57-7"><a href="reg.html#cb57-7"></a><span class="st">  </span><span class="kw">theme_minimal</span>()</span></code></pre></div>
+<p><img src="dav_files/figure-html/unnamed-chunk-45-1.png" width="672" /></p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="reg.html#cb58-1"></a><span class="kw">mean</span>((baseball_valid<span class="op">$</span>Salary <span class="op">-</span><span class="st"> </span>lasso_pred)<span class="op">^</span><span class="dv">2</span>)</span></code></pre></div>
+<pre><code>## [1] 178315.6</code></pre>
+</div>
+<div id="exercise-15-2" class="section level3">
+<h3><span class="header-section-number">4.6.15</span> Exercise 15</h3>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="reg.html#cb60-1"></a>lasso2 &lt;-<span class="st"> </span><span class="kw">glmnet</span>(<span class="dt">x =</span> x_train, <span class="dt">y =</span> baseball_train<span class="op">$</span>Salary,</span>
+<span id="cb60-2"><a href="reg.html#cb60-2"></a>                 <span class="dt">family =</span> <span class="st">&quot;gaussian&quot;</span>, <span class="dt">alpha =</span> <span class="dv">1</span>)</span>
+<span id="cb60-3"><a href="reg.html#cb60-3"></a><span class="kw">plot</span>(lasso2)</span></code></pre></div>
+<p><img src="dav_files/figure-html/unnamed-chunk-46-1.png" width="672" /></p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="reg.html#cb61-1"></a><span class="co"># coef(lasso2)</span></span></code></pre></div>
+<p>There are now different models fitted, for 98 different <code>lambda</code> values, and the coefficients of all these models are outputted.</p>
+</div>
+<div id="exercise-16-2" class="section level3">
+<h3><span class="header-section-number">4.6.16</span> Exercise 16</h3>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="reg.html#cb62-1"></a>cv_dat &lt;-<span class="st"> </span><span class="kw">bind_rows</span>(baseball_train, baseball_valid) <span class="op">%&gt;%</span><span class="st"> </span>dplyr<span class="op">::</span><span class="kw">select</span>(<span class="op">-</span>splits)</span>
+<span id="cb62-2"><a href="reg.html#cb62-2"></a></span>
+<span id="cb62-3"><a href="reg.html#cb62-3"></a>cv_lasso &lt;-<span class="st"> </span>cv_dat <span class="op">%&gt;%</span></span>
+<span id="cb62-4"><a href="reg.html#cb62-4"></a><span class="st">  </span><span class="kw">model.matrix</span>(Salary <span class="op">~</span><span class="st"> </span>. <span class="op">-</span><span class="st"> </span><span class="dv">1</span>, .) <span class="op">%&gt;%</span></span>
+<span id="cb62-5"><a href="reg.html#cb62-5"></a><span class="st">  </span><span class="kw">cv.glmnet</span>(<span class="dt">x =</span> ., <span class="dt">y =</span> cv_dat<span class="op">$</span>Salary, <span class="dt">nfolds =</span> <span class="dv">15</span>)</span>
+<span id="cb62-6"><a href="reg.html#cb62-6"></a></span>
+<span id="cb62-7"><a href="reg.html#cb62-7"></a>cv_lasso</span></code></pre></div>
+<pre><code>## 
+## Call:  cv.glmnet(x = ., y = cv_dat$Salary, nfolds = 15) 
+## 
+## Measure: Mean-Squared Error 
+## 
+##     Lambda Measure    SE Nonzero
+## min   2.42  130299 22339      14
+## 1se  83.19  152629 30336       5</code></pre>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="reg.html#cb64-1"></a>cv_lasso<span class="op">$</span>lambda.min</span></code></pre></div>
+<pre><code>## [1] 2.42494</code></pre>
+</div>
+<div id="exercise-17-2" class="section level3">
+<h3><span class="header-section-number">4.6.17</span> Exercise 17</h3>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="reg.html#cb66-1"></a><span class="kw">plot</span>(cv_lasso)</span></code></pre></div>
+<p><img src="dav_files/figure-html/unnamed-chunk-48-1.png" width="672" /></p>
+<p>This tells that with a very small lambda, there is hardly any increase in the mean squared error, so the additional variance that is due to less shrinkage of the parameters does not seem to be problematic. However, with a much higher lambda, that is, a much more restricted model, the bias increases substantially, leading to far worse predictions.</p>
+</div>
+<div id="exercise-18-3" class="section level3">
+<h3><span class="header-section-number">4.6.18</span> Exercise 18</h3>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="reg.html#cb67-1"></a>cv_lasso_pred &lt;-<span class="st"> </span>baseball_test <span class="op">%&gt;%</span></span>
+<span id="cb67-2"><a href="reg.html#cb67-2"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">select</span>(<span class="op">-</span>splits) <span class="op">%&gt;%</span></span>
+<span id="cb67-3"><a href="reg.html#cb67-3"></a><span class="st">  </span><span class="kw">model.matrix</span>(Salary <span class="op">~</span><span class="st"> </span>. <span class="op">-</span><span class="st"> </span><span class="dv">1</span>, .) <span class="op">%&gt;%</span></span>
+<span id="cb67-4"><a href="reg.html#cb67-4"></a><span class="st">  </span><span class="kw">predict</span>(cv_lasso, .)</span>
+<span id="cb67-5"><a href="reg.html#cb67-5"></a></span>
+<span id="cb67-6"><a href="reg.html#cb67-6"></a><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> cv_lasso_pred, <span class="dt">y =</span> baseball_test<span class="op">$</span>Salary)) <span class="op">+</span></span>
+<span id="cb67-7"><a href="reg.html#cb67-7"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
+<span id="cb67-8"><a href="reg.html#cb67-8"></a><span class="st">  </span><span class="kw">theme_minimal</span>()</span></code></pre></div>
+<p><img src="dav_files/figure-html/unnamed-chunk-49-1.png" width="672" /></p>
+</div>
+<div id="exercise-19-3" class="section level3">
+<h3><span class="header-section-number">4.6.19</span> Exercise 19</h3>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="reg.html#cb68-1"></a>lin_mod &lt;-<span class="st"> </span><span class="kw">lm</span>(Salary <span class="op">~</span><span class="st"> </span>., cv_dat)</span>
+<span id="cb68-2"><a href="reg.html#cb68-2"></a>best_subset &lt;-<span class="st"> </span><span class="kw">lm</span>(best_models[<span class="kw">which.min</span>(lowest_mses)], cv_dat)</span>
+<span id="cb68-3"><a href="reg.html#cb68-3"></a>lasso_<span class="dv">50</span> &lt;-<span class="st"> </span><span class="kw">model.matrix</span>(Salary <span class="op">~</span><span class="st"> </span>. <span class="op">-</span><span class="st"> </span><span class="dv">1</span>, cv_dat) <span class="op">%&gt;%</span></span>
+<span id="cb68-4"><a href="reg.html#cb68-4"></a><span class="st">  </span><span class="kw">glmnet</span>(<span class="dt">x =</span> ., <span class="dt">y =</span> cv_dat<span class="op">$</span>Salary, <span class="dt">family =</span> <span class="st">&quot;gaussian&quot;</span>, <span class="dt">alpha =</span> <span class="dv">1</span>, <span class="dt">lambda =</span> <span class="dv">50</span>)</span>
+<span id="cb68-5"><a href="reg.html#cb68-5"></a>cv_lasso &lt;-<span class="st"> </span><span class="kw">model.matrix</span>(Salary <span class="op">~</span><span class="st"> </span>. <span class="op">-</span><span class="st"> </span><span class="dv">1</span>, cv_dat) <span class="op">%&gt;%</span></span>
+<span id="cb68-6"><a href="reg.html#cb68-6"></a><span class="st">  </span><span class="kw">glmnet</span>(<span class="dt">x =</span> ., <span class="dt">y =</span> cv_dat<span class="op">$</span>Salary, <span class="dt">family =</span> <span class="st">&quot;gaussian&quot;</span>, <span class="dt">alpha =</span> <span class="dv">1</span>)</span>
+<span id="cb68-7"><a href="reg.html#cb68-7"></a></span>
+<span id="cb68-8"><a href="reg.html#cb68-8"></a>pred_lin &lt;-<span class="st"> </span><span class="kw">predict</span>(lin_mod, baseball_test <span class="op">%&gt;%</span><span class="st"> </span>dplyr<span class="op">::</span><span class="kw">select</span>(<span class="op">-</span>splits))</span>
+<span id="cb68-9"><a href="reg.html#cb68-9"></a>pred_sub &lt;-<span class="st"> </span><span class="kw">predict</span>(best_subset, baseball_test <span class="op">%&gt;%</span><span class="st"> </span>dplyr<span class="op">::</span><span class="kw">select</span>(<span class="op">-</span>splits))</span>
+<span id="cb68-10"><a href="reg.html#cb68-10"></a>pred_lasso_<span class="dv">50</span> &lt;-<span class="st"> </span><span class="kw">predict.glmnet</span>(lasso_<span class="dv">50</span>, </span>
+<span id="cb68-11"><a href="reg.html#cb68-11"></a>                                <span class="dt">newx =</span> baseball_test <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb68-12"><a href="reg.html#cb68-12"></a><span class="st">                                         </span>dplyr<span class="op">::</span><span class="kw">select</span>(<span class="op">-</span>splits) <span class="op">%&gt;%</span></span>
+<span id="cb68-13"><a href="reg.html#cb68-13"></a><span class="st">                                         </span><span class="kw">model.matrix</span>(Salary <span class="op">~</span><span class="st"> </span>. <span class="op">-</span><span class="st"> </span><span class="dv">1</span>, .))</span>
+<span id="cb68-14"><a href="reg.html#cb68-14"></a>pred_lasso_cv &lt;-<span class="st"> </span><span class="kw">predict.glmnet</span>(cv_lasso,</span>
+<span id="cb68-15"><a href="reg.html#cb68-15"></a>                                <span class="dt">newx =</span> baseball_test <span class="op">%&gt;%</span></span>
+<span id="cb68-16"><a href="reg.html#cb68-16"></a><span class="st">                                         </span>dplyr<span class="op">::</span><span class="kw">select</span>(<span class="op">-</span>splits) <span class="op">%&gt;%</span></span>
+<span id="cb68-17"><a href="reg.html#cb68-17"></a><span class="st">                                         </span><span class="kw">model.matrix</span>(Salary <span class="op">~</span><span class="st"> </span>. <span class="op">-</span><span class="st"> </span><span class="dv">1</span>, .))</span>
+<span id="cb68-18"><a href="reg.html#cb68-18"></a></span>
+<span id="cb68-19"><a href="reg.html#cb68-19"></a><span class="kw">map_dbl</span>(<span class="kw">list</span>(<span class="dt">full =</span> pred_lin, </span>
+<span id="cb68-20"><a href="reg.html#cb68-20"></a>             <span class="dt">subset =</span> pred_sub, </span>
+<span id="cb68-21"><a href="reg.html#cb68-21"></a>             <span class="dt">lasso50 =</span> pred_lasso_<span class="dv">50</span>, </span>
+<span id="cb68-22"><a href="reg.html#cb68-22"></a>             <span class="dt">lasso_cv =</span> pred_lasso_cv),</span>
+<span id="cb68-23"><a href="reg.html#cb68-23"></a>        <span class="cf">function</span>(x) <span class="kw">mse</span>(baseball_test<span class="op">$</span>Salary, x)) <span class="op">%&gt;%</span></span>
+<span id="cb68-24"><a href="reg.html#cb68-24"></a><span class="st">  </span><span class="kw">data.frame</span>(<span class="dt">mse =</span> .) <span class="op">%&gt;%</span></span>
+<span id="cb68-25"><a href="reg.html#cb68-25"></a><span class="st">  </span><span class="kw">rownames_to_column</span>() <span class="op">%&gt;%</span></span>
+<span id="cb68-26"><a href="reg.html#cb68-26"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> rowname, <span class="dt">y =</span> mse, <span class="dt">fill =</span> rowname)) <span class="op">+</span></span>
+<span id="cb68-27"><a href="reg.html#cb68-27"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>) <span class="op">+</span></span>
+<span id="cb68-28"><a href="reg.html#cb68-28"></a><span class="st">  </span><span class="kw">scale_fill_brewer</span>(<span class="dt">name =</span> <span class="st">&quot;Method&quot;</span>, <span class="dt">palette =</span> <span class="st">&quot;Set1&quot;</span>)</span></code></pre></div>
+<p><img src="dav_files/figure-html/unnamed-chunk-50-1.png" width="672" /></p>
 
 </div>
 </div>

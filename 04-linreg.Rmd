@@ -858,7 +858,7 @@ splits <- rep(c("train", "validation", "test"), times = c(253, 152, 101))
 ### Exercise 20
 
 ```{r}
-set.seed(123)
+set.seed(1)
 boston_master <- mutate(Boston, splits = sample(splits))
 ```
 
@@ -923,6 +923,240 @@ k_fold <- function(formula, data, k) {
 k_fold(medv ~ lstat + age + tax, Boston, 9)
 k_fold(medv ~ lstat + I(lstat^2) + age + tax, Boston, 9)
 ```
+
+## Practical regression II
+
+```{r, message = FALSE, warning = FALSE}
+library(ISLR)
+library(glmnet)
+library(tidyverse)
+```
+
+### Exercise 1
+
+```{r}
+baseball <- Hitters %>% filter(!is.na(Salary))
+```
+
+There are `r nrow(baseball)` players left.
+
+### Exercise 2
+
+```{r}
+splits <- rep(c("train", "valid", "test"),
+              times = c(round(nrow(baseball) * c(0.5, 0.3)),
+                        nrow(baseball) - sum(round(nrow(baseball) * c(0.5, 0.3)))))
+baseball <- baseball %>% mutate(splits = sample(splits))
+baseball_train <- baseball %>% filter(splits == "train")
+baseball_valid <- baseball %>% filter(splits == "valid")
+baseball_test  <- baseball %>% filter(splits == "test")
+```
+
+### Exercise 3
+
+```{r}
+lm_mse <- function(formula, training_set, test_set) {
+  train <- lm(formula, training_set)
+  mean((model.frame(formula, test_set)[,1] - predict(train, test_set))^2)
+}
+```
+
+### Exercise 4
+
+```{r}
+lm_mse(Salary ~ Hits + Runs, baseball_train, baseball_valid)
+```
+
+### Exercise 5
+
+```{r}
+source("data/generate_formulas.R")
+
+preds <- Hitters %>% dplyr::select(-Salary) %>% colnames()
+```
+
+### Exercise 6
+
+```{r}
+formulas <- generate_formulas(3, preds, "Salary")
+```
+
+### Exercise 7
+
+```{r}
+best_subset_mse_3 <- map_dbl(formulas, function(x) lm_mse(x, baseball_train, baseball_valid))
+
+formulas[which.min(best_subset_mse_3)]
+```
+
+### Exercise 8
+
+```{r}
+mses_1234 <- map(c(1,2,3,4), function(p) {
+  formulas <- generate_formulas(p, preds, "Salary")
+  
+  models  <- formulas %>% map(function(x) lm(x, baseball_train))
+  y_preds <- models %>% map(function(x) predict(x, baseball_valid))
+  mses    <- y_preds %>% map_dbl(function(x) mean((baseball_valid$Salary - x)^2))
+  
+  list(models = models, formulas = formulas, mses = mses)
+})
+
+best_models <- mses_1234 %>% map_chr(function(x) x$formulas[which.min(x$mses)])
+
+lowest_mses <- mses_1234 %>% map_dbl(function(x) min(x$mses))
+
+best_models[which.min(lowest_mses)]
+```
+So in this case, the most complex model is the best model.
+
+### Exercise 9
+
+```{r}
+best_mse_test <- lm_mse(as.formula(best_models[which.min(lowest_mses)]),
+                        baseball_train,
+                        baseball_test)
+
+ggplot(mapping = aes(x = predict(lm(as.formula(best_models[which.min(lowest_mses)]), baseball_train), baseball_test),
+                     y = baseball_test$Salary)) +
+         geom_point() +
+         theme_minimal()
+```
+
+
+### Exercise 10
+
+The data should be in matrices (i.e., x should be a matrix, y should be a vector).
+
+### Exercise 11
+
+```{r}
+x_train <- baseball_train %>% 
+  dplyr::select(-splits) %>%
+  model.matrix(Salary ~ . - 1, .)
+```
+
+### Exercise 12
+
+```{r}
+lasso <- glmnet(x_train, y = baseball_train$Salary, 
+                family = "gaussian", alpha = 1, lambda = 15, )
+```
+
+### Exercise 13
+
+```{r}
+coef(lasso)
+
+coef(lasso) -> coefs
+
+as.matrix(coefs)[abs(as.matrix(coefs)) > 0,]
+```
+
+### Exercise 14
+
+```{r}
+lasso_pred <- predict(lasso, 
+                      newx = model.matrix(Salary ~ . - 1, 
+                                          baseball_valid %>% dplyr::select(-splits)))
+
+ggplot(mapping = aes(x = lasso_pred, y = baseball_valid$Salary)) +
+  geom_point() +
+  theme_minimal()
+
+mean((baseball_valid$Salary - lasso_pred)^2)
+```
+
+### Exercise 15
+
+```{r}
+lasso2 <- glmnet(x = x_train, y = baseball_train$Salary,
+                 family = "gaussian", alpha = 1)
+plot(lasso2)
+# coef(lasso2)
+```
+
+There are now different models fitted, for 98 different `lambda` values, and the coefficients of all these models are outputted.
+
+### Exercise 16
+
+```{r}
+cv_dat <- bind_rows(baseball_train, baseball_valid) %>% dplyr::select(-splits)
+
+cv_lasso <- cv_dat %>%
+  model.matrix(Salary ~ . - 1, .) %>%
+  cv.glmnet(x = ., y = cv_dat$Salary, nfolds = 15)
+
+cv_lasso
+
+cv_lasso$lambda.min
+```
+
+### Exercise 17
+
+```{r}
+plot(cv_lasso)
+```
+
+This tells that with a very small lambda, there is hardly any increase in the mean squared error, so the additional variance that is due to less shrinkage of the parameters does not seem to be problematic. However, with a much higher lambda, that is, a much more restricted model, the bias increases substantially, leading to far worse predictions.
+
+### Exercise 18
+
+```{r}
+cv_lasso_pred <- baseball_test %>%
+  dplyr::select(-splits) %>%
+  model.matrix(Salary ~ . - 1, .) %>%
+  predict(cv_lasso, .)
+
+ggplot(mapping = aes(x = cv_lasso_pred, y = baseball_test$Salary)) +
+  geom_point() +
+  theme_minimal()
+```
+
+
+### Exercise 19
+
+```{r}
+lin_mod <- lm(Salary ~ ., cv_dat)
+best_subset <- lm(best_models[which.min(lowest_mses)], cv_dat)
+lasso_50 <- model.matrix(Salary ~ . - 1, cv_dat) %>%
+  glmnet(x = ., y = cv_dat$Salary, family = "gaussian", alpha = 1, lambda = 50)
+cv_lasso <- model.matrix(Salary ~ . - 1, cv_dat) %>%
+  glmnet(x = ., y = cv_dat$Salary, family = "gaussian", alpha = 1)
+
+pred_lin <- predict(lin_mod, baseball_test %>% dplyr::select(-splits))
+pred_sub <- predict(best_subset, baseball_test %>% dplyr::select(-splits))
+pred_lasso_50 <- predict.glmnet(lasso_50, 
+                                newx = baseball_test %>% 
+                                         dplyr::select(-splits) %>%
+                                         model.matrix(Salary ~ . - 1, .))
+pred_lasso_cv <- predict.glmnet(cv_lasso,
+                                newx = baseball_test %>%
+                                         dplyr::select(-splits) %>%
+                                         model.matrix(Salary ~ . - 1, .))
+
+map_dbl(list(full = pred_lin, 
+             subset = pred_sub, 
+             lasso50 = pred_lasso_50, 
+             lasso_cv = pred_lasso_cv),
+        function(x) mse(baseball_test$Salary, x)) %>%
+  data.frame(mse = .) %>%
+  rownames_to_column() %>%
+  ggplot(mapping = aes(x = rowname, y = mse, fill = rowname)) +
+  geom_bar(stat = "identity") +
+  scale_fill_brewer(name = "Method", palette = "Set1")
+```
+
+
+
+
+
+
+
+
+
+
+
 
 
 
