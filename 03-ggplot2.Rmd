@@ -2,7 +2,7 @@
 
 ## Introduction
 
-```{r}
+```{r, message = FALSE, warning = FALSE}
 library(ISLR)
 library(tidyverse)
 ```
@@ -10,8 +10,8 @@ library(tidyverse)
 ### Exercise 1
 
 - `aesthetics`: x = Hits, y = homeruns
-- `geoms`: points, 2d density
-- `scales`: identity
+- `geoms`: points, 2d density / contour lines
+- `scales`: x = continuous, y = continuous
 - `facets`: none
 - `transformations`: none
 - `coordinate systems`: cartesian

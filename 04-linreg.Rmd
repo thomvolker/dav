@@ -695,9 +695,242 @@ Note that the number of knots in splines can be optimized using a cross-validati
 
 ### Local regression
 
-Local regression is an extension to K-nearest neighbors in two ways: (1) it weights the neighbouring points by some function, the kernel $K(\cdot, \cdot)$; (2) it determines not only the interept, but also the slope and possible higher-order polynomials. Common kernels are uniform kernels, the Epanechnikov kernel and the tricube kernel. However, for local regression, the same holds as for K-nearest neighbor regression, namely that if the number of predictors becomes too large, KNN breaks down because the closest points on tens of predictors simultaneously may actually be quite far away (curse of dimensionality).
+Local regression is an extension to K-nearest neighbors in two ways: (1) it weights the neighbouring points by some function, the kernel $K(\cdot, \cdot)$; (2) it determines not only the intercept, but also the slope and possible higher-order polynomials. Common kernels are uniform kernels, the Epanechnikov kernel and the tricube kernel. However, for local regression, the same holds as for K-nearest neighbor regression, namely that if the number of predictors becomes too large, KNN breaks down because the closest points on tens of predictors simultaneously may actually be quite far away (curse of dimensionality).
 
 ## Practical Regression I
+
+### Exercise 1
+
+```{r, message = FALSE, warning=FALSE}
+library(ISLR)
+library(MASS)
+library(tidyverse)
+```
+
+```{r}
+lm_ses <- lm(medv ~ lstat, Boston)
+```
+
+### Exercise 2
+
+```{r}
+coef(lm_ses)
+```
+
+If the proportion of people with a lower status in a neighborhood increases with one percentage point, the median value of owner-occupied homes in that neighborhood decreases with $\$`r round(coef(lm_ses)[2])`$.
+
+### Exercise 3
+
+```{r}
+summary(lm_ses)
+```
+
+The function `summary` gives the output of the linear regression model in a structured way, containing nearly all relevant information if the goal is just to interpret the model.
+
+### Exercise 4
+
+```{r}
+y_pred <- predict(lm_ses)
+```
+
+### Exercise 5
+
+```{r}
+ggplot(mapping = aes(x = y_pred, y = Boston$medv)) +
+  geom_point() +
+  geom_smooth(se = FALSE, method = "lm") +
+  theme_minimal()
+```
+
+### Exercise 6
+
+```{r}
+pred_dat <- data.frame(lstat = seq(0, 40, length.out = 1000))
+```
+
+### Exercise 7
+
+```{r}
+y_pred_new <- predict(lm_ses, pred_dat)
+```
+
+### Exercise 8
+
+```{r}
+p_scatter <- ggplot(Boston, aes(x = lstat, y = medv)) +
+  geom_point()
+```
+
+### Exercise 9
+
+```{r}
+pred_dat$medv <- y_pred_new
+```
+
+### Exercise 10
+
+```{r}
+p_scatter +
+  geom_line(data = pred_dat)
+```
+
+The line indicates the predicted decrease in `medv` as a function of `lstat`, that is, the linear relationship between the two variables.
+
+### Exercise 11
+
+```{r}
+y_pred_95 <- predict(lm_ses, pred_dat, interval = "confidence")
+```
+
+### Exercise 12
+
+```{r}
+dat_95 <- tibble(lstat = pred_dat$lstat,
+                 medv  = y_pred_95[, 'fit'],
+                 lower = y_pred_95[, 'lwr'],
+                 upper = y_pred_95[, 'upr'])
+```
+
+### Exercise 13
+
+```{r}
+ggplot(Boston, aes(x = lstat, y = medv)) +
+  geom_ribbon(aes(ymin = lower, ymax = upper), data = dat_95,
+              fill = "dark red") +
+  geom_point() +
+  geom_line(data = pred_dat) +
+  theme_minimal()
+```
+
+### Exercise 14
+
+The ribbon represents the 95% confidence interval of the regression coefficients. That is, upon repeated sampling, 95% of these intervals should contain the true population parameter. 
+
+### Exercise 15
+
+```{r}
+y_predint_95 <- predict(lm_ses, pred_dat, interval = "prediction")
+
+dat_pred_95 <- tibble(lstat = pred_dat$lstat,
+                      medv  = y_predint_95[, 'fit'],
+                      lower = y_predint_95[, 'lwr'],
+                      upper = y_predint_95[, 'upr'])
+
+ggplot(Boston, aes(x = lstat, y = medv)) +
+  geom_ribbon(aes(ymin = lower, ymax = upper), data = dat_pred_95,
+              fill = "dark red") +
+  geom_point() +
+  geom_line(data = pred_dat) +
+  theme_minimal()
+```
+
+### Exercise 16
+
+Write a function called MSE, for calculating the mean squared error.
+
+```{r}
+mse <- function(y_true, y_pred) {
+  mean((y_true - y_pred)^2)
+}
+```
+
+
+### Exercise 17
+
+```{r}
+mse(1:10, 10:1)
+```
+
+### Exercise 18
+
+```{r}
+mse(Boston$medv, predict(lm_ses))
+```
+
+### Exercise 19
+
+Train-validation-test paradigm
+
+```{r}
+splits <- rep(c("train", "validation", "test"), times = c(253, 152, 101))
+```
+
+### Exercise 20
+
+```{r}
+set.seed(123)
+boston_master <- mutate(Boston, splits = sample(splits))
+```
+
+### Exercise 21
+
+```{r}
+boston_train <- filter(boston_master, splits == "train")
+boston_valid <- filter(boston_master, splits == "validation")
+boston_test  <- filter(boston_master, splits == "test")
+```
+
+### Exercise 22
+
+```{r}
+model_1 <- lm(medv ~ lstat, boston_train)
+```
+
+### Exercise 23
+
+```{r}
+model_1_mse_train <- mse(boston_train$medv, predict(model_1))
+```
+
+### Exercise 24
+
+```{r}
+model_1_mse_valid <- mse(boston_valid$medv, predict(model_1, boston_valid))
+```
+
+### Exercise 25
+
+```{r}
+model_2 <- update(model_1, ~ lstat + age + tax)
+model_2_mse_train <- mse(boston_train$medv, predict(model_2))
+model_2_mse_valid <- mse(boston_valid$medv, predict(model_2, boston_valid))
+```
+
+### Exercise 26
+
+Based on the training data, model 2 fits better than model 1. However, this is not unlikely, as with more parameters, the model always fits better on the training data. On the validation data, model 2 fits also better than model 1, so apparently model 2 has less bias at the cost of only a tiny increase in variances, so based on these estimates, I would choose model 2. Nevertheless, as we use only a single validation set, there is quite some uncertainty in these estimates, and k-fold cross-validation provides a more precise estimate of the test error.
+
+### Exercise 27
+
+```{r}
+model_2_mse_test <- mse(boston_test$medv, predict(model_2, boston_test))
+```
+
+This number tells me that on average, the squared error between the observed and predicted median houseprices within a region equals `r round(model_2_mse_test, 2)`.
+
+### Exercise 28
+
+```{r}
+k_fold <- function(formula, data, k) {
+  x <- mutate(data, splits = sample(rep_len(1:k, length.out = nrow(data))))
+  map_dbl(1:k, function(i) {
+    mod <- x %>% filter(splits != i) %>% lm(formula, .)
+    test <- x %>% filter(splits == i)
+    mse(model.frame(formula, test)[,1], predict(mod, test))
+  }) %>% mean()
+}
+
+k_fold(medv ~ lstat + age + tax, Boston, 9)
+k_fold(medv ~ lstat + I(lstat^2) + age + tax, Boston, 9)
+```
+
+
+
+
+
+
+
+
 
 
 
