@@ -24,7 +24,7 @@
 <meta name="author" content="Thom Volker" />
 
 
-<meta name="date" content="2021-02-03" />
+<meta name="date" content="2021-02-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,6 +52,70 @@
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -70,7 +134,7 @@
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
-<li class="chapter" data-level="2" data-path="eda.html"><a href="eda.html"><i class="fa fa-check"></i><b>2</b> Week 1 - Data manipulation and EDA</a><ul>
+<li class="chapter" data-level="2" data-path="eda.html"><a href="eda.html"><i class="fa fa-check"></i><b>2</b> Week 1 Data manipulation and EDA</a><ul>
 <li class="chapter" data-level="2.1" data-path="eda.html"><a href="eda.html#introduction-1"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
 <li class="chapter" data-level="2.2" data-path="eda.html"><a href="eda.html#data-types"><i class="fa fa-check"></i><b>2.2</b> Data types</a><ul>
 <li class="chapter" data-level="2.2.1" data-path="eda.html"><a href="eda.html#exercise-1"><i class="fa fa-check"></i><b>2.2.1</b> Exercise 1</a></li>
@@ -146,10 +210,170 @@
 <li class="chapter" data-level="4.4.4" data-path="reg.html"><a href="reg.html#splines"><i class="fa fa-check"></i><b>4.4.4</b> Splines</a></li>
 <li class="chapter" data-level="4.4.5" data-path="reg.html"><a href="reg.html#local-regression-1"><i class="fa fa-check"></i><b>4.4.5</b> Local regression</a></li>
 </ul></li>
-<li class="chapter" data-level="4.5" data-path="reg.html"><a href="reg.html#practical-regression-i"><i class="fa fa-check"></i><b>4.5</b> Practical Regression I</a></li>
+<li class="chapter" data-level="4.5" data-path="reg.html"><a href="reg.html#practical-regression-i"><i class="fa fa-check"></i><b>4.5</b> Practical Regression I</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="reg.html"><a href="reg.html#exercise-1-2"><i class="fa fa-check"></i><b>4.5.1</b> Exercise 1</a></li>
+<li class="chapter" data-level="4.5.2" data-path="reg.html"><a href="reg.html#exercise-2-2"><i class="fa fa-check"></i><b>4.5.2</b> Exercise 2</a></li>
+<li class="chapter" data-level="4.5.3" data-path="reg.html"><a href="reg.html#exercise-3-2"><i class="fa fa-check"></i><b>4.5.3</b> Exercise 3</a></li>
+<li class="chapter" data-level="4.5.4" data-path="reg.html"><a href="reg.html#exercise-4-2"><i class="fa fa-check"></i><b>4.5.4</b> Exercise 4</a></li>
+<li class="chapter" data-level="4.5.5" data-path="reg.html"><a href="reg.html#exercise-5-2"><i class="fa fa-check"></i><b>4.5.5</b> Exercise 5</a></li>
+<li class="chapter" data-level="4.5.6" data-path="reg.html"><a href="reg.html#exercise-6-2"><i class="fa fa-check"></i><b>4.5.6</b> Exercise 6</a></li>
+<li class="chapter" data-level="4.5.7" data-path="reg.html"><a href="reg.html#exercise-7-2"><i class="fa fa-check"></i><b>4.5.7</b> Exercise 7</a></li>
+<li class="chapter" data-level="4.5.8" data-path="reg.html"><a href="reg.html#exercise-8-2"><i class="fa fa-check"></i><b>4.5.8</b> Exercise 8</a></li>
+<li class="chapter" data-level="4.5.9" data-path="reg.html"><a href="reg.html#exercise-9-2"><i class="fa fa-check"></i><b>4.5.9</b> Exercise 9</a></li>
+<li class="chapter" data-level="4.5.10" data-path="reg.html"><a href="reg.html#exercise-10-2"><i class="fa fa-check"></i><b>4.5.10</b> Exercise 10</a></li>
+<li class="chapter" data-level="4.5.11" data-path="reg.html"><a href="reg.html#exercise-11-2"><i class="fa fa-check"></i><b>4.5.11</b> Exercise 11</a></li>
+<li class="chapter" data-level="4.5.12" data-path="reg.html"><a href="reg.html#exercise-12-2"><i class="fa fa-check"></i><b>4.5.12</b> Exercise 12</a></li>
+<li class="chapter" data-level="4.5.13" data-path="reg.html"><a href="reg.html#exercise-13-2"><i class="fa fa-check"></i><b>4.5.13</b> Exercise 13</a></li>
+<li class="chapter" data-level="4.5.14" data-path="reg.html"><a href="reg.html#exercise-14-1"><i class="fa fa-check"></i><b>4.5.14</b> Exercise 14</a></li>
+<li class="chapter" data-level="4.5.15" data-path="reg.html"><a href="reg.html#exercise-15-1"><i class="fa fa-check"></i><b>4.5.15</b> Exercise 15</a></li>
+<li class="chapter" data-level="4.5.16" data-path="reg.html"><a href="reg.html#exercise-16-1"><i class="fa fa-check"></i><b>4.5.16</b> Exercise 16</a></li>
+<li class="chapter" data-level="4.5.17" data-path="reg.html"><a href="reg.html#exercise-17-1"><i class="fa fa-check"></i><b>4.5.17</b> Exercise 17</a></li>
+<li class="chapter" data-level="4.5.18" data-path="reg.html"><a href="reg.html#exercise-18-2"><i class="fa fa-check"></i><b>4.5.18</b> Exercise 18</a></li>
+<li class="chapter" data-level="4.5.19" data-path="reg.html"><a href="reg.html#exercise-19-2"><i class="fa fa-check"></i><b>4.5.19</b> Exercise 19</a></li>
+<li class="chapter" data-level="4.5.20" data-path="reg.html"><a href="reg.html#exercise-20"><i class="fa fa-check"></i><b>4.5.20</b> Exercise 20</a></li>
+<li class="chapter" data-level="4.5.21" data-path="reg.html"><a href="reg.html#exercise-21"><i class="fa fa-check"></i><b>4.5.21</b> Exercise 21</a></li>
+<li class="chapter" data-level="4.5.22" data-path="reg.html"><a href="reg.html#exercise-22"><i class="fa fa-check"></i><b>4.5.22</b> Exercise 22</a></li>
+<li class="chapter" data-level="4.5.23" data-path="reg.html"><a href="reg.html#exercise-23"><i class="fa fa-check"></i><b>4.5.23</b> Exercise 23</a></li>
+<li class="chapter" data-level="4.5.24" data-path="reg.html"><a href="reg.html#exercise-24"><i class="fa fa-check"></i><b>4.5.24</b> Exercise 24</a></li>
+<li class="chapter" data-level="4.5.25" data-path="reg.html"><a href="reg.html#exercise-25"><i class="fa fa-check"></i><b>4.5.25</b> Exercise 25</a></li>
+<li class="chapter" data-level="4.5.26" data-path="reg.html"><a href="reg.html#exercise-26"><i class="fa fa-check"></i><b>4.5.26</b> Exercise 26</a></li>
+<li class="chapter" data-level="4.5.27" data-path="reg.html"><a href="reg.html#exercise-27"><i class="fa fa-check"></i><b>4.5.27</b> Exercise 27</a></li>
+<li class="chapter" data-level="4.5.28" data-path="reg.html"><a href="reg.html#exercise-28"><i class="fa fa-check"></i><b>4.5.28</b> Exercise 28</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="class.html"><a href="class.html"><i class="fa fa-check"></i><b>5</b> Classification</a></li>
-<li class="chapter" data-level="6" data-path="unsup.html"><a href="unsup.html"><i class="fa fa-check"></i><b>6</b> Unsupervised learning</a></li>
+<li class="chapter" data-level="4.6" data-path="reg.html"><a href="reg.html#practical-regression-ii"><i class="fa fa-check"></i><b>4.6</b> Practical regression II</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="reg.html"><a href="reg.html#exercise-1-3"><i class="fa fa-check"></i><b>4.6.1</b> Exercise 1</a></li>
+<li class="chapter" data-level="4.6.2" data-path="reg.html"><a href="reg.html#exercise-2-3"><i class="fa fa-check"></i><b>4.6.2</b> Exercise 2</a></li>
+<li class="chapter" data-level="4.6.3" data-path="reg.html"><a href="reg.html#exercise-3-3"><i class="fa fa-check"></i><b>4.6.3</b> Exercise 3</a></li>
+<li class="chapter" data-level="4.6.4" data-path="reg.html"><a href="reg.html#exercise-4-3"><i class="fa fa-check"></i><b>4.6.4</b> Exercise 4</a></li>
+<li class="chapter" data-level="4.6.5" data-path="reg.html"><a href="reg.html#exercise-5-3"><i class="fa fa-check"></i><b>4.6.5</b> Exercise 5</a></li>
+<li class="chapter" data-level="4.6.6" data-path="reg.html"><a href="reg.html#exercise-6-3"><i class="fa fa-check"></i><b>4.6.6</b> Exercise 6</a></li>
+<li class="chapter" data-level="4.6.7" data-path="reg.html"><a href="reg.html#exercise-7-3"><i class="fa fa-check"></i><b>4.6.7</b> Exercise 7</a></li>
+<li class="chapter" data-level="4.6.8" data-path="reg.html"><a href="reg.html#exercise-8-3"><i class="fa fa-check"></i><b>4.6.8</b> Exercise 8</a></li>
+<li class="chapter" data-level="4.6.9" data-path="reg.html"><a href="reg.html#exercise-9-3"><i class="fa fa-check"></i><b>4.6.9</b> Exercise 9</a></li>
+<li class="chapter" data-level="4.6.10" data-path="reg.html"><a href="reg.html#exercise-10-3"><i class="fa fa-check"></i><b>4.6.10</b> Exercise 10</a></li>
+<li class="chapter" data-level="4.6.11" data-path="reg.html"><a href="reg.html#exercise-11-3"><i class="fa fa-check"></i><b>4.6.11</b> Exercise 11</a></li>
+<li class="chapter" data-level="4.6.12" data-path="reg.html"><a href="reg.html#exercise-12-3"><i class="fa fa-check"></i><b>4.6.12</b> Exercise 12</a></li>
+<li class="chapter" data-level="4.6.13" data-path="reg.html"><a href="reg.html#exercise-13-3"><i class="fa fa-check"></i><b>4.6.13</b> Exercise 13</a></li>
+<li class="chapter" data-level="4.6.14" data-path="reg.html"><a href="reg.html#exercise-14-2"><i class="fa fa-check"></i><b>4.6.14</b> Exercise 14</a></li>
+<li class="chapter" data-level="4.6.15" data-path="reg.html"><a href="reg.html#exercise-15-2"><i class="fa fa-check"></i><b>4.6.15</b> Exercise 15</a></li>
+<li class="chapter" data-level="4.6.16" data-path="reg.html"><a href="reg.html#exercise-16-2"><i class="fa fa-check"></i><b>4.6.16</b> Exercise 16</a></li>
+<li class="chapter" data-level="4.6.17" data-path="reg.html"><a href="reg.html#exercise-17-2"><i class="fa fa-check"></i><b>4.6.17</b> Exercise 17</a></li>
+<li class="chapter" data-level="4.6.18" data-path="reg.html"><a href="reg.html#exercise-18-3"><i class="fa fa-check"></i><b>4.6.18</b> Exercise 18</a></li>
+<li class="chapter" data-level="4.6.19" data-path="reg.html"><a href="reg.html#exercise-19-3"><i class="fa fa-check"></i><b>4.6.19</b> Exercise 19</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="reg.html"><a href="reg.html#practical-regression-iii"><i class="fa fa-check"></i><b>4.7</b> Practical regression III</a><ul>
+<li class="chapter" data-level="4.7.1" data-path="reg.html"><a href="reg.html#exercise-1-4"><i class="fa fa-check"></i><b>4.7.1</b> Exercise 1</a></li>
+<li class="chapter" data-level="4.7.2" data-path="reg.html"><a href="reg.html#exercise-2-4"><i class="fa fa-check"></i><b>4.7.2</b> Exercise 2</a></li>
+<li class="chapter" data-level="4.7.3" data-path="reg.html"><a href="reg.html#exercise-3-4"><i class="fa fa-check"></i><b>4.7.3</b> Exercise 3</a></li>
+<li class="chapter" data-level="4.7.4" data-path="reg.html"><a href="reg.html#exercise-4-4"><i class="fa fa-check"></i><b>4.7.4</b> Exercise 4</a></li>
+<li class="chapter" data-level="4.7.5" data-path="reg.html"><a href="reg.html#exercise-5-4"><i class="fa fa-check"></i><b>4.7.5</b> Exercise 5</a></li>
+<li class="chapter" data-level="4.7.6" data-path="reg.html"><a href="reg.html#exercise-6-4"><i class="fa fa-check"></i><b>4.7.6</b> Exercise 6</a></li>
+<li class="chapter" data-level="4.7.7" data-path="reg.html"><a href="reg.html#exercise-7-4"><i class="fa fa-check"></i><b>4.7.7</b> Exercise 7</a></li>
+<li class="chapter" data-level="4.7.8" data-path="reg.html"><a href="reg.html#exercise-8-4"><i class="fa fa-check"></i><b>4.7.8</b> Exercise 8</a></li>
+<li class="chapter" data-level="4.7.9" data-path="reg.html"><a href="reg.html#exercise-9-4"><i class="fa fa-check"></i><b>4.7.9</b> Exercise 9</a></li>
+<li class="chapter" data-level="4.7.10" data-path="reg.html"><a href="reg.html#exercise-10-4"><i class="fa fa-check"></i><b>4.7.10</b> Exercise 10</a></li>
+<li class="chapter" data-level="4.7.11" data-path="reg.html"><a href="reg.html#exercise-11-4"><i class="fa fa-check"></i><b>4.7.11</b> Exercise 11</a></li>
+<li class="chapter" data-level="4.7.12" data-path="reg.html"><a href="reg.html#exercise-12-4"><i class="fa fa-check"></i><b>4.7.12</b> Exercise 12</a></li>
+<li class="chapter" data-level="4.7.13" data-path="reg.html"><a href="reg.html#exercise-13-4"><i class="fa fa-check"></i><b>4.7.13</b> Exercise 13</a></li>
+<li class="chapter" data-level="4.7.14" data-path="reg.html"><a href="reg.html#exercise-14-3"><i class="fa fa-check"></i><b>4.7.14</b> Exercise 14</a></li>
+<li class="chapter" data-level="4.7.15" data-path="reg.html"><a href="reg.html#exercise-15-3"><i class="fa fa-check"></i><b>4.7.15</b> Exercise 15</a></li>
+<li class="chapter" data-level="4.7.16" data-path="reg.html"><a href="reg.html#exercise-16-3"><i class="fa fa-check"></i><b>4.7.16</b> Exercise 16</a></li>
+<li class="chapter" data-level="4.7.17" data-path="reg.html"><a href="reg.html#exercise-17-3"><i class="fa fa-check"></i><b>4.7.17</b> Exercise 17</a></li>
+<li class="chapter" data-level="4.7.18" data-path="reg.html"><a href="reg.html#exercise-19-4"><i class="fa fa-check"></i><b>4.7.18</b> Exercise 19</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="class.html"><a href="class.html"><i class="fa fa-check"></i><b>5</b> Classification</a><ul>
+<li class="chapter" data-level="5.1" data-path="class.html"><a href="class.html#book-1"><i class="fa fa-check"></i><b>5.1</b> Book</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="class.html"><a href="class.html#regression-trees"><i class="fa fa-check"></i><b>5.1.1</b> Regression trees</a></li>
+<li class="chapter" data-level="5.1.2" data-path="class.html"><a href="class.html#tree-pruning"><i class="fa fa-check"></i><b>5.1.2</b> Tree pruning</a></li>
+<li class="chapter" data-level="5.1.3" data-path="class.html"><a href="class.html#cost-complexity-pruning-weakest-link-pruning"><i class="fa fa-check"></i><b>5.1.3</b> Cost-complexity pruning / weakest-link pruning</a></li>
+<li class="chapter" data-level="5.1.4" data-path="class.html"><a href="class.html#building-a-regression-tree"><i class="fa fa-check"></i><b>5.1.4</b> Building a regression tree</a></li>
+<li class="chapter" data-level="5.1.5" data-path="class.html"><a href="class.html#trees-versus-linear-models"><i class="fa fa-check"></i><b>5.1.5</b> Trees versus linear models</a></li>
+<li class="chapter" data-level="5.1.6" data-path="class.html"><a href="class.html#bagging"><i class="fa fa-check"></i><b>5.1.6</b> Bagging</a></li>
+<li class="chapter" data-level="5.1.7" data-path="class.html"><a href="class.html#out-of-bag-error-estimation"><i class="fa fa-check"></i><b>5.1.7</b> Out-of-bag error estimation</a></li>
+<li class="chapter" data-level="5.1.8" data-path="class.html"><a href="class.html#variable-importance-measures"><i class="fa fa-check"></i><b>5.1.8</b> Variable importance measures</a></li>
+<li class="chapter" data-level="5.1.9" data-path="class.html"><a href="class.html#random-forests"><i class="fa fa-check"></i><b>5.1.9</b> Random forests</a></li>
+<li class="chapter" data-level="5.1.10" data-path="class.html"><a href="class.html#boosting"><i class="fa fa-check"></i><b>5.1.10</b> Boosting</a></li>
+<li class="chapter" data-level="5.1.11" data-path="class.html"><a href="class.html#boosting-algorithm"><i class="fa fa-check"></i><b>5.1.11</b> Boosting algorithm</a></li>
+<li class="chapter" data-level="5.1.12" data-path="class.html"><a href="class.html#classification"><i class="fa fa-check"></i><b>5.1.12</b> Classification</a></li>
+<li class="chapter" data-level="5.1.13" data-path="class.html"><a href="class.html#the-bayes-classifier"><i class="fa fa-check"></i><b>5.1.13</b> The Bayes classifier</a></li>
+<li class="chapter" data-level="5.1.14" data-path="class.html"><a href="class.html#k-nearest-neighbors"><i class="fa fa-check"></i><b>5.1.14</b> K-nearest neighbors</a></li>
+<li class="chapter" data-level="5.1.15" data-path="class.html"><a href="class.html#logistic-regression---skipped"><i class="fa fa-check"></i><b>5.1.15</b> Logistic regression - skipped</a></li>
+<li class="chapter" data-level="5.1.16" data-path="class.html"><a href="class.html#linear-discriminant-analysis"><i class="fa fa-check"></i><b>5.1.16</b> Linear discriminant analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="class.html"><a href="class.html#lecture-classification-i"><i class="fa fa-check"></i><b>5.2</b> Lecture Classification I</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="class.html"><a href="class.html#classification-1"><i class="fa fa-check"></i><b>5.2.1</b> Classification</a></li>
+<li class="chapter" data-level="5.2.2" data-path="class.html"><a href="class.html#evaluating-classifiers"><i class="fa fa-check"></i><b>5.2.2</b> Evaluating classifiers</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="class.html"><a href="class.html#lecture-classification-ii"><i class="fa fa-check"></i><b>5.3</b> Lecture Classification II</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="class.html"><a href="class.html#bagging-1"><i class="fa fa-check"></i><b>5.3.1</b> Bagging</a></li>
+<li class="chapter" data-level="5.3.2" data-path="class.html"><a href="class.html#random-forests-1"><i class="fa fa-check"></i><b>5.3.2</b> Random forests</a></li>
+<li class="chapter" data-level="5.3.3" data-path="class.html"><a href="class.html#boosting-1"><i class="fa fa-check"></i><b>5.3.3</b> Boosting</a></li>
+<li class="chapter" data-level="5.3.4" data-path="class.html"><a href="class.html#conclusion"><i class="fa fa-check"></i><b>5.3.4</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="class.html"><a href="class.html#practical-classification-1"><i class="fa fa-check"></i><b>5.4</b> Practical classification 1</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="class.html"><a href="class.html#exercise-1-5"><i class="fa fa-check"></i><b>5.4.1</b> Exercise 1</a></li>
+<li class="chapter" data-level="5.4.2" data-path="class.html"><a href="class.html#exercise-2-5"><i class="fa fa-check"></i><b>5.4.2</b> Exercise 2</a></li>
+<li class="chapter" data-level="5.4.3" data-path="class.html"><a href="class.html#exercise-3-5"><i class="fa fa-check"></i><b>5.4.3</b> Exercise 3</a></li>
+<li class="chapter" data-level="5.4.4" data-path="class.html"><a href="class.html#exercise-4-5"><i class="fa fa-check"></i><b>5.4.4</b> Exercise 4</a></li>
+<li class="chapter" data-level="5.4.5" data-path="class.html"><a href="class.html#exercise-5-5"><i class="fa fa-check"></i><b>5.4.5</b> Exercise 5</a></li>
+<li class="chapter" data-level="5.4.6" data-path="class.html"><a href="class.html#exercise-6-5"><i class="fa fa-check"></i><b>5.4.6</b> Exercise 6</a></li>
+<li class="chapter" data-level="5.4.7" data-path="class.html"><a href="class.html#exercise-7-5"><i class="fa fa-check"></i><b>5.4.7</b> Exercise 7</a></li>
+<li class="chapter" data-level="5.4.8" data-path="class.html"><a href="class.html#exercise-8-5"><i class="fa fa-check"></i><b>5.4.8</b> Exercise 8</a></li>
+<li class="chapter" data-level="5.4.9" data-path="class.html"><a href="class.html#exercise-9-5"><i class="fa fa-check"></i><b>5.4.9</b> Exercise 9</a></li>
+<li class="chapter" data-level="5.4.10" data-path="class.html"><a href="class.html#exercise-10-5"><i class="fa fa-check"></i><b>5.4.10</b> Exercise 10</a></li>
+<li class="chapter" data-level="5.4.11" data-path="class.html"><a href="class.html#exercise-11-5"><i class="fa fa-check"></i><b>5.4.11</b> Exercise 11</a></li>
+<li class="chapter" data-level="5.4.12" data-path="class.html"><a href="class.html#exercise-12-5"><i class="fa fa-check"></i><b>5.4.12</b> Exercise 12</a></li>
+<li class="chapter" data-level="5.4.13" data-path="class.html"><a href="class.html#exercise-13-5"><i class="fa fa-check"></i><b>5.4.13</b> Exercise 13</a></li>
+<li class="chapter" data-level="5.4.14" data-path="class.html"><a href="class.html#exercise-14-4"><i class="fa fa-check"></i><b>5.4.14</b> Exercise 14</a></li>
+<li class="chapter" data-level="5.4.15" data-path="class.html"><a href="class.html#exercise-15-4"><i class="fa fa-check"></i><b>5.4.15</b> Exercise 15</a></li>
+<li class="chapter" data-level="5.4.16" data-path="class.html"><a href="class.html#exercise-16-4"><i class="fa fa-check"></i><b>5.4.16</b> Exercise 16</a></li>
+<li class="chapter" data-level="5.4.17" data-path="class.html"><a href="class.html#exercise-17-4"><i class="fa fa-check"></i><b>5.4.17</b> Exercise 17</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="class.html"><a href="class.html#practical-classification-ii"><i class="fa fa-check"></i><b>5.5</b> Practical classification II</a><ul>
+<li class="chapter" data-level="5.5.1" data-path="class.html"><a href="class.html#exercise-1-6"><i class="fa fa-check"></i><b>5.5.1</b> Exercise 1</a></li>
+<li class="chapter" data-level="5.5.2" data-path="class.html"><a href="class.html#exercise-2-6"><i class="fa fa-check"></i><b>5.5.2</b> Exercise 2</a></li>
+<li class="chapter" data-level="5.5.3" data-path="class.html"><a href="class.html#exercise-4-6"><i class="fa fa-check"></i><b>5.5.3</b> Exercise 4</a></li>
+<li class="chapter" data-level="5.5.4" data-path="class.html"><a href="class.html#exercise-5-6"><i class="fa fa-check"></i><b>5.5.4</b> Exercise 5</a></li>
+<li class="chapter" data-level="5.5.5" data-path="class.html"><a href="class.html#exercise-6-6"><i class="fa fa-check"></i><b>5.5.5</b> Exercise 6</a></li>
+<li class="chapter" data-level="5.5.6" data-path="class.html"><a href="class.html#exercise-7-6"><i class="fa fa-check"></i><b>5.5.6</b> Exercise 7</a></li>
+<li class="chapter" data-level="5.5.7" data-path="class.html"><a href="class.html#exercise-8-6"><i class="fa fa-check"></i><b>5.5.7</b> Exercise 8</a></li>
+<li class="chapter" data-level="5.5.8" data-path="class.html"><a href="class.html#exercise-9-6"><i class="fa fa-check"></i><b>5.5.8</b> Exercise 9</a></li>
+<li class="chapter" data-level="5.5.9" data-path="class.html"><a href="class.html#exercise-11-6"><i class="fa fa-check"></i><b>5.5.9</b> Exercise 11</a></li>
+<li class="chapter" data-level="5.5.10" data-path="class.html"><a href="class.html#exercise-12-6"><i class="fa fa-check"></i><b>5.5.10</b> Exercise 12</a></li>
+<li class="chapter" data-level="5.5.11" data-path="class.html"><a href="class.html#exercise-13-6"><i class="fa fa-check"></i><b>5.5.11</b> Exercise 13</a></li>
+<li class="chapter" data-level="5.5.12" data-path="class.html"><a href="class.html#exercise-14-5"><i class="fa fa-check"></i><b>5.5.12</b> Exercise 14</a></li>
+<li class="chapter" data-level="5.5.13" data-path="class.html"><a href="class.html#exercise-15-5"><i class="fa fa-check"></i><b>5.5.13</b> Exercise 15</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="unsup.html"><a href="unsup.html"><i class="fa fa-check"></i><b>6</b> Unsupervised learning</a><ul>
+<li class="chapter" data-level="6.1" data-path="unsup.html"><a href="unsup.html#book-unsupervised-learning-pca"><i class="fa fa-check"></i><b>6.1</b> Book unsupervised learning PCA</a></li>
+<li class="chapter" data-level="6.2" data-path="unsup.html"><a href="unsup.html#unsupervised-learning-practical-i"><i class="fa fa-check"></i><b>6.2</b> Unsupervised learning practical I</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="unsup.html"><a href="unsup.html#exercise-1-7"><i class="fa fa-check"></i><b>6.2.1</b> Exercise 1</a></li>
+<li class="chapter" data-level="6.2.2" data-path="unsup.html"><a href="unsup.html#exercise-2-7"><i class="fa fa-check"></i><b>6.2.2</b> Exercise 2</a></li>
+<li class="chapter" data-level="6.2.3" data-path="unsup.html"><a href="unsup.html#exercise-3-6"><i class="fa fa-check"></i><b>6.2.3</b> Exercise 3</a></li>
+<li class="chapter" data-level="6.2.4" data-path="unsup.html"><a href="unsup.html#exercise-4-7"><i class="fa fa-check"></i><b>6.2.4</b> Exercise 4</a></li>
+<li class="chapter" data-level="6.2.5" data-path="unsup.html"><a href="unsup.html#exercise-5-7"><i class="fa fa-check"></i><b>6.2.5</b> Exercise 5</a></li>
+<li class="chapter" data-level="6.2.6" data-path="unsup.html"><a href="unsup.html#exercise-6-7"><i class="fa fa-check"></i><b>6.2.6</b> Exercise 6</a></li>
+<li class="chapter" data-level="6.2.7" data-path="unsup.html"><a href="unsup.html#exercise-7-7"><i class="fa fa-check"></i><b>6.2.7</b> Exercise 7</a></li>
+<li class="chapter" data-level="6.2.8" data-path="unsup.html"><a href="unsup.html#exercise-8-7"><i class="fa fa-check"></i><b>6.2.8</b> Exercise 8</a></li>
+<li class="chapter" data-level="6.2.9" data-path="unsup.html"><a href="unsup.html#exercise-9-7"><i class="fa fa-check"></i><b>6.2.9</b> Exercise 9</a></li>
+<li class="chapter" data-level="6.2.10" data-path="unsup.html"><a href="unsup.html#exercise-10-6"><i class="fa fa-check"></i><b>6.2.10</b> Exercise 10</a></li>
+<li class="chapter" data-level="6.2.11" data-path="unsup.html"><a href="unsup.html#exercise-11-7"><i class="fa fa-check"></i><b>6.2.11</b> Exercise 11</a></li>
+<li class="chapter" data-level="6.2.12" data-path="unsup.html"><a href="unsup.html#exercise-12-7"><i class="fa fa-check"></i><b>6.2.12</b> Exercise 12</a></li>
+<li class="chapter" data-level="6.2.13" data-path="unsup.html"><a href="unsup.html#exercise-13-7"><i class="fa fa-check"></i><b>6.2.13</b> Exercise 13</a></li>
+<li class="chapter" data-level="6.2.14" data-path="unsup.html"><a href="unsup.html#exercise-14-6"><i class="fa fa-check"></i><b>6.2.14</b> Exercise 14</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="unsup.html"><a href="unsup.html#unsupervised-learning-practical-ii"><i class="fa fa-check"></i><b>6.3</b> Unsupervised learning practical II</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="unsup.html"><a href="unsup.html#exercise-1-8"><i class="fa fa-check"></i><b>6.3.1</b> Exercise 1</a></li>
+<li class="chapter" data-level="6.3.2" data-path="unsup.html"><a href="unsup.html#exercise-2-8"><i class="fa fa-check"></i><b>6.3.2</b> Exercise 2</a></li>
+<li class="chapter" data-level="6.3.3" data-path="unsup.html"><a href="unsup.html#exercise-3-7"><i class="fa fa-check"></i><b>6.3.3</b> Exercise 3</a></li>
+<li class="chapter" data-level="6.3.4" data-path="unsup.html"><a href="unsup.html#exercise-4-8"><i class="fa fa-check"></i><b>6.3.4</b> Exercise 4</a></li>
+<li class="chapter" data-level="6.3.5" data-path="unsup.html"><a href="unsup.html#exercise-5-8"><i class="fa fa-check"></i><b>6.3.5</b> Exercise 5</a></li>
+<li class="chapter" data-level="6.3.6" data-path="unsup.html"><a href="unsup.html#exercise-6-8"><i class="fa fa-check"></i><b>6.3.6</b> Exercise 6</a></li>
+<li class="chapter" data-level="6.3.7" data-path="unsup.html"><a href="unsup.html#exercise-7-8"><i class="fa fa-check"></i><b>6.3.7</b> Exercise 7</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -173,8 +397,380 @@
             <section class="normal" id="section-">
 <div id="unsup" class="section level1">
 <h1><span class="header-section-number">Chapter 6</span> Unsupervised learning</h1>
-<p>This is yet to come.</p>
+<div id="book-unsupervised-learning-pca" class="section level2">
+<h2><span class="header-section-number">6.1</span> Book unsupervised learning PCA</h2>
+<p>The goal of unsupervised learning is to discover interesting relations among the X’s.</p>
+</div>
+<div id="unsupervised-learning-practical-i" class="section level2">
+<h2><span class="header-section-number">6.2</span> Unsupervised learning practical I</h2>
+<div id="exercise-1-7" class="section level3">
+<h3><span class="header-section-number">6.2.1</span> Exercise 1</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="unsup.html#cb1-1"></a><span class="kw">library</span>(ISLR)</span>
+<span id="cb1-2"><a href="unsup.html#cb1-2"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="unsup.html#cb1-3"></a><span class="kw">library</span>(ca)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="unsup.html#cb2-1"></a>df &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/questionnaire.csv&quot;</span>)</span></code></pre></div>
+</div>
+<div id="exercise-2-7" class="section level3">
+<h3><span class="header-section-number">6.2.2</span> Exercise 2</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="unsup.html#cb3-1"></a>df_scaled &lt;-<span class="st"> </span>df <span class="op">%&gt;%</span></span>
+<span id="cb3-2"><a href="unsup.html#cb3-2"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">select</span>(<span class="op">-</span>sex) <span class="op">%&gt;%</span></span>
+<span id="cb3-3"><a href="unsup.html#cb3-3"></a><span class="st">  </span><span class="kw">scale</span>() <span class="op">%&gt;%</span></span>
+<span id="cb3-4"><a href="unsup.html#cb3-4"></a><span class="st">  </span><span class="kw">as_tibble</span>()</span>
+<span id="cb3-5"><a href="unsup.html#cb3-5"></a></span>
+<span id="cb3-6"><a href="unsup.html#cb3-6"></a><span class="co"># optionally, we can also compare datasets to see what happened.</span></span>
+<span id="cb3-7"><a href="unsup.html#cb3-7"></a>bubble_plot &lt;-<span class="st"> </span><span class="cf">function</span>(df) {</span>
+<span id="cb3-8"><a href="unsup.html#cb3-8"></a>  df <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb3-9"><a href="unsup.html#cb3-9"></a><span class="st">    </span><span class="kw">gather</span>(<span class="dt">key =</span> Question, <span class="dt">value =</span> Answer) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb3-10"><a href="unsup.html#cb3-10"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">Question =</span> <span class="kw">str_to_lower</span>(Question)) <span class="op">%&gt;%</span></span>
+<span id="cb3-11"><a href="unsup.html#cb3-11"></a><span class="st">    </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Question, <span class="dt">y =</span> Answer)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb3-12"><a href="unsup.html#cb3-12"></a><span class="st">    </span><span class="kw">geom_count</span>(<span class="dt">colour =</span> <span class="st">&quot;#00008B&quot;</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb3-13"><a href="unsup.html#cb3-13"></a><span class="st">    </span><span class="kw">theme_minimal</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb3-14"><a href="unsup.html#cb3-14"></a><span class="st">    </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">90</span>, <span class="dt">hjust =</span> <span class="dv">1</span>))</span>
+<span id="cb3-15"><a href="unsup.html#cb3-15"></a>}</span>
+<span id="cb3-16"><a href="unsup.html#cb3-16"></a></span>
+<span id="cb3-17"><a href="unsup.html#cb3-17"></a><span class="co"># Unscaled</span></span>
+<span id="cb3-18"><a href="unsup.html#cb3-18"></a>df <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb3-19"><a href="unsup.html#cb3-19"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">select</span>(<span class="op">-</span>sex) <span class="op">%&gt;%</span></span>
+<span id="cb3-20"><a href="unsup.html#cb3-20"></a><span class="st">  </span><span class="kw">bubble_plot</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb3-21"><a href="unsup.html#cb3-21"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Unscaled&quot;</span>)</span></code></pre></div>
+<p><img src="dav_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="unsup.html#cb4-1"></a><span class="co"># Scaled</span></span>
+<span id="cb4-2"><a href="unsup.html#cb4-2"></a>df_scaled <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb4-3"><a href="unsup.html#cb4-3"></a><span class="st">  </span><span class="kw">bubble_plot</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb4-4"><a href="unsup.html#cb4-4"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="st">&quot;Z-score&quot;</span>, </span>
+<span id="cb4-5"><a href="unsup.html#cb4-5"></a>       <span class="dt">title =</span> <span class="st">&quot;Scaled&quot;</span>)</span></code></pre></div>
+<p><img src="dav_files/figure-html/unnamed-chunk-3-2.png" width="672" /></p>
+</div>
+<div id="exercise-3-6" class="section level3">
+<h3><span class="header-section-number">6.2.3</span> Exercise 3</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="unsup.html#cb5-1"></a>pca_mod &lt;-<span class="st"> </span><span class="kw">prcomp</span>(df_scaled)</span></code></pre></div>
+</div>
+<div id="exercise-4-7" class="section level3">
+<h3><span class="header-section-number">6.2.4</span> Exercise 4</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="unsup.html#cb6-1"></a><span class="kw">summary</span>(pca_mod)</span></code></pre></div>
+<pre><code>## Importance of components:
+##                          PC1    PC2    PC3     PC4     PC5     PC6     PC7
+## Standard deviation     1.990 1.7203 1.2231 1.13377 1.08634 1.01829 0.93155
+## Proportion of Variance 0.198 0.1480 0.0748 0.06427 0.05901 0.05185 0.04339
+## Cumulative Proportion  0.198 0.3459 0.4207 0.48501 0.54402 0.59586 0.63925
+##                            PC8    PC9    PC10    PC11    PC12    PC13    PC14
+## Standard deviation     0.88987 0.8843 0.87713 0.80285 0.80101 0.74269 0.72226
+## Proportion of Variance 0.03959 0.0391 0.03847 0.03223 0.03208 0.02758 0.02608
+## Cumulative Proportion  0.67884 0.7179 0.75641 0.78863 0.82072 0.84829 0.87438
+##                           PC15   PC16    PC17   PC18    PC19    PC20
+## Standard deviation     0.69182 0.6885 0.66436 0.6418 0.59656 0.59211
+## Proportion of Variance 0.02393 0.0237 0.02207 0.0206 0.01779 0.01753
+## Cumulative Proportion  0.89831 0.9220 0.94408 0.9647 0.98247 1.00000</code></pre>
+<p>Together, the first two components explain about 35% of the total variance, and we would need 5 components to explain 50% of the variance in the data.</p>
+</div>
+<div id="exercise-5-7" class="section level3">
+<h3><span class="header-section-number">6.2.5</span> Exercise 5</h3>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="unsup.html#cb8-1"></a>pca_mod<span class="op">$</span>rotation[,<span class="dv">1</span>][<span class="kw">which.max</span>(pca_mod<span class="op">$</span>rotation[,<span class="dv">1</span>])]</span></code></pre></div>
+<pre><code>##    BIGF13 
+## 0.3182789</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="unsup.html#cb10-1"></a><span class="kw">cor</span>(pca_mod<span class="op">$</span>x[,<span class="dv">1</span>], df_scaled<span class="op">$</span>BIGF13)</span></code></pre></div>
+<pre><code>## [1] 0.6333226</code></pre>
+<p>The variable BIGF13 loads highest on the first factor.</p>
+</div>
+<div id="exercise-6-7" class="section level3">
+<h3><span class="header-section-number">6.2.6</span> Exercise 6</h3>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="unsup.html#cb12-1"></a><span class="kw">as_tibble</span>(pca_mod<span class="op">$</span>x) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb12-2"><a href="unsup.html#cb12-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> PC1, <span class="dt">y =</span> PC2, <span class="dt">colour =</span> df<span class="op">$</span>sex)) <span class="op">+</span></span>
+<span id="cb12-3"><a href="unsup.html#cb12-3"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
+<span id="cb12-4"><a href="unsup.html#cb12-4"></a><span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span></span>
+<span id="cb12-5"><a href="unsup.html#cb12-5"></a><span class="st">  </span><span class="kw">scale_colour_viridis_d</span>()</span></code></pre></div>
+<p><img src="dav_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+</div>
+<div id="exercise-7-7" class="section level3">
+<h3><span class="header-section-number">6.2.7</span> Exercise 7</h3>
+<p>Correspondance analysis (CA)</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="unsup.html#cb13-1"></a><span class="kw">load</span>(<span class="st">&quot;data/songs_ca.RData&quot;</span>)</span></code></pre></div>
+</div>
+<div id="exercise-8-7" class="section level3">
+<h3><span class="header-section-number">6.2.8</span> Exercise 8</h3>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="unsup.html#cb14-1"></a>ca_mod &lt;-<span class="st"> </span><span class="kw">ca</span>(songs_ca)</span></code></pre></div>
+</div>
+<div id="exercise-9-7" class="section level3">
+<h3><span class="header-section-number">6.2.9</span> Exercise 9</h3>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="unsup.html#cb15-1"></a><span class="kw">summary</span>(ca_mod)</span></code></pre></div>
+<pre><code>## 
+## Principal inertias (eigenvalues):
+## 
+##  dim    value      %   cum%   scree plot               
+##  1      0.050916  34.6  34.6  *********                
+##  2      0.037005  25.2  59.8  ******                   
+##  3      0.021217  14.4  74.2  ****                     
+##  4      0.013919   9.5  83.7  **                       
+##  5      0.008329   5.7  89.3  *                        
+##  6      0.006925   4.7  94.1  *                        
+##  7      0.003570   2.4  96.5  *                        
+##  8      0.002149   1.5  97.9                           
+##  9      0.001293   0.9  98.8                           
+##  10     0.001119   0.8  99.6                           
+##  11     0.000614   0.4 100.0                           
+##         -------- -----                                 
+##  Total: 0.147056 100.0                                 
+## 
+## 
+## Rows:
+##      name   mass  qlt  inr    k=1 cor ctr    k=2 cor ctr  
+## 1  | CtSt |   76  175   37 |   -4   0   0 | -113 175  26 |
+## 2  |  Exo |   49  972  288 | -820 775 645 |  414 198 226 |
+## 3  | SnpD |  155  252   71 |   61  55  11 | -115 198  56 |
+## 4  | Vngl |   44  385  123 | -237 136  48 | -320 249 122 |
+## 5  | TmMG |   78  290   24 |    8   1   0 | -114 289  27 |
+## 6  | IggP |   61  156   27 |   63  62   5 |  -77  94  10 |
+## 7  | BryW |   73  410   40 | -107 141  16 | -148 269  43 |
+## 8  | GrtD |   57   55   35 |   68  51   5 |  -20   4   1 |
+## 9  | FlRd |  149  397   84 |  171 352  86 |   62  46  15 |
+## 10 | JhnM |   95  188   49 | -118 185  26 |  -17   4   1 |
+## 11 | JnsJ |  109  845  200 |  268 266 154 |  395 579 461 |
+## 12 | Extr |   53  200   20 |  -53  49   3 |  -92 151  12 |
+## 
+## Columns:
+##      name   mass  qlt  inr    k=1 cor ctr    k=2 cor ctr  
+## 1  |    i |  258  203   31 |   57 186  16 |  -17  17   2 |
+## 2  | love |   39  475   69 | -352 475  94 |    1   0   0 |
+## 3  |  you |  206  956   93 | -234 825 223 |   93 131  49 |
+## 4  |   me |   84  494   32 |  165 493  45 |    7   1   0 |
+## 5  |   we |   33  508   67 |   13   1   0 | -386 507 135 |
+## 6  |   to |  113  667   68 |  131 192  38 | -205 475 129 |
+## 7  |   be |   36  529   16 |   48  35   2 | -178 494  31 |
+## 8  |   do |   22  250   11 |  123 198   7 |  -63  52   2 |
+## 9  |   go |   22  830   70 | -544 640 130 |  297 190  53 |
+## 10 |   no |   35  852   97 |  321 253  71 |  494 599 231 |
+## 11 | baby |   23  799   84 |  417 329  80 |  499 471 157 |
+## 12 | hert |    8  668   31 | -599 666  59 |   25   1   0 |
+## 13 | life |   12  350   52 | -105  17   3 | -458 333  69 |
+## 14 | down |   21  395   36 |  313 392  41 |   28   3   0 |
+## 15 | wrld |    8  245   11 |   45  10   0 | -225 235  11 |
+## 16 | over |    5  159   11 |  170  93   3 | -143  66   3 |
+## 17 | eyes |    5  205   21 |  -12   0   0 | -349 205  17 |
+## 18 |  bad |    3  218    9 |   98  23   1 | -281 195   7 |
+## 19 | away |   10  590   29 | -512 590  49 |   12   0   0 |
+## 20 | tgth |    2  803   18 | -904 750  38 |  240  53   4 |
+## 21 | tngh |    3  132   21 |  312 111   7 | -137  21   2 |
+## 22 | evry |    3  623   12 | -503 506  17 |  242 117   5 |
+## 23 | live |    5  348   24 |  -53   4   0 | -491 344  32 |
+## 24 | make |   13  334   20 |  261 303  17 |  -83  31   2 |
+## 25 | back |   15   62   19 |  108  61   3 |   -7   0   0 |
+## 26 |  hey |   13  686   50 |  466 391  57 |  405 295  59 |</code></pre>
+<p>The first two axes explain nearly 60% of the variation in the data. The principal coordinates for the first two dimensions (k = 1 and k = 2) show that the word “love” has no correlation or a contribution with/to the second dimension. All else being equal, if two artists differ on dimension 2, the artist with a lower score on this dimension uses the word love relatively more often.</p>
+</div>
+<div id="exercise-10-6" class="section level3">
+<h3><span class="header-section-number">6.2.10</span> Exercise 10</h3>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="unsup.html#cb17-1"></a><span class="kw">plot</span>(ca_mod)</span></code></pre></div>
+<p><img src="dav_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="unsup.html#cb18-1"></a>gg_ca &lt;-<span class="st"> </span></span>
+<span id="cb18-2"><a href="unsup.html#cb18-2"></a><span class="st">  </span><span class="kw">rbind</span>(ca_mod<span class="op">$</span>rowcoord[, <span class="dv">1</span><span class="op">:</span><span class="dv">2</span>], ca_mod<span class="op">$</span>colcoord[, <span class="dv">1</span><span class="op">:</span><span class="dv">2</span>]) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb18-3"><a href="unsup.html#cb18-3"></a><span class="st">  </span><span class="kw">as_tibble</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb18-4"><a href="unsup.html#cb18-4"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">name =</span> <span class="kw">c</span>(<span class="kw">rownames</span>(songs_ca), <span class="kw">colnames</span>(songs_ca)), </span>
+<span id="cb18-5"><a href="unsup.html#cb18-5"></a>         <span class="dt">type =</span> <span class="kw">c</span>(<span class="kw">rep</span>(<span class="st">&quot;row&quot;</span>, <span class="dv">12</span>), <span class="kw">rep</span>(<span class="st">&quot;col&quot;</span>, <span class="dv">26</span>)))</span>
+<span id="cb18-6"><a href="unsup.html#cb18-6"></a></span>
+<span id="cb18-7"><a href="unsup.html#cb18-7"></a>gg_ca <span class="op">%&gt;%</span></span>
+<span id="cb18-8"><a href="unsup.html#cb18-8"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Dim1, <span class="dt">y =</span> Dim2, <span class="dt">shape =</span> type, <span class="dt">colour =</span> type, <span class="dt">label =</span> name)) <span class="op">+</span></span>
+<span id="cb18-9"><a href="unsup.html#cb18-9"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
+<span id="cb18-10"><a href="unsup.html#cb18-10"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">hjust =</span> <span class="dv">0</span>, <span class="dt">nudge_x =</span> <span class="fl">0.05</span>) <span class="op">+</span></span>
+<span id="cb18-11"><a href="unsup.html#cb18-11"></a><span class="st">  </span><span class="kw">coord_fixed</span>() <span class="op">+</span></span>
+<span id="cb18-12"><a href="unsup.html#cb18-12"></a><span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span></span>
+<span id="cb18-13"><a href="unsup.html#cb18-13"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;none&quot;</span>) <span class="op">+</span></span>
+<span id="cb18-14"><a href="unsup.html#cb18-14"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Dimension 1&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Dimension 2&quot;</span>, </span>
+<span id="cb18-15"><a href="unsup.html#cb18-15"></a>       <span class="dt">title =</span> <span class="st">&quot;CA of popular words in songs&quot;</span>)</span></code></pre></div>
+<p><img src="dav_files/figure-html/unnamed-chunk-11-2.png" width="672" /></p>
+</div>
+<div id="exercise-11-7" class="section level3">
+<h3><span class="header-section-number">6.2.11</span> Exercise 11</h3>
+<p>Exo is a k-pop band. Janis Joplin was born in 1943 (and a member of the infamous 27 club), so her lyrics are from a different period than the other artists.</p>
+</div>
+<div id="exercise-12-7" class="section level3">
+<h3><span class="header-section-number">6.2.12</span> Exercise 12</h3>
+<p>It would look completely different: correspondence analysis maps rows and columns together. So the words will be in different places. For example, if the artist “high school musical” would be in the sample, it would separate itself from the other artists because the word “together” is used a lot. Consequently, the word “together” would appear near the artist. The same will happen with Cole Porter and “love”.</p>
+</div>
+<div id="exercise-13-7" class="section level3">
+<h3><span class="header-section-number">6.2.13</span> Exercise 13</h3>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="unsup.html#cb19-1"></a><span class="kw">load</span>(<span class="st">&quot;data/corn.RData&quot;</span>)</span>
+<span id="cb19-2"><a href="unsup.html#cb19-2"></a></span>
+<span id="cb19-3"><a href="unsup.html#cb19-3"></a><span class="kw">t</span>(corn[, <span class="op">-</span><span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)]) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb19-4"><a href="unsup.html#cb19-4"></a><span class="st">  </span>as_tibble <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb19-5"><a href="unsup.html#cb19-5"></a><span class="st">  </span><span class="kw">gather</span>(<span class="dt">key =</span> corn, <span class="dt">value =</span> signal) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb19-6"><a href="unsup.html#cb19-6"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">wavelength =</span> <span class="kw">rep</span>(<span class="kw">seq</span>(<span class="dv">1100</span>, <span class="dv">2498</span>, <span class="dv">2</span>), <span class="dv">80</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb19-7"><a href="unsup.html#cb19-7"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> wavelength, <span class="dt">y =</span> signal, <span class="dt">colour =</span> corn)) <span class="op">+</span></span>
+<span id="cb19-8"><a href="unsup.html#cb19-8"></a><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span></span>
+<span id="cb19-9"><a href="unsup.html#cb19-9"></a><span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span></span>
+<span id="cb19-10"><a href="unsup.html#cb19-10"></a><span class="st">  </span><span class="kw">scale_colour_viridis_d</span>(<span class="dt">guide =</span> <span class="st">&quot;none&quot;</span>) <span class="op">+</span></span>
+<span id="cb19-11"><a href="unsup.html#cb19-11"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Wavelength (nm)&quot;</span>,</span>
+<span id="cb19-12"><a href="unsup.html#cb19-12"></a>       <span class="dt">y =</span> <span class="st">&quot;Transmittance&quot;</span>,</span>
+<span id="cb19-13"><a href="unsup.html#cb19-13"></a>       <span class="dt">title =</span> <span class="st">&quot;NIR Spectroscopy of 80 corn samples&quot;</span>)</span></code></pre></div>
+<pre><code>## Warning: The `x` argument of `as_tibble.matrix()` must have unique column names if `.name_repair` is omitted as of tibble 2.0.0.
+## Using compatibility `.name_repair`.
+## This warning is displayed once every 8 hours.
+## Call `lifecycle::last_warnings()` to see where this warning was generated.</code></pre>
+<p><img src="dav_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+</div>
+<div id="exercise-14-6" class="section level3">
+<h3><span class="header-section-number">6.2.14</span> Exercise 14</h3>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="unsup.html#cb21-1"></a><span class="co"># Perform svd-pca</span></span>
+<span id="cb21-2"><a href="unsup.html#cb21-2"></a>x_scaled  &lt;-<span class="st"> </span><span class="kw">scale</span>(corn[, <span class="op">-</span><span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)], <span class="dt">scale =</span> <span class="ot">FALSE</span>)</span>
+<span id="cb21-3"><a href="unsup.html#cb21-3"></a>svd_corn  &lt;-<span class="st"> </span><span class="kw">svd</span>(x_scaled)</span>
+<span id="cb21-4"><a href="unsup.html#cb21-4"></a>pc_scores &lt;-<span class="st"> </span>svd_corn<span class="op">$</span>u <span class="op">%*%</span><span class="st"> </span><span class="kw">diag</span>(svd_corn<span class="op">$</span>d) </span>
+<span id="cb21-5"><a href="unsup.html#cb21-5"></a></span>
+<span id="cb21-6"><a href="unsup.html#cb21-6"></a><span class="co"># Plot first two principal components versus the corn properties </span></span>
+<span id="cb21-7"><a href="unsup.html#cb21-7"></a>ggcorn &lt;-</span>
+<span id="cb21-8"><a href="unsup.html#cb21-8"></a><span class="st">  </span>corn[, <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>] <span class="op">%&gt;%</span></span>
+<span id="cb21-9"><a href="unsup.html#cb21-9"></a><span class="st">  </span><span class="kw">bind_cols</span>(<span class="kw">tibble</span>(<span class="dt">PC1 =</span> pc_scores[, <span class="dv">1</span>], </span>
+<span id="cb21-10"><a href="unsup.html#cb21-10"></a>                   <span class="dt">PC2 =</span> pc_scores[, <span class="dv">2</span>], </span>
+<span id="cb21-11"><a href="unsup.html#cb21-11"></a>                   <span class="dt">PC5 =</span> pc_scores[, <span class="dv">5</span>], </span>
+<span id="cb21-12"><a href="unsup.html#cb21-12"></a>                   <span class="dt">PC6 =</span> pc_scores[, <span class="dv">6</span>]))</span>
+<span id="cb21-13"><a href="unsup.html#cb21-13"></a></span>
+<span id="cb21-14"><a href="unsup.html#cb21-14"></a>cowplot<span class="op">::</span><span class="kw">plot_grid</span>(</span>
+<span id="cb21-15"><a href="unsup.html#cb21-15"></a>  ggcorn <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb21-16"><a href="unsup.html#cb21-16"></a><span class="st">    </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> PC1, <span class="dt">y =</span> PC2, <span class="dt">colour =</span> Moisture)) <span class="op">+</span></span>
+<span id="cb21-17"><a href="unsup.html#cb21-17"></a><span class="st">    </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
+<span id="cb21-18"><a href="unsup.html#cb21-18"></a><span class="st">    </span><span class="kw">theme_minimal</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb21-19"><a href="unsup.html#cb21-19"></a><span class="st">    </span><span class="kw">scale_colour_viridis_c</span>(),</span>
+<span id="cb21-20"><a href="unsup.html#cb21-20"></a>  ggcorn <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb21-21"><a href="unsup.html#cb21-21"></a><span class="st">    </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> PC1, <span class="dt">y =</span> PC2, <span class="dt">colour =</span> Oil)) <span class="op">+</span></span>
+<span id="cb21-22"><a href="unsup.html#cb21-22"></a><span class="st">    </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
+<span id="cb21-23"><a href="unsup.html#cb21-23"></a><span class="st">    </span><span class="kw">theme_minimal</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb21-24"><a href="unsup.html#cb21-24"></a><span class="st">    </span><span class="kw">scale_colour_viridis_c</span>(),</span>
+<span id="cb21-25"><a href="unsup.html#cb21-25"></a>  ggcorn <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb21-26"><a href="unsup.html#cb21-26"></a><span class="st">    </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> PC1, <span class="dt">y =</span> PC2, <span class="dt">colour =</span> Protein)) <span class="op">+</span></span>
+<span id="cb21-27"><a href="unsup.html#cb21-27"></a><span class="st">    </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
+<span id="cb21-28"><a href="unsup.html#cb21-28"></a><span class="st">    </span><span class="kw">theme_minimal</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb21-29"><a href="unsup.html#cb21-29"></a><span class="st">    </span><span class="kw">scale_colour_viridis_c</span>(),</span>
+<span id="cb21-30"><a href="unsup.html#cb21-30"></a>  ggcorn <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb21-31"><a href="unsup.html#cb21-31"></a><span class="st">    </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> PC1, <span class="dt">y =</span> PC2, <span class="dt">colour =</span> Starch)) <span class="op">+</span></span>
+<span id="cb21-32"><a href="unsup.html#cb21-32"></a><span class="st">    </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
+<span id="cb21-33"><a href="unsup.html#cb21-33"></a><span class="st">    </span><span class="kw">theme_minimal</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb21-34"><a href="unsup.html#cb21-34"></a><span class="st">    </span><span class="kw">scale_colour_viridis_c</span>()</span>
+<span id="cb21-35"><a href="unsup.html#cb21-35"></a>)</span></code></pre></div>
+<p><img src="dav_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p>Moisture and oil seem to have a strong relation with the first two PCs, and their high values are on opposite sides. The high/low values for protein and starch seem more randomly ordered in these plots.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="unsup.html#cb22-1"></a>cowplot<span class="op">::</span><span class="kw">plot_grid</span>(</span>
+<span id="cb22-2"><a href="unsup.html#cb22-2"></a>  ggcorn <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb22-3"><a href="unsup.html#cb22-3"></a><span class="st">    </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> PC5, <span class="dt">y =</span> PC6, <span class="dt">colour =</span> Moisture)) <span class="op">+</span></span>
+<span id="cb22-4"><a href="unsup.html#cb22-4"></a><span class="st">    </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
+<span id="cb22-5"><a href="unsup.html#cb22-5"></a><span class="st">    </span><span class="kw">theme_minimal</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb22-6"><a href="unsup.html#cb22-6"></a><span class="st">    </span><span class="kw">scale_colour_viridis_c</span>(),</span>
+<span id="cb22-7"><a href="unsup.html#cb22-7"></a>  ggcorn <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb22-8"><a href="unsup.html#cb22-8"></a><span class="st">    </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> PC5, <span class="dt">y =</span> PC6, <span class="dt">colour =</span> Oil)) <span class="op">+</span></span>
+<span id="cb22-9"><a href="unsup.html#cb22-9"></a><span class="st">    </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
+<span id="cb22-10"><a href="unsup.html#cb22-10"></a><span class="st">    </span><span class="kw">theme_minimal</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb22-11"><a href="unsup.html#cb22-11"></a><span class="st">    </span><span class="kw">scale_colour_viridis_c</span>(),</span>
+<span id="cb22-12"><a href="unsup.html#cb22-12"></a>  ggcorn <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb22-13"><a href="unsup.html#cb22-13"></a><span class="st">    </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> PC5, <span class="dt">y =</span> PC6, <span class="dt">colour =</span> Protein)) <span class="op">+</span></span>
+<span id="cb22-14"><a href="unsup.html#cb22-14"></a><span class="st">    </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
+<span id="cb22-15"><a href="unsup.html#cb22-15"></a><span class="st">    </span><span class="kw">theme_minimal</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb22-16"><a href="unsup.html#cb22-16"></a><span class="st">    </span><span class="kw">scale_colour_viridis_c</span>(),</span>
+<span id="cb22-17"><a href="unsup.html#cb22-17"></a>  ggcorn <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb22-18"><a href="unsup.html#cb22-18"></a><span class="st">    </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> PC5, <span class="dt">y =</span> PC6, <span class="dt">colour =</span> Starch)) <span class="op">+</span></span>
+<span id="cb22-19"><a href="unsup.html#cb22-19"></a><span class="st">    </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
+<span id="cb22-20"><a href="unsup.html#cb22-20"></a><span class="st">    </span><span class="kw">theme_minimal</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb22-21"><a href="unsup.html#cb22-21"></a><span class="st">    </span><span class="kw">scale_colour_viridis_c</span>()</span>
+<span id="cb22-22"><a href="unsup.html#cb22-22"></a>)</span></code></pre></div>
+<p><img src="dav_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p>Here, it’s protein and starch that relate more to the PCs. They too are opposites in these samples.</p>
+</div>
+</div>
+<div id="unsupervised-learning-practical-ii" class="section level2">
+<h2><span class="header-section-number">6.3</span> Unsupervised learning practical II</h2>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="unsup.html#cb23-1"></a><span class="kw">library</span>(igraph)</span>
+<span id="cb23-2"><a href="unsup.html#cb23-2"></a><span class="kw">library</span>(ggdendro)</span>
+<span id="cb23-3"><a href="unsup.html#cb23-3"></a><span class="kw">library</span>(dendextend)</span>
+<span id="cb23-4"><a href="unsup.html#cb23-4"></a><span class="kw">library</span>(ISLR)</span>
+<span id="cb23-5"><a href="unsup.html#cb23-5"></a><span class="kw">library</span>(tidyverse)</span></code></pre></div>
+<div id="exercise-1-8" class="section level3">
+<h3><span class="header-section-number">6.3.1</span> Exercise 1</h3>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="unsup.html#cb24-1"></a>dat &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/clusterdata.csv&quot;</span>)</span>
+<span id="cb24-2"><a href="unsup.html#cb24-2"></a></span>
+<span id="cb24-3"><a href="unsup.html#cb24-3"></a><span class="kw">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb24-4"><a href="unsup.html#cb24-4"></a></span>
+<span id="cb24-5"><a href="unsup.html#cb24-5"></a>dat <span class="op">%&gt;%</span></span>
+<span id="cb24-6"><a href="unsup.html#cb24-6"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> x1, <span class="dt">y =</span> x2)) <span class="op">+</span></span>
+<span id="cb24-7"><a href="unsup.html#cb24-7"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
+<span id="cb24-8"><a href="unsup.html#cb24-8"></a><span class="st">  </span><span class="kw">coord_fixed</span>() <span class="op">+</span></span>
+<span id="cb24-9"><a href="unsup.html#cb24-9"></a><span class="st">  </span><span class="kw">theme_minimal</span>()</span></code></pre></div>
+<p><img src="dav_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+</div>
+<div id="exercise-2-8" class="section level3">
+<h3><span class="header-section-number">6.3.2</span> Exercise 2</h3>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="unsup.html#cb25-1"></a>kmeans3 &lt;-<span class="st"> </span><span class="kw">kmeans</span>(dat, <span class="dt">centers =</span> <span class="dv">3</span>)</span>
+<span id="cb25-2"><a href="unsup.html#cb25-2"></a>kmeans5 &lt;-<span class="st"> </span><span class="kw">kmeans</span>(dat, <span class="dt">centers =</span> <span class="dv">5</span>)</span></code></pre></div>
+</div>
+<div id="exercise-3-7" class="section level3">
+<h3><span class="header-section-number">6.3.3</span> Exercise 3</h3>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="unsup.html#cb26-1"></a>cowplot<span class="op">::</span><span class="kw">plot_grid</span>(</span>
+<span id="cb26-2"><a href="unsup.html#cb26-2"></a>  </span>
+<span id="cb26-3"><a href="unsup.html#cb26-3"></a>  <span class="co"># K = 3 plot</span></span>
+<span id="cb26-4"><a href="unsup.html#cb26-4"></a>  dat <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb26-5"><a href="unsup.html#cb26-5"></a><span class="st">    </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> x1, <span class="dt">y =</span> x2, <span class="dt">colour =</span> <span class="kw">factor</span>(kmeans3<span class="op">$</span>cluster))) <span class="op">+</span></span>
+<span id="cb26-6"><a href="unsup.html#cb26-6"></a><span class="st">    </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
+<span id="cb26-7"><a href="unsup.html#cb26-7"></a><span class="st">    </span><span class="kw">coord_fixed</span>() <span class="op">+</span></span>
+<span id="cb26-8"><a href="unsup.html#cb26-8"></a><span class="st">    </span><span class="kw">theme_minimal</span>() <span class="op">+</span></span>
+<span id="cb26-9"><a href="unsup.html#cb26-9"></a><span class="st">    </span><span class="kw">scale_colour_viridis_d</span>(<span class="dt">guide =</span> <span class="st">&quot;none&quot;</span>),</span>
+<span id="cb26-10"><a href="unsup.html#cb26-10"></a>  </span>
+<span id="cb26-11"><a href="unsup.html#cb26-11"></a>  <span class="co"># K = 5 plot</span></span>
+<span id="cb26-12"><a href="unsup.html#cb26-12"></a>  dat <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb26-13"><a href="unsup.html#cb26-13"></a><span class="st">    </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> x1, <span class="dt">y =</span> x2, <span class="dt">colour =</span> <span class="kw">factor</span>(kmeans5<span class="op">$</span>cluster))) <span class="op">+</span></span>
+<span id="cb26-14"><a href="unsup.html#cb26-14"></a><span class="st">    </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
+<span id="cb26-15"><a href="unsup.html#cb26-15"></a><span class="st">    </span><span class="kw">coord_fixed</span>() <span class="op">+</span></span>
+<span id="cb26-16"><a href="unsup.html#cb26-16"></a><span class="st">    </span><span class="kw">theme_minimal</span>() <span class="op">+</span></span>
+<span id="cb26-17"><a href="unsup.html#cb26-17"></a><span class="st">    </span><span class="kw">scale_colour_viridis_d</span>(<span class="dt">guide =</span> <span class="st">&quot;none&quot;</span>)</span>
+<span id="cb26-18"><a href="unsup.html#cb26-18"></a>  </span>
+<span id="cb26-19"><a href="unsup.html#cb26-19"></a>)</span></code></pre></div>
+<p><img src="dav_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+</div>
+<div id="exercise-4-8" class="section level3">
+<h3><span class="header-section-number">6.3.4</span> Exercise 4</h3>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="unsup.html#cb27-1"></a>dist_mat &lt;-<span class="st"> </span><span class="kw">dist</span>(dat, <span class="dt">method =</span> <span class="st">&quot;euclidean&quot;</span>)</span>
+<span id="cb27-2"><a href="unsup.html#cb27-2"></a></span>
+<span id="cb27-3"><a href="unsup.html#cb27-3"></a>hclust1 &lt;-<span class="st"> </span><span class="kw">hclust</span>(dist_mat, <span class="dt">method =</span> <span class="st">&quot;complete&quot;</span>)</span>
+<span id="cb27-4"><a href="unsup.html#cb27-4"></a>hclust2 &lt;-<span class="st"> </span><span class="kw">hclust</span>(dist_mat, <span class="dt">method =</span> <span class="st">&quot;average&quot;</span>)</span></code></pre></div>
+</div>
+<div id="exercise-5-8" class="section level3">
+<h3><span class="header-section-number">6.3.5</span> Exercise 5</h3>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="unsup.html#cb28-1"></a><span class="kw">ggdendrogram</span>(hclust1) <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Complete-linkage hierarchical clustering&quot;</span>)</span></code></pre></div>
+<p><img src="dav_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="unsup.html#cb29-1"></a><span class="kw">ggdendrogram</span>(hclust2) <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Average-linkage hierarchical clustering&quot;</span>)</span></code></pre></div>
+<p><img src="dav_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+</div>
+<div id="exercise-6-8" class="section level3">
+<h3><span class="header-section-number">6.3.6</span> Exercise 6</h3>
+<p>Compare dendrograms.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="unsup.html#cb30-1"></a>dend_list &lt;-<span class="st"> </span><span class="kw">dendlist</span>(<span class="kw">as.dendrogram</span>(hclust1), <span class="kw">as.dendrogram</span>(hclust2))</span>
+<span id="cb30-2"><a href="unsup.html#cb30-2"></a></span>
+<span id="cb30-3"><a href="unsup.html#cb30-3"></a>dend_list <span class="op">%&gt;%</span></span>
+<span id="cb30-4"><a href="unsup.html#cb30-4"></a><span class="st">  </span><span class="kw">untangle</span>(<span class="dt">method =</span> <span class="st">&quot;step1side&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb30-5"><a href="unsup.html#cb30-5"></a><span class="st">  </span><span class="kw">tanglegram</span>()</span></code></pre></div>
+<p><img src="dav_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+</div>
+<div id="exercise-7-8" class="section level3">
+<h3><span class="header-section-number">6.3.7</span> Exercise 7</h3>
+<p>Gives three means clustering the same result as hierarchical clustering with a cutoff at three?</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="unsup.html#cb31-1"></a><span class="co"># first, let&#39;s make two factors with congruent labels for the observations</span></span>
+<span id="cb31-2"><a href="unsup.html#cb31-2"></a>hclust_fac &lt;-<span class="st"> </span><span class="kw">factor</span>(<span class="kw">cutree</span>(hclust1, <span class="dt">k =</span> <span class="dv">3</span>), <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>))</span>
+<span id="cb31-3"><a href="unsup.html#cb31-3"></a>kmeans_fac &lt;-<span class="st"> </span><span class="kw">factor</span>(kmeans3<span class="op">$</span>cluster, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>))</span>
+<span id="cb31-4"><a href="unsup.html#cb31-4"></a></span>
+<span id="cb31-5"><a href="unsup.html#cb31-5"></a><span class="co"># then we can check whether the labels are the same</span></span>
+<span id="cb31-6"><a href="unsup.html#cb31-6"></a>same_clust &lt;-<span class="st"> </span>hclust_fac <span class="op">==</span><span class="st"> </span>kmeans_fac</span>
+<span id="cb31-7"><a href="unsup.html#cb31-7"></a><span class="kw">all</span>(same_clust)</span></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<p>No it doesn’t.</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="unsup.html#cb33-1"></a><span class="kw">sum</span>(<span class="op">!</span>same_clust)</span></code></pre></div>
+<pre><code>## [1] 6</code></pre>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="unsup.html#cb35-1"></a><span class="co"># we could also make a visual comparison of the differences</span></span>
+<span id="cb35-2"><a href="unsup.html#cb35-2"></a><span class="kw">ggplot</span>(dat, <span class="kw">aes</span>(<span class="dt">x =</span> x1, <span class="dt">y =</span> x2)) <span class="op">+</span></span>
+<span id="cb35-3"><a href="unsup.html#cb35-3"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="dv">6</span>, <span class="dt">colour =</span> <span class="kw">ifelse</span>(same_clust, <span class="st">&quot;#00000000&quot;</span>, <span class="st">&quot;#00000030&quot;</span>)) <span class="op">+</span></span>
+<span id="cb35-4"><a href="unsup.html#cb35-4"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">colour =</span> hclust_fac), <span class="dt">position =</span> <span class="kw">position_nudge</span>(<span class="op">-</span><span class="fl">0.07</span>)) <span class="op">+</span></span>
+<span id="cb35-5"><a href="unsup.html#cb35-5"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">colour =</span> kmeans_fac), <span class="dt">position =</span> <span class="kw">position_nudge</span>(<span class="fl">0.07</span>)) <span class="op">+</span></span>
+<span id="cb35-6"><a href="unsup.html#cb35-6"></a><span class="st">  </span><span class="kw">scale_colour_viridis_d</span>() <span class="op">+</span></span>
+<span id="cb35-7"><a href="unsup.html#cb35-7"></a><span class="st">  </span><span class="kw">coord_fixed</span>() <span class="op">+</span></span>
+<span id="cb35-8"><a href="unsup.html#cb35-8"></a><span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span></span>
+<span id="cb35-9"><a href="unsup.html#cb35-9"></a><span class="st">  </span><span class="kw">theme</span>()</span></code></pre></div>
+<p><img src="dav_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
 
+</div>
+</div>
 </div>
             </section>
 

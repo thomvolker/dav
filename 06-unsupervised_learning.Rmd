@@ -1,3 +1,355 @@
 # Unsupervised learning {#unsup}
 
-This is yet to come.
+## Book unsupervised learning PCA
+
+The goal of unsupervised learning is to discover interesting relations among the X's.
+
+## Unsupervised learning practical I
+
+### Exercise 1
+
+```{r, message = FALSE, warning = FALSE}
+library(ISLR)
+library(tidyverse)
+library(ca)
+```
+
+```{r, message = FALSE}
+df <- read_csv("data/questionnaire.csv")
+```
+
+### Exercise 2
+
+```{r}
+df_scaled <- df %>%
+  dplyr::select(-sex) %>%
+  scale() %>%
+  as_tibble()
+
+# optionally, we can also compare datasets to see what happened.
+bubble_plot <- function(df) {
+  df %>% 
+    gather(key = Question, value = Answer) %>% 
+    mutate(Question = str_to_lower(Question)) %>%
+    ggplot(aes(x = Question, y = Answer)) + 
+    geom_count(colour = "#00008B") + 
+    theme_minimal() + 
+    theme(axis.text.x = element_text(angle = 90, hjust = 1))
+}
+
+# Unscaled
+df %>% 
+  dplyr::select(-sex) %>%
+  bubble_plot() + 
+  ggtitle("Unscaled")
+
+# Scaled
+df_scaled %>% 
+  bubble_plot() + 
+  labs(y = "Z-score", 
+       title = "Scaled")
+```
+
+### Exercise 3
+
+```{r}
+pca_mod <- prcomp(df_scaled)
+```
+
+### Exercise 4
+
+```{r}
+summary(pca_mod)
+```
+
+Together, the first two components explain about 35% of the total variance, and we would need 5 components to explain 50% of the variance in the data.
+
+### Exercise 5
+
+```{r}
+pca_mod$rotation[,1][which.max(pca_mod$rotation[,1])]
+
+cor(pca_mod$x[,1], df_scaled$BIGF13)
+```
+
+The variable BIGF13 loads highest on the first factor.
+
+### Exercise 6
+
+```{r}
+as_tibble(pca_mod$x) %>% 
+  ggplot(aes(x = PC1, y = PC2, colour = df$sex)) +
+  geom_point() +
+  theme_minimal() +
+  scale_colour_viridis_d()
+
+```
+
+
+### Exercise 7
+
+Correspondance analysis (CA)
+
+```{r}
+load("data/songs_ca.RData")
+```
+
+### Exercise 8
+
+```{r}
+ca_mod <- ca(songs_ca)
+```
+
+### Exercise 9
+
+```{r}
+summary(ca_mod)
+```
+
+The first two axes explain nearly 60% of the variation in the data. The principal coordinates for the first two dimensions (k = 1 and k = 2) show that the word "love" has no correlation or a contribution with/to the second dimension. All else being equal, if two artists differ on dimension 2, the artist with a lower score on this dimension uses the word love relatively more often.
+
+### Exercise 10 
+
+```{r}
+plot(ca_mod)
+
+gg_ca <- 
+  rbind(ca_mod$rowcoord[, 1:2], ca_mod$colcoord[, 1:2]) %>% 
+  as_tibble() %>% 
+  mutate(name = c(rownames(songs_ca), colnames(songs_ca)), 
+         type = c(rep("row", 12), rep("col", 26)))
+
+gg_ca %>%
+  ggplot(aes(x = Dim1, y = Dim2, shape = type, colour = type, label = name)) +
+  geom_point() +
+  geom_text(hjust = 0, nudge_x = 0.05) +
+  coord_fixed() +
+  theme_minimal() +
+  theme(legend.position = "none") +
+  labs(x = "Dimension 1", y = "Dimension 2", 
+       title = "CA of popular words in songs")
+```
+
+
+### Exercise 11
+
+Exo is a k-pop band. Janis Joplin was born in 1943 (and a member of the infamous 27 club), so her lyrics are from a different period than the other artists.
+
+### Exercise 12
+
+It would look completely different: correspondence analysis maps rows and columns together. So the words will be in different places. For example, if the artist "high school musical" would be in the sample, it would separate itself from the other artists because the word "together" is used a lot. Consequently, the word "together" would appear near the artist. The same will happen with Cole Porter and "love".
+
+### Exercise 13
+
+```{r}
+load("data/corn.RData")
+
+t(corn[, -c(1:4)]) %>% 
+  as_tibble %>% 
+  gather(key = corn, value = signal) %>% 
+  mutate(wavelength = rep(seq(1100, 2498, 2), 80)) %>% 
+  ggplot(aes(x = wavelength, y = signal, colour = corn)) +
+  geom_line() +
+  theme_minimal() +
+  scale_colour_viridis_d(guide = "none") +
+  labs(x = "Wavelength (nm)",
+       y = "Transmittance",
+       title = "NIR Spectroscopy of 80 corn samples")
+```
+
+### Exercise 14
+
+```{r}
+# Perform svd-pca
+x_scaled  <- scale(corn[, -c(1:4)], scale = FALSE)
+svd_corn  <- svd(x_scaled)
+pc_scores <- svd_corn$u %*% diag(svd_corn$d) 
+
+# Plot first two principal components versus the corn properties 
+ggcorn <-
+  corn[, 1:4] %>%
+  bind_cols(tibble(PC1 = pc_scores[, 1], 
+                   PC2 = pc_scores[, 2], 
+                   PC5 = pc_scores[, 5], 
+                   PC6 = pc_scores[, 6]))
+
+cowplot::plot_grid(
+  ggcorn %>% 
+    ggplot(aes(x = PC1, y = PC2, colour = Moisture)) +
+    geom_point() +
+    theme_minimal() + 
+    scale_colour_viridis_c(),
+  ggcorn %>% 
+    ggplot(aes(x = PC1, y = PC2, colour = Oil)) +
+    geom_point() +
+    theme_minimal() + 
+    scale_colour_viridis_c(),
+  ggcorn %>% 
+    ggplot(aes(x = PC1, y = PC2, colour = Protein)) +
+    geom_point() +
+    theme_minimal() + 
+    scale_colour_viridis_c(),
+  ggcorn %>% 
+    ggplot(aes(x = PC1, y = PC2, colour = Starch)) +
+    geom_point() +
+    theme_minimal() + 
+    scale_colour_viridis_c()
+)
+```
+
+Moisture and oil seem to have a strong relation with the first two PCs, and their high values are on opposite sides. The high/low values for protein and starch seem more randomly ordered in these plots. 
+
+```{r}
+cowplot::plot_grid(
+  ggcorn %>% 
+    ggplot(aes(x = PC5, y = PC6, colour = Moisture)) +
+    geom_point() +
+    theme_minimal() + 
+    scale_colour_viridis_c(),
+  ggcorn %>% 
+    ggplot(aes(x = PC5, y = PC6, colour = Oil)) +
+    geom_point() +
+    theme_minimal() + 
+    scale_colour_viridis_c(),
+  ggcorn %>% 
+    ggplot(aes(x = PC5, y = PC6, colour = Protein)) +
+    geom_point() +
+    theme_minimal() + 
+    scale_colour_viridis_c(),
+  ggcorn %>% 
+    ggplot(aes(x = PC5, y = PC6, colour = Starch)) +
+    geom_point() +
+    theme_minimal() + 
+    scale_colour_viridis_c()
+)
+```
+
+Here, it's protein and starch that relate more to the PCs. They too are opposites in these samples.
+
+## Unsupervised learning practical II
+
+```{r, message = FALSE, warning = FALSE}
+library(igraph)
+library(ggdendro)
+library(dendextend)
+library(ISLR)
+library(tidyverse)
+```
+
+### Exercise 1
+
+```{r, message = FALSE}
+dat <- read_csv("data/clusterdata.csv")
+
+set.seed(123)
+
+dat %>%
+  ggplot(aes(x = x1, y = x2)) +
+  geom_point() +
+  coord_fixed() +
+  theme_minimal()
+```
+
+
+### Exercise 2
+
+```{r}
+kmeans3 <- kmeans(dat, centers = 3)
+kmeans5 <- kmeans(dat, centers = 5)
+```
+
+
+### Exercise 3
+
+```{r}
+cowplot::plot_grid(
+  
+  # K = 3 plot
+  dat %>% 
+    ggplot(aes(x = x1, y = x2, colour = factor(kmeans3$cluster))) +
+    geom_point() +
+    coord_fixed() +
+    theme_minimal() +
+    scale_colour_viridis_d(guide = "none"),
+  
+  # K = 5 plot
+  dat %>% 
+    ggplot(aes(x = x1, y = x2, colour = factor(kmeans5$cluster))) +
+    geom_point() +
+    coord_fixed() +
+    theme_minimal() +
+    scale_colour_viridis_d(guide = "none")
+  
+)
+
+```
+
+### Exercise 4
+
+```{r}
+dist_mat <- dist(dat, method = "euclidean")
+
+hclust1 <- hclust(dist_mat, method = "complete")
+hclust2 <- hclust(dist_mat, method = "average")
+```
+
+### Exercise 5
+
+```{r}
+ggdendrogram(hclust1) + labs(title = "Complete-linkage hierarchical clustering")
+```
+
+```{r}
+ggdendrogram(hclust2) + labs(title = "Average-linkage hierarchical clustering")
+```
+
+### Exercise 6
+
+Compare dendrograms.
+
+```{r}
+dend_list <- dendlist(as.dendrogram(hclust1), as.dendrogram(hclust2))
+
+dend_list %>%
+  untangle(method = "step1side") %>%
+  tanglegram()
+```
+
+
+### Exercise 7
+
+Gives three means clustering the same result as hierarchical clustering with a cutoff at three?
+
+```{r}
+# first, let's make two factors with congruent labels for the observations
+hclust_fac <- factor(cutree(hclust1, k = 3), labels = c("a", "b", "c"))
+kmeans_fac <- factor(kmeans3$cluster, labels = c("a", "b", "c"))
+
+# then we can check whether the labels are the same
+same_clust <- hclust_fac == kmeans_fac
+all(same_clust)
+```
+
+No it doesn't.
+
+```{r}
+sum(!same_clust)
+```
+
+```{r}
+# we could also make a visual comparison of the differences
+ggplot(dat, aes(x = x1, y = x2)) +
+  geom_point(size = 6, colour = ifelse(same_clust, "#00000000", "#00000030")) +
+  geom_point(aes(colour = hclust_fac), position = position_nudge(-0.07)) +
+  geom_point(aes(colour = kmeans_fac), position = position_nudge(0.07)) +
+  scale_colour_viridis_d() +
+  coord_fixed() +
+  theme_minimal() +
+  theme()
+```
+
+
+
+
+
+

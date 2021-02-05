@@ -475,7 +475,259 @@ caret::confusionMatrix(predict(lda_mod)$class,
                        positive = "Yes")
 ```
 
+## Practical classification II
+
+### Exercise 1
+
+Confusion matrices
+
+```{r, message = FALSE, warning = FALSE}
+library(MASS)
+library(ISLR)
+library(pROC)
+library(rpart)
+library(rpart.plot)
+library(randomForest)
+```
+
+```{r, message = FALSE}
+treat <- read_csv("data/cardiovascular_treatment.csv") %>%
+  mutate(severity = as.factor(severity),
+         gender = as.factor(gender),
+         dose = as.factor(dose),
+         response = as.factor(response))
+
+lr_mod <- glm(response ~ ., family = "binomial", data = treat)
+
+pred_lr <- ifelse(predict(lr_mod, type = "response") > 0.5, 1, 0)
+
+table(true = treat$response, predicted = pred_lr)
+```
+
+### Exercise 2
+
+```{r}
+## accuracy
+cmat_lr <- table(true = treat$response, predicted = pred_lr)
+acc <- sum(diag(cmat_lr)) / sum(cmat_lr)
+
+TN <- cmat_lr[1,1]
+FN <- cmat_lr[2,1]
+FP <- cmat_lr[1,2]
+TP <- cmat_lr[2,2]
+
+tibble(acc = (TP + TN) / (sum(cmat_lr)),
+       tpr = (TP) / (TP + FN),
+       tnr = (TN) / (TN + FP),
+       fpr = (FP) / (TN + FP),
+       ppv = (TP) / (TP + FP),
+       npv = (TN) / (TN + FN))
+```
+- Accuracy - 70%, 30% is misclassified.
+
+ - True positive rate - If the patient will respond to treatment, there is an 77% probability that the model will detect this.
+ 
+ - True negative rate - If the patient will not respond to treatment, there is a 63% probability that the model will detect this.
+ 
+ - False positive rate - If the patient does not respond to treatment, there is a 37% chance he or she will anyway be predicted to respond to the treatment.
+ 
+ - Positive predictive value - If the patient is predicted to respond to the treatment, there is a 67% chance they will actually respond to the treatment.
+ 
+ - Negative predictive value - If the patient is predicted to not respond to the treatment, there is a 73% probability that they will indeed not respond to the treatment.
+ 
+ The last two metrics are very important, because if new patients come in, you only know the prediction, and not the true value.
+ 
+ ### Exercise 3
+ 
+```{r}
+lda_mod <- lda(response ~ ., treat)
+
+pred_lda <- predict(lda_mod)$class
+
+cmat_lda <- table(true = treat$response, pred = pred_lda)
+
+TN <- cmat_lda[1,1]
+FN <- cmat_lda[2,1]
+FP <- cmat_lda[1,2]
+TP <- cmat_lda[2,2]
+
+TP / (TP + FP) # PPV
+TN / (TN + FN) # NPV
+
+sum(diag(cmat_lda)) / sum(cmat_lda)
+```
+ 
+The performance is exactly the same.
+
+### Exercise 4
+
+```{r, message = FALSE}
+new_patients <- read_csv("data/new_patients.csv") %>% 
+  mutate(severity = as.factor(severity),
+         gender   = as.factor(gender),
+         dose     = as.factor(dose),
+         response = as.factor(response))
+
+pred_lda_new <- predict(lda_mod, newdata = new_patients)$class
+prob_lr_new <- predict(lr_mod, newdata = new_patients, type = "response")
+pred_lr_new  <- ifelse(prob_lr_new > 0.5, 1, 0)
+
+cmat_lda_new <- table(true = new_patients$response, predicted = pred_lda_new)
+cmat_lr_new  <- table(true = new_patients$response, predicted = pred_lr_new)
+```
+Again, the model fit exactly the same.
+
+```{r}
+cmat_lda_new[2,2] / sum(cmat_lda_new[,2]) # PPV
+cmat_lda_new[1,1] / sum(cmat_lda_new[,1]) # NPV
+```
+
+Brier score
+
+```{r}
+mean((prob_lr_new - (as.numeric(new_patients$response) - 1))^2)
+```
+
+The mean squared difference between the predicted probability and the true class is 0.23.
+
+### Exercise 5
+
+ROC curve
+
+```{r}
+lr1_mod <- glm(response ~ severity + age + bb_score, family = "binomial", data = treat)
+lr2_mod <- glm(response ~ age + I(age^2) + gender + bb_score * prior_cvd * dose,
+               family = "binomial", data = treat)
+
+prob_lr1 <- predict(lr1_mod, type = "response")
+prob_lr2 <- predict(lr2_mod, type = "response")
+```
+
+### Exercise 6
+
+```{r}
+roc1 <- roc(treat$response, prob_lr1)
+roc2 <- roc(treat$response, prob_lr2)
+
+ggroc(roc1) + theme_minimal() + labs(title = "LR1")
+ggroc(roc2) + theme_minimal() + labs(title = "LR2")
+```
 
 
+### Exercise 7
+
+```{r}
+roc1
+roc2
+```
+
+LR2 has a much higher AUC. Intuitive interpretation of the AUC: if we pick one person who does not respond to the treatment and one who does, the AUC is the probability that the classifier ranks the person who responds to treatment higher.
+
+### Exercise 8
+
+```{r}
+# fit lda model, i.e. calculate model parameters
+lda_iris <- lda(Species ~ ., data = iris)
+
+# use those parameters to compute the first linear discriminant
+first_ld <- -c(as.matrix(iris[, -5]) %*% lda_iris$scaling[,1])
+
+# plot
+tibble(
+  ld = first_ld,
+  Species = iris$Species
+) %>% 
+  ggplot(aes(x = ld, fill = Species)) +
+  geom_histogram(binwidth = .5, position = "identity", alpha = .9) +
+  scale_fill_viridis_d(guide = ) +
+  theme_minimal() +
+  labs(
+    x = "Discriminant function",
+    y = "Frequency", 
+    main = "Fisher's linear discriminant function on Iris species"
+  ) + 
+  theme(legend.position = "top")
+```
+
+
+```{r}
+summary(iris)
+```
+
+### Exercise 9
+
+```{r}
+lda_iris_sepal <- lda(Species ~ Sepal.Length + Sepal.Width, data = iris)
+
+table(true = iris$Species, predicted = predict(lda_iris)$class)
+table(true = iris$Species, predicted = predict(lda_iris_sepal)$class)
+```
+The lda_iris model performs better, as the sum of the off-diagonal is lower.
+
+### Exercise 11
+
+Classification trees
+
+```{r}
+iris_tree_mod <- rpart(Species ~ ., data = iris)
+rpart.plot(iris_tree_mod)
+```
+
+### Exercise 12
+
+How would an iris with 2.7 cm long and 1.5 cm wide petals be classified?
+
+As an Iris Versicolor, following the tree from the top to the bottom.
+
+### Exercise 13
+
+```{r}
+iris %>% 
+  ggplot(aes(x = Petal.Length, y = Petal.Width, colour = Species)) +
+  geom_point() +
+  geom_segment(aes(x = 2.5, xend = 2.5, y = -Inf, yend = Inf),
+               colour = "black") +
+  geom_segment(aes(x = 2.5, xend = Inf, y = 1.75, yend = 1.75), 
+               colour = "black") +
+  scale_colour_viridis_d() +
+  theme_minimal()
+```
+
+The first split perfectly separates setosa from the other two, the second split leads to 5 misclassifications: virginica classified as versicolor.
+
+### Exercise 14
+
+```{r}
+iris_tree_full_mod <- rpart(Species ~ ., data = iris,
+                            control = rpart.control(minbucket = 1, cp = 0))
+rpart.plot(iris_tree_full_mod)
+```
+
+### Exercise 15
+
+Random forests
+
+```{r}
+rf_mod <- randomForest(Species ~ ., data = iris)
+
+var_imp <- importance(rf_mod)
+tibble(
+  importance = c(var_imp), 
+  variable = rownames(var_imp)
+) %>% 
+  ggplot(aes(x = variable, y = importance, fill = variable)) +
+  geom_bar(stat = "identity") +
+  scale_fill_viridis_d() +
+  theme_minimal() +
+  labs(
+    x = "Variable", 
+    y = "Mean reduction in Gini coefficient", 
+    title = "Variable importance"
+  )
+```
+
+```{r}
+rf_mod
+```
 
 
